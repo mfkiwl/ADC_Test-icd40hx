@@ -1,0 +1,30 @@
+---------------------------------------------------
+Report for cell adc_ms
+   Instance path: adc_ms
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	     196.00        100.0
+                                  LUT4	     300.00        100.0
+                                 IOBUF	         29        100.0
+                                PFUREG	        257        100.0
+                                RIPPLE	         45        100.0
+SUB MODULES
+                                  cell	      count    SLC Usage(%)
+                               uart_tx	          1         5.6
+                               uart_rx	          1        17.3
+---------------------------------------------------
+Report for cell uart_tx
+   Instance path: adc_ms/uart_tx_a
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      11.00         5.6
+                                  LUT4	      24.00         8.0
+                                PFUREG	          8         3.1
+---------------------------------------------------
+Report for cell uart_rx
+   Instance path: adc_ms/uart_rx_a
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  SLIC	      33.92        17.3
+                                  LUT4	      86.00        28.7
+                                PFUREG	         39        15.2

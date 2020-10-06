@@ -1,0 +1,5 @@
+-rem
+-distrce
+-log "adc_ms_b_adc_ms.log"
+-o "adc_ms_b_adc_ms.csv"
+-pr "adc_ms_b_adc_ms.prf"

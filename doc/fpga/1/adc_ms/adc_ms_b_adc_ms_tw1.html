@@ -1,0 +1,616 @@
+<HTML>
+<HEAD><TITLE>Lattice Map TRACE Report</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="Map_Twr"></A><B><U><big>Map TRACE Report</big></U></B>
+
+Loading design for application trce from file adc_ms_b_adc_ms_map.ncd.
+Design name: adc_ms
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO1200C
+Package:     TQFP100
+Performance: 3
+Loading device for application trce from file 'mj5g17x12.nph' in environment: /home/jarin/storage/main/sw/lattice/3.11_x64/ispfpga.
+Package Status:                     Final          Version 1.19.
+Performance Hardware Data Status: Version 1.94.
+Setup and Hold Report
+
+--------------------------------------------------------------------------------
+<A name="Map_Twr_setup"></A><B><U><big>Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.11.0.396.4</big></U></B>
+Wed Jul  1 23:40:42 2020
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
+
+<A name="mtw1_set_ri"></A><B><U><big>Report Information</big></U></B>
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o adc_ms_b_adc_ms.tw1 -gui adc_ms_b_adc_ms_map.ncd adc_ms_b_adc_ms.prf 
+Design file:     adc_ms_b_adc_ms_map.ncd
+Preference file: adc_ms_b_adc_ms.prf
+Device,speed:    LCMXO1200C,3
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+<A name="mtw1_set_ps"></A><B><U><big>Preference Summary</big></U></B>
+
+<FONT COLOR=red><LI><A href='#map_twr_pref_0_0' Target='right'><FONT COLOR=red>FREQUENCY NET "uart_divider[3]" 321.647000 MHz (276 errors)</FONT></A></LI>
+</FONT>            345 items scored, 276 timing errors detected.
+Warning:  68.236MHz is the maximum frequency for this preference.
+
+<FONT COLOR=red><LI><A href='#map_twr_pref_0_1' Target='right'><FONT COLOR=red>FREQUENCY NET "cnt[5]" 190.404000 MHz (2483 errors)</FONT></A></LI>
+</FONT>            3025 items scored, 2483 timing errors detected.
+Warning:  34.384MHz is the maximum frequency for this preference.
+
+<FONT COLOR=red><LI><A href='#map_twr_pref_0_2' Target='right'><FONT COLOR=red>FREQUENCY NET "mclk_c" 146.994000 MHz (118 errors)</FONT></A></LI>
+</FONT>            311 items scored, 118 timing errors detected.
+Warning:   9.794MHz is the maximum frequency for this preference.
+
+<FONT COLOR=red><LI><A href='#map_twr_pref_0_3' Target='right'><FONT COLOR=red>FREQUENCY NET "uart_divider[0]" 283.768000 MHz (709 errors)</FONT></A></LI>
+</FONT>            781 items scored, 709 timing errors detected.
+Warning:   3.593MHz is the maximum frequency for this preference.
+
+Report Type:     based on TRACE automatically generated preferences
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+<A name="map_twr_pref_0_0"></A>Preference: FREQUENCY NET "uart_divider[3]" 321.647000 MHz ;
+            345 items scored, 276 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error: The following path exceeds requirements by 2.804ns (weighted slack = -11.547ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              uart_frame_start_378  (from cnt[5] +)
+   Destination:    FF         Data in        uart_frame_r__i1  (to uart_divider[3] +)
+
+   Delay:               2.933ns  (31.7% logic, 68.3% route), 2 logic levels.
+
+ Constraint Details:
+
+      2.933ns physical path delay SLICE_137 to SLICE_136 exceeds
+      (delay constraint based on source clock period of 5.252ns and destination clock period of 3.109ns)
+      0.755ns delay constraint less
+      0.626ns LSR_SET requirement (totaling 0.129ns) by 2.804ns
+
+ Physical Path Details:
+
+      Data path SLICE_137 to SLICE_136:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.560  SLICE_137.CLK to   SLICE_137.Q0 SLICE_137 (from cnt[5])
+ROUTE         5   e 0.561   SLICE_137.Q0 to   SLICE_137.B1 uart_frame_start
+CTOF_DEL    ---     0.371   SLICE_137.B1 to   SLICE_137.F1 SLICE_137
+ROUTE        24   e 1.441   SLICE_137.F1 to  SLICE_136.LSR uart_divider_3_enable_51 (to uart_divider[3])
+                  --------
+                    2.933   (31.7% logic, 68.3% route), 2 logic levels.
+
+Warning:  68.236MHz is the maximum frequency for this preference.
+
+
+================================================================================
+<A name="map_twr_pref_0_1"></A>Preference: FREQUENCY NET "cnt[5]" 190.404000 MHz ;
+            3025 items scored, 2483 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error: The following path exceeds requirements by 6.607ns (weighted slack = -23.832ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              uart_rx_a/uart_rx_data_i0_i4  (from uart_divider[0] +)
+   Destination:    FF         Data in        runup_set_i3  (to cnt[5] +)
+
+   Delay:               7.437ns  (22.5% logic, 77.5% route), 4 logic levels.
+
+ Constraint Details:
+
+      7.437ns physical path delay SLICE_162 to SLICE_118 exceeds
+      (delay constraint based on source clock period of 3.524ns and destination clock period of 5.252ns)
+      1.456ns delay constraint less
+      0.626ns LSR_SET requirement (totaling 0.830ns) by 6.607ns
+
+ Physical Path Details:
+
+      Data path SLICE_162 to SLICE_118:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.560  SLICE_162.CLK to   SLICE_162.Q0 SLICE_162 (from uart_divider[0])
+ROUTE         1   e 1.441   SLICE_162.Q0 to   SLICE_163.A1 uart_rx_register_4
+CTOF_DEL    ---     0.371   SLICE_163.A1 to   SLICE_163.F1 SLICE_163
+ROUTE         1   e 1.441   SLICE_163.F1 to   SLICE_207.C0 n6
+CTOF_DEL    ---     0.371   SLICE_207.C0 to   SLICE_207.F0 SLICE_207
+ROUTE         7   e 1.441   SLICE_207.F0 to   SLICE_122.A1 cnt_5_enable_43
+CTOF_DEL    ---     0.371   SLICE_122.A1 to   SLICE_122.F1 SLICE_122
+ROUTE         1   e 1.441   SLICE_122.F1 to  SLICE_118.LSR n3723 (to cnt[5])
+                  --------
+                    7.437   (22.5% logic, 77.5% route), 4 logic levels.
+
+Warning:  34.384MHz is the maximum frequency for this preference.
+
+
+================================================================================
+<A name="map_twr_pref_0_2"></A>Preference: FREQUENCY NET "mclk_c" 146.994000 MHz ;
+            311 items scored, 118 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error: The following path exceeds requirements by 4.945ns (weighted slack = -95.300ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              state__i1  (from cnt[5] +)
+   Destination:    FF         Data in        rundown_cnt_1055__i1  (to mclk_c +)
+
+   Delay:               5.117ns  (32.7% logic, 67.3% route), 4 logic levels.
+
+ Constraint Details:
+
+      5.117ns physical path delay SLICE_125 to SLICE_101 exceeds
+      (delay constraint based on source clock period of 5.252ns and destination clock period of 6.803ns)
+      0.353ns delay constraint less
+      0.181ns DIN_SET requirement (totaling 0.172ns) by 4.945ns
+
+ Physical Path Details:
+
+      Data path SLICE_125 to SLICE_101:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.560  SLICE_125.CLK to   SLICE_125.Q1 SLICE_125 (from cnt[5])
+ROUTE        22   e 1.441   SLICE_125.Q1 to   SLICE_206.A0 state_1
+CTOF_DEL    ---     0.371   SLICE_206.A0 to   SLICE_206.F0 SLICE_206
+ROUTE         2   e 0.561   SLICE_206.F0 to   SLICE_206.B1 n5800
+CTOF_DEL    ---     0.371   SLICE_206.B1 to   SLICE_206.F1 SLICE_206
+ROUTE        16   e 1.441   SLICE_206.F1 to   SLICE_101.C1 n2029
+CTOF_DEL    ---     0.371   SLICE_101.C1 to   SLICE_101.F1 SLICE_101
+ROUTE         1   e 0.001   SLICE_101.F1 to  SLICE_101.DI1 n3715 (to mclk_c)
+                  --------
+                    5.117   (32.7% logic, 67.3% route), 4 logic levels.
+
+Warning:   9.794MHz is the maximum frequency for this preference.
+
+
+================================================================================
+<A name="map_twr_pref_0_3"></A>Preference: FREQUENCY NET "uart_divider[0]" 283.768000 MHz ;
+            781 items scored, 709 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error: The following path exceeds requirements by 5.303ns (weighted slack = -274.820ns)
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              uart_rx_rst_371  (from cnt[5] +)
+   Destination:    FF         Data in        uart_rx_a/uart_rx_state__i2  (to uart_divider[0] +)
+
+   Delay:               4.745ns  (27.4% logic, 72.6% route), 3 logic levels.
+
+ Constraint Details:
+
+      4.745ns physical path delay SLICE_164 to uart_rx_a/SLICE_151 exceeds
+      (delay constraint based on source clock period of 5.252ns and destination clock period of 3.524ns)
+      0.068ns delay constraint less
+      0.626ns LSR_SET requirement (totaling -0.558ns) by 5.303ns
+
+ Physical Path Details:
+
+      Data path SLICE_164 to uart_rx_a/SLICE_151:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.560  SLICE_164.CLK to   SLICE_164.Q0 SLICE_164 (from cnt[5])
+ROUTE         5   e 0.561   SLICE_164.Q0 to   SLICE_164.D1 uart_rx_rst
+CTOF_DEL    ---     0.371   SLICE_164.D1 to   SLICE_164.F1 SLICE_164
+ROUTE         4   e 1.441   SLICE_164.F1 to   SLICE_237.D0 uart_rx_a/n2104
+CTOF_DEL    ---     0.371   SLICE_237.D0 to   SLICE_237.F0 SLICE_237
+ROUTE         1   e 1.441   SLICE_237.F0 to *SLICE_151.LSR uart_rx_a/n5449 (to uart_divider[0])
+                  --------
+                    4.745   (27.4% logic, 72.6% route), 3 logic levels.
+
+Warning:   3.593MHz is the maximum frequency for this preference.
+
+<A name="mtw1_set_rs"></A><B><U><big>Report Summary</big></U></B>
+--------------
+----------------------------------------------------------------------------
+Preference                              |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY NET "uart_divider[3]"         |             |             |
+321.647000 MHz ;                        |  321.647 MHz|   68.236 MHz|   2 *
+                                        |             |             |
+FREQUENCY NET "cnt[5]" 190.404000 MHz ; |  190.404 MHz|   34.384 MHz|   4 *
+                                        |             |             |
+FREQUENCY NET "mclk_c" 146.994000 MHz ; |  146.994 MHz|    9.794 MHz|   4 *
+                                        |             |             |
+FREQUENCY NET "uart_divider[0]"         |             |             |
+283.768000 MHz ;                        |  283.768 MHz|    3.593 MHz|   3 *
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+4 preferences(marked by "*" above) not met.
+
+----------------------------------------------------------------------------
+Critical Nets                           |   Loads|  Errors| % of total
+----------------------------------------------------------------------------
+runup_state_r_0__N_76                   |       4|     630|     17.57%
+                                        |        |        |
+n2019                                   |      15|     615|     17.15%
+                                        |        |        |
+n3734                                   |       8|     520|     14.50%
+                                        |        |        |
+n8                                      |       1|     520|     14.50%
+                                        |        |        |
+n3324                                   |       5|     512|     14.28%
+                                        |        |        |
+result_content_46__N_186                |       2|     465|     12.97%
+                                        |        |        |
+runup_state_r_0__N_75                   |       4|     437|     12.19%
+                                        |        |        |
+n5096                                   |       1|     418|     11.66%
+                                        |        |        |
+n5095                                   |       1|     380|     10.60%
+                                        |        |        |
+n5495                                   |       2|     380|     10.60%
+                                        |        |        |
+----------------------------------------------------------------------------
+
+
+<A name="mtw1_set_clkda"></A><B><U><big>Clock Domains Analysis</big></U></B>
+------------------------
+
+Found 4 clocks:
+
+Clock Domain: uart_divider[3]   Source: SLICE_9.Q1   Loads: 40
+   Covered under: FREQUENCY NET "uart_divider[3]" 321.647000 MHz ;
+
+   Data transfers from:
+   Clock Domain: cnt[5]   Source: SLICE_3.Q1
+      Covered under: FREQUENCY NET "uart_divider[3]" 321.647000 MHz ;   Transfers: 41
+
+Clock Domain: uart_divider[0]   Source: SLICE_10.Q0   Loads: 25
+   Covered under: FREQUENCY NET "uart_divider[0]" 283.768000 MHz ;
+
+   Data transfers from:
+   Clock Domain: cnt[5]   Source: SLICE_3.Q1
+      Covered under: FREQUENCY NET "uart_divider[0]" 283.768000 MHz ;   Transfers: 1
+
+Clock Domain: mclk_c   Source: mclk.PAD   Loads: 12
+   Covered under: FREQUENCY NET "mclk_c" 146.994000 MHz ;
+
+   Data transfers from:
+   Clock Domain: cnt[5]   Source: SLICE_3.Q1
+      Covered under: FREQUENCY NET "mclk_c" 146.994000 MHz ;   Transfers: 4
+
+Clock Domain: cnt[5]   Source: SLICE_3.Q1   Loads: 70
+   Covered under: FREQUENCY NET "cnt[5]" 190.404000 MHz ;
+
+   Data transfers from:
+   Clock Domain: uart_divider[0]   Source: SLICE_10.Q0
+      Covered under: FREQUENCY NET "cnt[5]" 190.404000 MHz ;   Transfers: 9
+
+   Clock Domain: mclk_c   Source: mclk.PAD
+      Covered under: FREQUENCY NET "cnt[5]" 190.404000 MHz ;   Transfers: 16
+
+
+<A name="mtw1_set_ts"></A><B><U><big>Timing summary (Setup):</big></U></B>
+---------------
+
+Timing errors: 3586  Score: 22481949
+Cumulative negative slack: 22481949
+
+Constraints cover 4649 paths, 6 nets, and 1572 connections (98.93% coverage)
+
+--------------------------------------------------------------------------------
+<A name="Map_Twr_hold"></A><B><U><big>Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.11.0.396.4</big></U></B>
+Wed Jul  1 23:40:42 2020
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
+
+<A name="mtw1_hold_ri"></A><B><U><big>Report Information</big></U></B>
+------------------
+Command line:    trce -v 1 -gt -mapchkpnt 0 -sethld -o adc_ms_b_adc_ms.tw1 -gui adc_ms_b_adc_ms_map.ncd adc_ms_b_adc_ms.prf 
+Design file:     adc_ms_b_adc_ms_map.ncd
+Preference file: adc_ms_b_adc_ms.prf
+Device,speed:    LCMXO1200C,M
+Report level:    verbose report, limited to 1 item per preference
+--------------------------------------------------------------------------------
+
+<A name="mtw1_hold_ps"></A><B><U><big>Preference Summary</big></U></B>
+
+<LI><A href='#map_twr_pref_1_0' Target='right'>FREQUENCY NET "uart_divider[3]" 321.647000 MHz (0 errors)</A></LI>            345 items scored, 0 timing errors detected.
+
+<LI><A href='#map_twr_pref_1_1' Target='right'>FREQUENCY NET "cnt[5]" 190.404000 MHz (0 errors)</A></LI>            3025 items scored, 0 timing errors detected.
+
+<LI><A href='#map_twr_pref_1_2' Target='right'>FREQUENCY NET "mclk_c" 146.994000 MHz (0 errors)</A></LI>            311 items scored, 0 timing errors detected.
+
+<LI><A href='#map_twr_pref_1_3' Target='right'>FREQUENCY NET "uart_divider[0]" 283.768000 MHz (0 errors)</A></LI>            781 items scored, 0 timing errors detected.
+
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+<A name="map_twr_pref_1_0"></A>Preference: FREQUENCY NET "uart_divider[3]" 321.647000 MHz ;
+            345 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.408ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              uart_frame_cnt_1056__i0  (from uart_divider[3] +)
+   Destination:    FF         Data in        uart_frame_cnt_1056__i1  (to uart_divider[3] +)
+
+   Delay:               0.400ns  (50.0% logic, 50.0% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.400ns physical path delay SLICE_133 to SLICE_133 meets
+     -0.008ns DIN_HLD and
+      0.000ns delay constraint requirement (totaling -0.008ns) by 0.408ns
+
+ Physical Path Details:
+
+      Data path SLICE_133 to SLICE_133:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.126  SLICE_133.CLK to   SLICE_133.Q0 SLICE_133 (from uart_divider[3])
+ROUTE        21   e 0.199   SLICE_133.Q0 to   SLICE_133.D1 uart_frame_cnt_0
+CTOF_DEL    ---     0.074   SLICE_133.D1 to   SLICE_133.F1 SLICE_133
+ROUTE         1   e 0.001   SLICE_133.F1 to  SLICE_133.DI1 n3415 (to uart_divider[3])
+                  --------
+                    0.400   (50.0% logic, 50.0% route), 2 logic levels.
+
+
+================================================================================
+<A name="map_twr_pref_1_1"></A>Preference: FREQUENCY NET "cnt[5]" 190.404000 MHz ;
+            3025 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.342ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              comp_slow_sync_365  (from cnt[5] +)
+   Destination:    FF         Data in        comp_slow_366  (to cnt[5] +)
+
+   Delay:               0.325ns  (38.8% logic, 61.2% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.325ns physical path delay SLICE_204 to SLICE_204 meets
+     -0.017ns M_HLD and
+      0.000ns delay constraint requirement (totaling -0.017ns) by 0.342ns
+
+ Physical Path Details:
+
+      Data path SLICE_204 to SLICE_204:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.126  SLICE_204.CLK to   SLICE_204.Q1 SLICE_204 (from cnt[5])
+ROUTE         1   e 0.199   SLICE_204.Q1 to   SLICE_204.M0 comp_slow_sync (to cnt[5])
+                  --------
+                    0.325   (38.8% logic, 61.2% route), 1 logic levels.
+
+
+================================================================================
+<A name="map_twr_pref_1_2"></A>Preference: FREQUENCY NET "mclk_c" 146.994000 MHz ;
+            311 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.342ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              comp_fast_sync_433  (from mclk_c +)
+   Destination:    FF         Data in        comp_fast_434  (to mclk_c +)
+
+   Delay:               0.325ns  (38.8% logic, 61.2% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.325ns physical path delay SLICE_191 to SLICE_191 meets
+     -0.017ns M_HLD and
+      0.000ns delay constraint requirement (totaling -0.017ns) by 0.342ns
+
+ Physical Path Details:
+
+      Data path SLICE_191 to SLICE_191:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.126  SLICE_191.CLK to   SLICE_191.Q1 SLICE_191 (from mclk_c)
+ROUTE         1   e 0.199   SLICE_191.Q1 to   SLICE_191.M0 comp_fast_sync (to mclk_c)
+                  --------
+                    0.325   (38.8% logic, 61.2% route), 1 logic levels.
+
+
+================================================================================
+<A name="map_twr_pref_1_3"></A>Preference: FREQUENCY NET "uart_divider[0]" 283.768000 MHz ;
+            781 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.408ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              uart_rx_a/uart_rx_tmp_i0  (from uart_divider[0] +)
+   Destination:    FF         Data in        uart_rx_a/uart_rx_tmp_i0  (to uart_divider[0] +)
+
+   Delay:               0.400ns  (50.0% logic, 50.0% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.400ns physical path delay uart_rx_a/SLICE_152 to uart_rx_a/SLICE_152 meets
+     -0.008ns DIN_HLD and
+      0.000ns delay constraint requirement (totaling -0.008ns) by 0.408ns
+
+ Physical Path Details:
+
+      Data path uart_rx_a/SLICE_152 to uart_rx_a/SLICE_152:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.126 *SLICE_152.CLK to */SLICE_152.Q0 uart_rx_a/SLICE_152 (from uart_divider[0])
+ROUTE         2   e 0.199 */SLICE_152.Q0 to */SLICE_152.B0 uart_rx_a/uart_rx_tmp_0
+CTOF_DEL    ---     0.074 */SLICE_152.B0 to */SLICE_152.F0 uart_rx_a/SLICE_152
+ROUTE         1   e 0.001 */SLICE_152.F0 to *SLICE_152.DI0 uart_rx_a/n3386 (to uart_divider[0])
+                  --------
+                    0.400   (50.0% logic, 50.0% route), 2 logic levels.
+
+<A name="mtw1_hold_rs"></A><B><U><big>Report Summary</big></U></B>
+--------------
+----------------------------------------------------------------------------
+Preference(MIN Delays)                  |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY NET "uart_divider[3]"         |             |             |
+321.647000 MHz ;                        |     0.000 ns|     0.408 ns|   2  
+                                        |             |             |
+FREQUENCY NET "cnt[5]" 190.404000 MHz ; |     0.000 ns|     0.342 ns|   1  
+                                        |             |             |
+FREQUENCY NET "mclk_c" 146.994000 MHz ; |     0.000 ns|     0.342 ns|   1  
+                                        |             |             |
+FREQUENCY NET "uart_divider[0]"         |             |             |
+283.768000 MHz ;                        |     0.000 ns|     0.408 ns|   2  
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+All preferences were met.
+
+
+<A name="mtw1_hold_clkda"></A><B><U><big>Clock Domains Analysis</big></U></B>
+------------------------
+
+Found 4 clocks:
+
+Clock Domain: uart_divider[3]   Source: SLICE_9.Q1   Loads: 40
+   Covered under: FREQUENCY NET "uart_divider[3]" 321.647000 MHz ;
+
+   Data transfers from:
+   Clock Domain: cnt[5]   Source: SLICE_3.Q1
+      Covered under: FREQUENCY NET "uart_divider[3]" 321.647000 MHz ;   Transfers: 41
+
+Clock Domain: uart_divider[0]   Source: SLICE_10.Q0   Loads: 25
+   Covered under: FREQUENCY NET "uart_divider[0]" 283.768000 MHz ;
+
+   Data transfers from:
+   Clock Domain: cnt[5]   Source: SLICE_3.Q1
+      Covered under: FREQUENCY NET "uart_divider[0]" 283.768000 MHz ;   Transfers: 1
+
+Clock Domain: mclk_c   Source: mclk.PAD   Loads: 12
+   Covered under: FREQUENCY NET "mclk_c" 146.994000 MHz ;
+
+   Data transfers from:
+   Clock Domain: cnt[5]   Source: SLICE_3.Q1
+      Covered under: FREQUENCY NET "mclk_c" 146.994000 MHz ;   Transfers: 4
+
+Clock Domain: cnt[5]   Source: SLICE_3.Q1   Loads: 70
+   Covered under: FREQUENCY NET "cnt[5]" 190.404000 MHz ;
+
+   Data transfers from:
+   Clock Domain: uart_divider[0]   Source: SLICE_10.Q0
+      Covered under: FREQUENCY NET "cnt[5]" 190.404000 MHz ;   Transfers: 9
+
+   Clock Domain: mclk_c   Source: mclk.PAD
+      Covered under: FREQUENCY NET "cnt[5]" 190.404000 MHz ;   Transfers: 16
+
+
+<A name="mtw1_hold_ts"></A><B><U><big>Timing summary (Hold):</big></U></B>
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 4649 paths, 6 nets, and 1572 connections (98.93% coverage)
+
+
+
+<A name="mtw1_ts"></A><B><U><big>Timing summary (Setup and Hold):</big></U></B>
+---------------
+
+Timing errors: 3586 (setup), 0 (hold)
+Score: 22481949 (setup), 0 (hold)
+Cumulative negative slack: 22481949 (22481949+0)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

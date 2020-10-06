@@ -1,0 +1,37 @@
+NOTE Copyright (C), 1992-2010, Lattice Semiconductor Corporation *
+NOTE All Rights Reserved *
+NOTE DATE CREATED: Tue Jul 28 13:18:04 2020 *
+NOTE DESIGN NAME: adc_ms *
+NOTE DEVICE NAME: LCMXO1200C-3TQFP100 *
+NOTE PIN ASSIGNMENTS *
+NOTE PINS deb_1 : 2 : out *
+NOTE PINS deb_0 : 99 : out *
+NOTE PINS vref_su : 5 : out *
+NOTE PINS deb_2 : 3 : out *
+NOTE PINS so_dat : 25 : out *
+NOTE PINS sw_vref_n : 21 : out *
+NOTE PINS sw_vref : 63 : out *
+NOTE PINS sw_rst : 75 : out *
+NOTE PINS sw_dn : 77 : out *
+NOTE PINS sw_up : 79 : out *
+NOTE PINS sw_in : 78 : out *
+NOTE PINS par_out[13] : 58 : out *
+NOTE PINS par_out[12] : 57 : out *
+NOTE PINS par_out[11] : 61 : out *
+NOTE PINS par_out[10] : 48 : out *
+NOTE PINS par_out[9] : 45 : out *
+NOTE PINS par_out[8] : 49 : out *
+NOTE PINS par_out[7] : 46 : out *
+NOTE PINS par_out[6] : 51 : out *
+NOTE PINS par_out[5] : 54 : out *
+NOTE PINS par_out[4] : 38 : out *
+NOTE PINS par_out[3] : 37 : out *
+NOTE PINS par_out[2] : 39 : out *
+NOTE PINS par_out[1] : 53 : out *
+NOTE PINS par_out[0] : 43 : out *
+NOTE PINS mclk : 40 : in *
+NOTE PINS comp_ext : 67 : in *
+NOTE PINS con_start : 31 : in *
+NOTE PINS si_dat : 32 : in *
+NOTE CONFIGURATION MODE: NONE *
+NOTE COMPRESSION: off *

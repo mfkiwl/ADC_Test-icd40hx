@@ -1,0 +1,18 @@
+Results of NGD DRC are available in adc_ms_drc.log.
+Loading NGL library '/usr/local/diamond/3.11_x64/ispfpga/mj5g00e/data/mj5gelib.ngl'...
+Loading NGL library '/usr/local/diamond/3.11_x64/ispfpga/mj5g00/data/mj5glib.ngl'...
+Loading NGL library '/usr/local/diamond/3.11_x64/ispfpga/mg5g00/data/mg5glib.ngl'...
+Loading NGL library '/usr/local/diamond/3.11_x64/ispfpga/or5g00/data/orc5glib.ngl'...
+
+
+Running DRC...
+
+WARNING - synthesis: logical net 'n6925' has no load.
+WARNING - synthesis: input pad net 'n6925' has no legal load.
+WARNING - synthesis: DRC complete with 2 warnings.
+
+Design Results:
+    649 blocks expanded
+completed the first expansion
+All blocks are expanded and NGD expansion is successful.
+Writing NGD file adc_ms_b_adc_ms.ngd.

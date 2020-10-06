@@ -1,0 +1,402 @@
+
+            Lattice Mapping Report File for Design Module 'adc_ms'
+
+
+Design Information
+------------------
+
+Command line:   map -a MachXO -p LCMXO1200C -t TQFP100 -s 3 -oc Commercial
+     adc_ms_b_adc_ms.ngd -o adc_ms_b_adc_ms_map.ncd -pr adc_ms_b_adc_ms.prf -mp
+     adc_ms_b_adc_ms.mrp -lpf /home/jarin/storage/main/backup_mg/contest/tah/mm/
+     proj/fpga/1/adc_ms/adc_ms_b_adc_ms.lpf -lpf
+     /home/jarin/storage/main/backup_mg/contest/tah/mm/proj/fpga/1/adc_ms_b.lpf
+     -c 0 -gui -msgset
+     /home/jarin/storage/main/backup_mg/contest/tah/mm/proj/fpga/1/promote.xml 
+Target Vendor:  LATTICE
+Target Device:  LCMXO1200CTQFP100
+Target Performance:   3
+Mapper:  mj5g00,  version:  Diamond (64-bit) 3.11.2.446
+Mapped on:  07/28/20  13:17:56
+
+Design Summary
+--------------
+
+   Number of PFU registers:   257 out of  1200 (21%)
+   Number of SLICEs:       196 out of   600 (33%)
+      SLICEs as Logic/ROM:    196 out of   600 (33%)
+      SLICEs as RAM:            0 out of   200 (0%)
+      SLICEs as Carry:         45 out of   600 (8%)
+   Number of LUT4s:        390 out of  1200 (33%)
+      Number used as logic LUTs:        300
+      Number used as distributed RAM:     0
+      Number used as ripple logic:       90
+      Number used as shift registers:     0
+   Number of external PIOs: 29 out of 73 (40%)
+   Number of PLLs:  0 out of 1 (0%)
+   Number of block RAMs:  0 out of 1 (0%)
+   Number of GSRs:  0 out of 1 (0%)
+   JTAG used :      No
+   Readback used :  No
+   Oscillator used :  No
+   Startup used :   No
+   Number of TSALL: 0 out of 1 (0%)
+   Notes:-
+      1. Total number of LUT4s = (Number of logic LUT4s) + 2*(Number of
+     distributed RAMs) + 2*(Number of ripple logic)
+      2. Number of logic LUT4s does not include count of distributed RAM and
+     ripple logic.
+   Number of clocks:  4
+     Net uart_divider[3]: 39 loads, 39 rising, 0 falling (Driver:
+     uart_divider_1076_1248__i4 )
+     Net cnt[5]: 75 loads, 75 rising, 0 falling (Driver: cnt_1085__i5 )
+     Net mclk_c: 12 loads, 12 rising, 0 falling (Driver: PIO mclk )
+     Net uart_divider[0]: 24 loads, 24 rising, 0 falling (Driver:
+     uart_divider_1076_1248__i1 )
+   Number of Clock Enables:  24
+     Net uart_divider_3_enable_13: 2 loads, 2 LSLICEs
+     Net uart_tx_a/uart_tx_busy_N_585: 1 loads, 1 LSLICEs
+     Net uart_tx_a/uart_divider_3_enable_3: 1 loads, 1 LSLICEs
+     Net cnt_5_enable_84: 8 loads, 8 LSLICEs
+     Net cnt_5_enable_69: 2 loads, 2 LSLICEs
+     Net cnt_5_enable_52: 2 loads, 2 LSLICEs
+     Net cnt_5_enable_63: 20 loads, 20 LSLICEs
+
+                                    Page 1
+
+
+
+
+Design:  adc_ms                                        Date:  07/28/20  13:17:56
+
+Design Summary (cont)
+---------------------
+     Net cnt_5_enable_14: 1 loads, 1 LSLICEs
+     Net cnt_5_enable_46: 5 loads, 5 LSLICEs
+     Net cnt_5_enable_81: 1 loads, 1 LSLICEs
+     Net cnt_5_enable_66: 1 loads, 1 LSLICEs
+     Net cnt_5_enable_22: 1 loads, 1 LSLICEs
+     Net uart_rx_rst: 1 loads, 1 LSLICEs
+     Net uart_divider_3_enable_11: 5 loads, 5 LSLICEs
+     Net cnt_5_enable_75: 2 loads, 2 LSLICEs
+     Net cnt_5_enable_65: 1 loads, 1 LSLICEs
+     Net uart_divider_3_enable_52: 20 loads, 20 LSLICEs
+     Net cnt_5_enable_64: 1 loads, 1 LSLICEs
+     Net uart_frame_start: 1 loads, 1 LSLICEs
+     Net cnt_5_enable_68: 1 loads, 1 LSLICEs
+     Net cnt_5_enable_73: 2 loads, 2 LSLICEs
+     Net uart_rx_a/uart_divider_0_enable_1: 1 loads, 1 LSLICEs
+     Net uart_rx_a/uart_divider_0_enable_3: 1 loads, 1 LSLICEs
+     Net uart_rx_a/uart_divider_0_enable_10: 4 loads, 4 LSLICEs
+   Number of LSRs:  15
+     Net uart_tx_a/uart_tx_state_2__N_570: 5 loads, 5 LSLICEs
+     Net uart_tx_a/n5972: 1 loads, 1 LSLICEs
+     Net n3867: 8 loads, 8 LSLICEs
+     Net cnt_5_enable_63: 1 loads, 1 LSLICEs
+     Net n6689: 3 loads, 3 LSLICEs
+     Net n31_adj_691: 1 loads, 1 LSLICEs
+     Net n4458: 3 loads, 3 LSLICEs
+     Net cnt_5__N_310: 3 loads, 3 LSLICEs
+     Net n6728: 2 loads, 2 LSLICEs
+     Net n6300: 1 loads, 1 LSLICEs
+     Net n6275: 1 loads, 1 LSLICEs
+     Net uart_divider_3_enable_52: 1 loads, 1 LSLICEs
+     Net n3007: 1 loads, 1 LSLICEs
+     Net uart_rx_a/n6695: 3 loads, 3 LSLICEs
+     Net uart_rx_a/n6324: 1 loads, 1 LSLICEs
+   Number of nets driven by tri-state buffers:  0
+   Top 10 highest fanout non-clock nets:
+     Net n6691: 33 loads
+     Net uart_divider_3_enable_52: 24 loads
+     Net cnt_5_enable_63: 22 loads
+     Net state_0: 21 loads
+     Net uart_frame_cnt_0: 21 loads
+     Net n9: 20 loads
+     Net state_1: 20 loads
+     Net uart_frame_cnt_2: 20 loads
+     Net state_4: 19 loads
+     Net uart_rx_a/uart_rx_cnt_0: 17 loads
+
+
+
+
+   Number of warnings:  2
+   Number of errors:    0
+     
+
+
+
+
+
+                                    Page 2
+
+
+
+
+Design:  adc_ms                                        Date:  07/28/20  13:17:56
+
+Design Errors/Warnings
+----------------------
+
+WARNING - map: input pad net 'n6925' has no legal load.
+WARNING - map: IO buffer missing for top level port p1...logic will be
+     discarded.
+
+IO (PIO) Attributes
+-------------------
+
++---------------------+-----------+-----------+------------+------------+
+| IO Name             | Direction | Levelmode | IO         | FIXEDDELAY |
+|                     |           |  IO_TYPE  | Register   |            |
++---------------------+-----------+-----------+------------+------------+
+| deb_1               | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| deb_0               | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| vref_su             | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| deb_2               | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| so_dat              | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| sw_vref_n           | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| sw_vref             | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| sw_rst              | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| sw_dn               | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| sw_up               | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| sw_in               | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| par_out[13]         | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| par_out[12]         | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| par_out[11]         | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| par_out[10]         | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| par_out[9]          | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| par_out[8]          | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| par_out[7]          | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| par_out[6]          | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| par_out[5]          | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| par_out[4]          | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| par_out[3]          | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+
+                                    Page 3
+
+
+
+
+Design:  adc_ms                                        Date:  07/28/20  13:17:56
+
+IO (PIO) Attributes (cont)
+--------------------------
+| par_out[2]          | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| par_out[1]          | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| par_out[0]          | OUTPUT    | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| mclk                | INPUT     | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| comp_ext            | INPUT     | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| con_start           | INPUT     | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+| si_dat              | INPUT     | LVCMOS33  |            |            |
++---------------------+-----------+-----------+------------+------------+
+
+Removed logic
+-------------
+
+Block GSR_INST undriven or does not drive anything - clipped.
+Signal comp_ext_N_559 was merged into signal comp_ext_c
+Signal GND_net undriven or does not drive anything - clipped.
+Signal cnt_1085_add_4_4/CO0 undriven or does not drive anything - clipped.
+Signal cnt_1085_add_4_6/CO1 undriven or does not drive anything - clipped.
+Signal cnt_1085_add_4_6/CO0 undriven or does not drive anything - clipped.
+Signal cnt_stat_1077_add_4_2/CO0 undriven or does not drive anything - clipped.
+Signal cnt_stat_1077_add_4_4/CO0 undriven or does not drive anything - clipped.
+Signal cnt_runup_1079_add_4_16/S1 undriven or does not drive anything - clipped.
+     
+Signal cnt_runup_1079_add_4_16/CO1 undriven or does not drive anything -
+     clipped.
+Signal cnt_runup_1079_add_4_16/CO0 undriven or does not drive anything -
+     clipped.
+Signal cnt_stat_1077_add_4_6/CO0 undriven or does not drive anything - clipped.
+Signal cnt_stat_1077_add_4_8/CO0 undriven or does not drive anything - clipped.
+Signal cnt_stat_1077_add_4_10/CO0 undriven or does not drive anything - clipped.
+     
+Signal cnt_stat_1077_add_4_12/CO0 undriven or does not drive anything - clipped.
+     
+Signal cnt_stat_1077_add_4_14/CO0 undriven or does not drive anything - clipped.
+     
+Signal cnt_stat_1077_add_4_16/S1 undriven or does not drive anything - clipped.
+Signal cnt_stat_1077_add_4_16/CO1 undriven or does not drive anything - clipped.
+     
+Signal cnt_stat_1077_add_4_16/CO0 undriven or does not drive anything - clipped.
+     
+Signal uart_divider_1076_1248_add_4_2/CO0 undriven or does not drive anything -
+     clipped.
+Signal uart_divider_1076_1248_add_4_4/CO1 undriven or does not drive anything -
+     clipped.
+Signal uart_divider_1076_1248_add_4_4/CO0 undriven or does not drive anything -
+     clipped.
+Signal sub_955_add_2_2/S1 undriven or does not drive anything - clipped.
+Signal sub_955_add_2_2/S0 undriven or does not drive anything - clipped.
+Signal sub_955_add_2_2/CO0 undriven or does not drive anything - clipped.
+Signal sub_955_add_2_4/S1 undriven or does not drive anything - clipped.
+Signal sub_955_add_2_4/S0 undriven or does not drive anything - clipped.
+
+                                    Page 4
+
+
+
+
+Design:  adc_ms                                        Date:  07/28/20  13:17:56
+
+Removed logic (cont)
+--------------------
+Signal sub_955_add_2_4/CO0 undriven or does not drive anything - clipped.
+Signal sub_955_add_2_6/S1 undriven or does not drive anything - clipped.
+Signal sub_955_add_2_6/S0 undriven or does not drive anything - clipped.
+Signal sub_955_add_2_6/CO0 undriven or does not drive anything - clipped.
+Signal sub_955_add_2_8/S1 undriven or does not drive anything - clipped.
+Signal sub_955_add_2_8/S0 undriven or does not drive anything - clipped.
+Signal sub_955_add_2_8/CO0 undriven or does not drive anything - clipped.
+Signal sub_955_add_2_10/S1 undriven or does not drive anything - clipped.
+Signal sub_955_add_2_10/S0 undriven or does not drive anything - clipped.
+Signal sub_955_add_2_10/CO0 undriven or does not drive anything - clipped.
+Signal sub_955_add_2_12/S1 undriven or does not drive anything - clipped.
+Signal sub_955_add_2_12/S0 undriven or does not drive anything - clipped.
+Signal sub_955_add_2_12/CO0 undriven or does not drive anything - clipped.
+Signal sub_955_add_2_14/S1 undriven or does not drive anything - clipped.
+Signal sub_955_add_2_14/S0 undriven or does not drive anything - clipped.
+Signal sub_955_add_2_14/CO0 undriven or does not drive anything - clipped.
+Signal cnt_runup_1079_add_4_12/CO0 undriven or does not drive anything -
+     clipped.
+Signal cnt_runup_1079_add_4_2/CO0 undriven or does not drive anything - clipped.
+     
+Signal sub_955_add_2_16/S0 undriven or does not drive anything - clipped.
+Signal sub_955_add_2_16/CO1 undriven or does not drive anything - clipped.
+Signal sub_955_add_2_16/CO0 undriven or does not drive anything - clipped.
+Signal cnt_runup_1079_add_4_10/CO0 undriven or does not drive anything -
+     clipped.
+Signal runup_cnt_1081_add_4_6/CO0 undriven or does not drive anything - clipped.
+     
+Signal cnt_runup_1079_add_4_4/CO0 undriven or does not drive anything - clipped.
+     
+Signal cnt_runup_1079_add_4_6/CO0 undriven or does not drive anything - clipped.
+     
+Signal cnt_runup_1079_add_4_8/CO0 undriven or does not drive anything - clipped.
+     
+Signal runup_cnt_1081_add_4_4/CO0 undriven or does not drive anything - clipped.
+     
+Signal runup_cnt_1081_add_4_8/CO0 undriven or does not drive anything - clipped.
+     
+Signal runup_cnt_1081_add_4_10/CO0 undriven or does not drive anything -
+     clipped.
+Signal cnt_runup_1079_add_4_14/CO0 undriven or does not drive anything -
+     clipped.
+Signal runup_cnt_1081_add_4_12/CO0 undriven or does not drive anything -
+     clipped.
+Signal runup_cnt_1081_add_4_14/CO0 undriven or does not drive anything -
+     clipped.
+Signal runup_cnt_1081_add_4_16/S1 undriven or does not drive anything - clipped.
+     
+Signal runup_cnt_1081_add_4_16/CO1 undriven or does not drive anything -
+     clipped.
+Signal runup_cnt_1081_add_4_16/CO0 undriven or does not drive anything -
+     clipped.
+Signal rundown_cnt_1083_add_4_2/CO0 undriven or does not drive anything -
+     clipped.
+Signal rundown_cnt_1083_add_4_4/CO0 undriven or does not drive anything -
+     clipped.
+Signal rundown_cnt_1083_add_4_6/CO0 undriven or does not drive anything -
+
+                                    Page 5
+
+
+
+
+Design:  adc_ms                                        Date:  07/28/20  13:17:56
+
+Removed logic (cont)
+--------------------
+     clipped.
+Signal rundown_cnt_1083_add_4_8/CO0 undriven or does not drive anything -
+     clipped.
+Signal rundown_cnt_1083_add_4_10/CO0 undriven or does not drive anything -
+     clipped.
+Signal runup_cnt_1081_add_4_2/CO0 undriven or does not drive anything - clipped.
+     
+Signal rundown_cnt_1083_add_4_12/CO0 undriven or does not drive anything -
+     clipped.
+Signal rundown_cnt_1083_add_4_14/CO0 undriven or does not drive anything -
+     clipped.
+Signal rundown_cnt_1083_add_4_16/CO1 undriven or does not drive anything -
+     clipped.
+Signal rundown_cnt_1083_add_4_16/CO0 undriven or does not drive anything -
+     clipped.
+Signal cnt_1085_add_4_2/CO0 undriven or does not drive anything - clipped.
+Block comp_ext_I_0_1_lut was optimized away.
+Block i1 was optimized away.
+
+Run Time and Memory Usage
+-------------------------
+
+   Total CPU Time: 0 secs  
+   Total REAL Time: 0 secs  
+   Peak Memory Usage: 157 MB
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    Page 6
+
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+     Copyright (c) 1995 AT&T Corp.   All rights reserved.
+     Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+     Copyright (c) 2001 Agere Systems   All rights reserved.
+     Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights
+     reserved.

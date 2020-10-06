@@ -1,0 +1,181 @@
+--------------------------------------------------------------------------------
+Lattice Synthesis Timing Report, Version  
+Mon Jul 27 20:59:18 2020
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Design:     uart_tx
+Constraint file:  
+Report level:    verbose report, limited to 3 items per constraint
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+Constraint: create_clock -period 5.000000 -name clk0 [get_nets uart_tx_bclk_c]
+            87 items scored, 34 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error:  The following path violates requirements by 1.617ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3JX    CK             uart_tx_state_i1  (from uart_tx_bclk_c +)
+   Destination:    FD1S3JX    D              uart_tx_state_i1  (to uart_tx_bclk_c +)
+
+   Delay:                   6.435ns  (29.4% logic, 70.6% route), 4 logic levels.
+
+ Constraint Details:
+
+      6.435ns data_path uart_tx_state_i1 to uart_tx_state_i1 violates
+      5.000ns delay constraint less
+      0.182ns L_S requirement (totaling 4.818ns) by 1.617ns
+
+ Path Details: uart_tx_state_i1 to uart_tx_state_i1
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.613             CK to Q              uart_tx_state_i1 (from uart_tx_bclk_c)
+Route        11   e 1.915                                  uart_tx_state[1]
+LUT4        ---     0.390              B to Z              i1_2_lut_rep_5_3_lut
+Route         2   e 1.386                                  n386
+LUT4        ---     0.390              C to Z              i96_3_lut_4_lut
+Route         1   e 0.020                                  n150
+MOFX0       ---     0.501             C0 to Z              i178
+Route         1   e 1.220                                  n248
+                  --------
+                    6.435  (29.4% logic, 70.6% route), 4 logic levels.
+
+
+Error:  The following path violates requirements by 1.617ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3JX    CK             uart_tx_state_i1  (from uart_tx_bclk_c +)
+   Destination:    FD1S3JX    D              uart_tx_state_i1  (to uart_tx_bclk_c +)
+
+   Delay:                   6.435ns  (29.4% logic, 70.6% route), 4 logic levels.
+
+ Constraint Details:
+
+      6.435ns data_path uart_tx_state_i1 to uart_tx_state_i1 violates
+      5.000ns delay constraint less
+      0.182ns L_S requirement (totaling 4.818ns) by 1.617ns
+
+ Path Details: uart_tx_state_i1 to uart_tx_state_i1
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.613             CK to Q              uart_tx_state_i1 (from uart_tx_bclk_c)
+Route        11   e 1.915                                  uart_tx_state[1]
+LUT4        ---     0.390              B to Z              i1_2_lut_3_lut
+Route         2   e 1.386                                  n5
+LUT4        ---     0.390              D to Z              i96_3_lut_4_lut
+Route         1   e 0.020                                  n150
+MOFX0       ---     0.501             C0 to Z              i178
+Route         1   e 1.220                                  n248
+                  --------
+                    6.435  (29.4% logic, 70.6% route), 4 logic levels.
+
+
+Error:  The following path violates requirements by 1.594ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3IX    CK             uart_tx_state_i2  (from uart_tx_bclk_c +)
+   Destination:    FD1S3JX    D              uart_tx_state_i1  (to uart_tx_bclk_c +)
+
+   Delay:                   6.412ns  (29.5% logic, 70.5% route), 4 logic levels.
+
+ Constraint Details:
+
+      6.412ns data_path uart_tx_state_i2 to uart_tx_state_i1 violates
+      5.000ns delay constraint less
+      0.182ns L_S requirement (totaling 4.818ns) by 1.594ns
+
+ Path Details: uart_tx_state_i2 to uart_tx_state_i1
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.613             CK to Q              uart_tx_state_i2 (from uart_tx_bclk_c)
+Route        10   e 1.892                                  uart_tx_state[2]
+LUT4        ---     0.390              A to Z              i1_2_lut_3_lut
+Route         2   e 1.386                                  n5
+LUT4        ---     0.390              D to Z              i96_3_lut_4_lut
+Route         1   e 0.020                                  n150
+MOFX0       ---     0.501             C0 to Z              i178
+Route         1   e 1.220                                  n248
+                  --------
+                    6.412  (29.5% logic, 70.5% route), 4 logic levels.
+
+Warning: 6.617 ns is the maximum delay for this constraint.
+
+
+Timing Report Summary
+--------------
+--------------------------------------------------------------------------------
+Constraint                              |   Constraint|       Actual|Levels
+--------------------------------------------------------------------------------
+                                        |             |             |
+create_clock -period 5.000000 -name     |             |             |
+clk0 [get_nets uart_tx_bclk_c]          |     5.000 ns|     6.617 ns|     4 *
+                                        |             |             |
+--------------------------------------------------------------------------------
+
+
+1 constraints not met.
+
+--------------------------------------------------------------------------------
+Critical Nets                           |   Loads|  Errors| % of total
+--------------------------------------------------------------------------------
+n244                                    |       1|      13|     38.24%
+                                        |        |        |
+n248                                    |       1|      12|     35.29%
+                                        |        |        |
+n150                                    |       1|       8|     23.53%
+                                        |        |        |
+uart_tx_pin_N_18                        |       1|       7|     20.59%
+                                        |        |        |
+n5                                      |       2|       6|     17.65%
+                                        |        |        |
+n386                                    |       2|       6|     17.65%
+                                        |        |        |
+uart_tx_bit[0]                          |      11|       6|     17.65%
+                                        |        |        |
+uart_tx_bit[1]                          |       8|       6|     17.65%
+                                        |        |        |
+uart_tx_state[0]                        |      10|       6|     17.65%
+                                        |        |        |
+uart_tx_state[2]                        |      10|       6|     17.65%
+                                        |        |        |
+uart_tx_bit[2]                          |       7|       5|     14.71%
+                                        |        |        |
+uart_tx_state[1]                        |      11|       5|     14.71%
+                                        |        |        |
+uart_tx_state_2__N_1[0]                 |       1|       5|     14.71%
+                                        |        |        |
+n144                                    |       1|       4|     11.76%
+                                        |        |        |
+n332                                    |       1|       4|     11.76%
+                                        |        |        |
+n389                                    |       2|       4|     11.76%
+                                        |        |        |
+uart_tx_bclk_c_enable_1                 |       1|       4|     11.76%
+                                        |        |        |
+--------------------------------------------------------------------------------
+
+
+Timing summary:
+---------------
+
+Timing errors: 34  Score: 41212
+
+Constraints cover  87 paths, 37 nets, and 105 connections (87.5% coverage)
+
+
+Peak memory: 180461568 bytes, TRCE: 978944 bytes, DLYMAN: 0 bytes
+CPU_TIME_REPORT: 0 secs 

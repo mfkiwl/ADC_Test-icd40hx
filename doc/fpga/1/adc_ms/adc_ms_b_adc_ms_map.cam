@@ -1,0 +1,112 @@
+[ START MERGED ]
+comp_ext_N_559 comp_ext_c
+[ END MERGED ]
+[ START CLIPPED ]
+GND_net
+cnt_1085_add_4_4/CO0
+cnt_1085_add_4_6/CO1
+cnt_1085_add_4_6/CO0
+cnt_stat_1077_add_4_2/CO0
+cnt_stat_1077_add_4_4/CO0
+cnt_runup_1079_add_4_16/S1
+cnt_runup_1079_add_4_16/CO1
+cnt_runup_1079_add_4_16/CO0
+cnt_stat_1077_add_4_6/CO0
+cnt_stat_1077_add_4_8/CO0
+cnt_stat_1077_add_4_10/CO0
+cnt_stat_1077_add_4_12/CO0
+cnt_stat_1077_add_4_14/CO0
+cnt_stat_1077_add_4_16/S1
+cnt_stat_1077_add_4_16/CO1
+cnt_stat_1077_add_4_16/CO0
+uart_divider_1076_1248_add_4_2/CO0
+uart_divider_1076_1248_add_4_4/CO1
+uart_divider_1076_1248_add_4_4/CO0
+sub_955_add_2_2/S1
+sub_955_add_2_2/S0
+sub_955_add_2_2/CO0
+sub_955_add_2_4/S1
+sub_955_add_2_4/S0
+sub_955_add_2_4/CO0
+sub_955_add_2_6/S1
+sub_955_add_2_6/S0
+sub_955_add_2_6/CO0
+sub_955_add_2_8/S1
+sub_955_add_2_8/S0
+sub_955_add_2_8/CO0
+sub_955_add_2_10/S1
+sub_955_add_2_10/S0
+sub_955_add_2_10/CO0
+sub_955_add_2_12/S1
+sub_955_add_2_12/S0
+sub_955_add_2_12/CO0
+sub_955_add_2_14/S1
+sub_955_add_2_14/S0
+sub_955_add_2_14/CO0
+cnt_runup_1079_add_4_12/CO0
+cnt_runup_1079_add_4_2/CO0
+sub_955_add_2_16/S0
+sub_955_add_2_16/CO1
+sub_955_add_2_16/CO0
+cnt_runup_1079_add_4_10/CO0
+runup_cnt_1081_add_4_6/CO0
+cnt_runup_1079_add_4_4/CO0
+cnt_runup_1079_add_4_6/CO0
+cnt_runup_1079_add_4_8/CO0
+runup_cnt_1081_add_4_4/CO0
+runup_cnt_1081_add_4_8/CO0
+runup_cnt_1081_add_4_10/CO0
+cnt_runup_1079_add_4_14/CO0
+runup_cnt_1081_add_4_12/CO0
+runup_cnt_1081_add_4_14/CO0
+runup_cnt_1081_add_4_16/S1
+runup_cnt_1081_add_4_16/CO1
+runup_cnt_1081_add_4_16/CO0
+rundown_cnt_1083_add_4_2/CO0
+rundown_cnt_1083_add_4_4/CO0
+rundown_cnt_1083_add_4_6/CO0
+rundown_cnt_1083_add_4_8/CO0
+rundown_cnt_1083_add_4_10/CO0
+runup_cnt_1081_add_4_2/CO0
+rundown_cnt_1083_add_4_12/CO0
+rundown_cnt_1083_add_4_14/CO0
+rundown_cnt_1083_add_4_16/CO1
+rundown_cnt_1083_add_4_16/CO0
+cnt_1085_add_4_2/CO0
+[ END CLIPPED ]
+[ START DESIGN PREFS ]
+SCHEMATIC START ;
+# map:  version Diamond (64-bit) 3.11.2.446 -- WARNING: Map write only section -- Tue Jul 28 13:17:56 2020
+
+SYSCONFIG INBUF=ON CONFIG_SECURE=OFF ;
+LOCATE COMP "deb_1" SITE "2" ;
+LOCATE COMP "deb_0" SITE "99" ;
+LOCATE COMP "vref_su" SITE "5" ;
+LOCATE COMP "deb_2" SITE "3" ;
+LOCATE COMP "so_dat" SITE "25" ;
+LOCATE COMP "sw_vref_n" SITE "21" ;
+LOCATE COMP "sw_vref" SITE "63" ;
+LOCATE COMP "sw_rst" SITE "75" ;
+LOCATE COMP "sw_dn" SITE "77" ;
+LOCATE COMP "sw_up" SITE "79" ;
+LOCATE COMP "sw_in" SITE "78" ;
+LOCATE COMP "par_out[13]" SITE "58" ;
+LOCATE COMP "par_out[12]" SITE "57" ;
+LOCATE COMP "par_out[11]" SITE "61" ;
+LOCATE COMP "par_out[10]" SITE "48" ;
+LOCATE COMP "par_out[9]" SITE "45" ;
+LOCATE COMP "par_out[8]" SITE "49" ;
+LOCATE COMP "par_out[7]" SITE "46" ;
+LOCATE COMP "par_out[6]" SITE "51" ;
+LOCATE COMP "par_out[5]" SITE "54" ;
+LOCATE COMP "par_out[4]" SITE "38" ;
+LOCATE COMP "par_out[3]" SITE "37" ;
+LOCATE COMP "par_out[2]" SITE "39" ;
+LOCATE COMP "par_out[1]" SITE "53" ;
+LOCATE COMP "par_out[0]" SITE "43" ;
+LOCATE COMP "mclk" SITE "40" ;
+LOCATE COMP "comp_ext" SITE "67" ;
+LOCATE COMP "con_start" SITE "31" ;
+LOCATE COMP "si_dat" SITE "32" ;
+SCHEMATIC END ;
+[ END DESIGN PREFS ]

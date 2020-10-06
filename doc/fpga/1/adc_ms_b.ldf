@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BaliProject version="3.2" title="adc_ms_b" device="LCMXO1200C-3T100C" default_implementation="adc_ms">
+    <Options/>
+    <Implementation title="adc_ms" dir="adc_ms" description="adc_ms" synthesis="lse" default_strategy="Strategy1">
+        <Options def_top="adc_ms"/>
+        <Source name="adc_ms.v" type="Verilog" type_short="Verilog">
+            <Options top_module="adc_ms"/>
+        </Source>
+        <Source name="uart_rx.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="uart_tx.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="adc_ms/adc_ms.xcf" type="Programming Project File" type_short="Programming">
+            <Options/>
+        </Source>
+        <Source name="adc_ms_b.lpf" type="Logic Preference" type_short="LPF">
+            <Options/>
+        </Source>
+    </Implementation>
+    <Strategy name="Strategy1" file="adc_ms_b1.sty"/>
+</BaliProject>

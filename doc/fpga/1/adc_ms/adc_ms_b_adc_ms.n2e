@@ -1,0 +1,1454 @@
+
+comp 0: SLICE_0 (FSLICE)
+
+comp 1: SLICE_1 (FSLICE)
+
+comp 2: SLICE_2 (FSLICE)
+
+comp 3: SLICE_3 (FSLICE)
+
+comp 4: SLICE_4 (FSLICE)
+
+comp 5: SLICE_5 (FSLICE)
+
+comp 6: SLICE_6 (FSLICE)
+
+comp 7: SLICE_7 (FSLICE)
+
+comp 8: SLICE_8 (FSLICE)
+
+comp 9: SLICE_9 (FSLICE)
+
+comp 10: SLICE_10 (FSLICE)
+
+comp 11: SLICE_11 (FSLICE)
+
+comp 12: SLICE_12 (FSLICE)
+
+comp 13: SLICE_13 (FSLICE)
+
+comp 14: SLICE_14 (FSLICE)
+
+comp 15: SLICE_15 (FSLICE)
+
+comp 16: SLICE_16 (FSLICE)
+
+comp 17: SLICE_17 (FSLICE)
+
+comp 18: SLICE_18 (FSLICE)
+
+comp 19: SLICE_19 (FSLICE)
+
+comp 20: SLICE_20 (FSLICE)
+
+comp 21: SLICE_21 (FSLICE)
+
+comp 22: SLICE_22 (FSLICE)
+
+comp 23: SLICE_23 (FSLICE)
+
+comp 24: SLICE_24 (FSLICE)
+
+comp 25: SLICE_25 (FSLICE)
+
+comp 26: SLICE_26 (FSLICE)
+
+comp 27: SLICE_27 (FSLICE)
+
+comp 28: SLICE_28 (FSLICE)
+
+comp 29: SLICE_29 (FSLICE)
+
+comp 30: SLICE_30 (FSLICE)
+
+comp 31: SLICE_31 (FSLICE)
+
+comp 32: SLICE_32 (FSLICE)
+
+comp 33: SLICE_33 (FSLICE)
+
+comp 34: SLICE_34 (FSLICE)
+
+comp 35: SLICE_35 (FSLICE)
+
+comp 36: SLICE_36 (FSLICE)
+
+comp 37: SLICE_37 (FSLICE)
+
+comp 38: SLICE_38 (FSLICE)
+
+comp 39: SLICE_39 (FSLICE)
+
+comp 40: SLICE_40 (FSLICE)
+
+comp 41: SLICE_41 (FSLICE)
+
+comp 42: SLICE_42 (FSLICE)
+
+comp 43: SLICE_43 (FSLICE)
+
+comp 44: SLICE_44 (FSLICE)
+
+comp 45: SLICE_45 (FSLICE)
+n3544 = (~n5781*(~n5761*cnt_runup_0+n5761*n80_adj_668)+n5781*(n5761*n80_adj_668))
+cnt_runup_0.D = n3544
+cnt_runup_0.CLK = cnt[5]
+cnt_runup_0.SP = VCC
+cnt_runup_0.LSR = GND
+n3548 = (~n5781*(~n5761*cnt_runup_1+n5761*n79_adj_669)+n5781*(n5761*n79_adj_669))
+cnt_runup_1.D = n3548
+cnt_runup_1.CLK = cnt[5]
+cnt_runup_1.SP = VCC
+cnt_runup_1.LSR = GND
+
+comp 46: SLICE_46 (FSLICE)
+n3579 = (~n5781*(~n5761*cnt_runup_2+n5761*n78_adj_670)+n5781*(n5761*n78_adj_670))
+cnt_runup_2.D = n3579
+cnt_runup_2.CLK = cnt[5]
+cnt_runup_2.SP = VCC
+cnt_runup_2.LSR = GND
+n3581 = (~n5781*(~n5761*cnt_runup_3+n5761*n77_adj_671)+n5781*(n5761*n77_adj_671))
+cnt_runup_3.D = n3581
+cnt_runup_3.CLK = cnt[5]
+cnt_runup_3.SP = VCC
+cnt_runup_3.LSR = GND
+
+comp 47: SLICE_47 (FSLICE)
+n3585 = (~n5781*(~n5761*cnt_runup_4+n5761*n76_adj_672)+n5781*(n5761*n76_adj_672))
+cnt_runup_4.D = n3585
+cnt_runup_4.CLK = cnt[5]
+cnt_runup_4.SP = VCC
+cnt_runup_4.LSR = GND
+n3600 = (~n5781*(~n5761*cnt_runup_5+n5761*n75_adj_673)+n5781*(n5761*n75_adj_673))
+cnt_runup_5.D = n3600
+cnt_runup_5.CLK = cnt[5]
+cnt_runup_5.SP = VCC
+cnt_runup_5.LSR = GND
+
+comp 48: SLICE_48 (FSLICE)
+n3644 = (~n5781*(~n5761*cnt_runup_6+n5761*n74_adj_674)+n5781*(n5761*n74_adj_674))
+cnt_runup_6.D = n3644
+cnt_runup_6.CLK = cnt[5]
+cnt_runup_6.SP = VCC
+cnt_runup_6.LSR = GND
+n3646 = (~n5781*(~n5761*cnt_runup_7+n5761*n73_adj_675)+n5781*(n5761*n73_adj_675))
+cnt_runup_7.D = n3646
+cnt_runup_7.CLK = cnt[5]
+cnt_runup_7.SP = VCC
+cnt_runup_7.LSR = GND
+
+comp 49: SLICE_49 (FSLICE)
+n3658 = (~n5781*(~n5761*cnt_runup_8+n5761*n72_adj_676)+n5781*(n5761*n72_adj_676))
+cnt_runup_8.D = n3658
+cnt_runup_8.CLK = cnt[5]
+cnt_runup_8.SP = VCC
+cnt_runup_8.LSR = GND
+n3624 = (~n5781*(~n5761*cnt_runup_9+n5761*n71_adj_677)+n5781*(n5761*n71_adj_677))
+cnt_runup_9.D = n3624
+cnt_runup_9.CLK = cnt[5]
+cnt_runup_9.SP = VCC
+cnt_runup_9.LSR = GND
+
+comp 50: SLICE_50 (FSLICE)
+n3636 = (~n5781*(~n5761*cnt_runup_10+n5761*n70_adj_678)+n5781*(n5761*n70_adj_678))
+cnt_runup_10.D = n3636
+cnt_runup_10.CLK = cnt[5]
+cnt_runup_10.SP = VCC
+cnt_runup_10.LSR = GND
+n3674 = (~n5781*(~n5761*cnt_runup_11+n5761*n69_adj_679)+n5781*(n5761*n69_adj_679))
+cnt_runup_11.D = n3674
+cnt_runup_11.CLK = cnt[5]
+cnt_runup_11.SP = VCC
+cnt_runup_11.LSR = GND
+
+comp 51: SLICE_51 (FSLICE)
+n3557 = (~n5781*(~n5761*cnt_runup_12+n5761*n68_adj_680)+n5781*(n5761*n68_adj_680))
+cnt_runup_12.D = n3557
+cnt_runup_12.CLK = cnt[5]
+cnt_runup_12.SP = VCC
+cnt_runup_12.LSR = GND
+n3559 = (~n5781*(~n5761*cnt_runup_13+n5761*n67_adj_681)+n5781*(n5761*n67_adj_681))
+cnt_runup_13.D = n3559
+cnt_runup_13.CLK = cnt[5]
+cnt_runup_13.SP = VCC
+cnt_runup_13.LSR = GND
+
+comp 52: SLICE_52 (FSLICE)
+n3561 = (~n5781*(~n5761*cnt_runup_14+n5761*n66_adj_682)+n5781*(n5761*n66_adj_682))
+cnt_runup_14.D = n3561
+cnt_runup_14.CLK = cnt[5]
+cnt_runup_14.SP = VCC
+cnt_runup_14.LSR = GND
+n5761 = (state_0*(runup_state_r_0__N_76*(~state_4*~state_1)))
+
+comp 53: uart_rx_a/SLICE_59 (FSLICE)
+uart_rx_a/uart_rx_dbg_N_654 = (~uart_rx_a/uart_divider_0_enable_5*(uart_rx_a/n5792@~deb_1_c)+uart_rx_a/uart_divider_0_enable_5*(uart_rx_a/rx_pin_state@~uart_rx_a/n5792))
+deb_1_c.D = uart_rx_a/uart_rx_dbg_N_654
+deb_1_c.CLK = uart_divider[0]
+deb_1_c.SP = VCC
+deb_1_c.LSR = GND
+uart_rx_a/n5792 = ((~uart_rx_a/uart_rx_state_1+uart_rx_a/uart_rx_state_2)+uart_rx_a/uart_rx_state_0)
+
+comp 54: SLICE_60 (FSLICE)
+n5893\003/BUF1 = VCC
+deb_2_c.D = n5893\003/BUF1
+deb_2_c.CLK = cnt[5]
+deb_2_c.SP = cnt_5_enable_54
+deb_2_c.LSR = n47
+
+comp 55: SLICE_101 (FSLICE)
+n3628 = (~n5789*(n2029*n85)+n5789*(~n2029*rundown_cnt_0+n2029*n85))
+rundown_cnt_0.D = n3628
+rundown_cnt_0.CLK = mclk_c
+rundown_cnt_0.SP = VCC
+rundown_cnt_0.LSR = GND
+n3715 = (~n5789*(n2029*n84)+n5789*(~n2029*rundown_cnt_1+n2029*n84))
+rundown_cnt_1.D = n3715
+rundown_cnt_1.CLK = mclk_c
+rundown_cnt_1.SP = VCC
+rundown_cnt_1.LSR = GND
+
+comp 56: SLICE_102 (FSLICE)
+n3536 = (~n5789*(n2029*n83)+n5789*(~n2029*rundown_cnt_2+n2029*n83))
+rundown_cnt_2.D = n3536
+rundown_cnt_2.CLK = mclk_c
+rundown_cnt_2.SP = VCC
+rundown_cnt_2.LSR = GND
+n3577 = (~n5789*(n2029*n82)+n5789*(~n2029*rundown_cnt_3+n2029*n82))
+rundown_cnt_3.D = n3577
+rundown_cnt_3.CLK = mclk_c
+rundown_cnt_3.SP = VCC
+rundown_cnt_3.LSR = GND
+
+comp 57: SLICE_103 (FSLICE)
+n3606 = (~n5789*(n2029*n81)+n5789*(~n2029*rundown_cnt_4+n2029*n81))
+rundown_cnt_4.D = n3606
+rundown_cnt_4.CLK = mclk_c
+rundown_cnt_4.SP = VCC
+rundown_cnt_4.LSR = GND
+n3592 = (~n5789*(n2029*n80_adj_694)+n5789*(~n2029*rundown_cnt_5+n2029*n80_adj_694))
+rundown_cnt_5.D = n3592
+rundown_cnt_5.CLK = mclk_c
+rundown_cnt_5.SP = VCC
+rundown_cnt_5.LSR = GND
+
+comp 58: SLICE_104 (FSLICE)
+n3596 = (~n5789*(n2029*n79_adj_693)+n5789*(~n2029*rundown_cnt_6+n2029*n79_adj_693))
+rundown_cnt_6.D = n3596
+rundown_cnt_6.CLK = mclk_c
+rundown_cnt_6.SP = VCC
+rundown_cnt_6.LSR = GND
+n3638 = (~n5789*(n2029*n78_adj_692)+n5789*(~n2029*rundown_cnt_7+n2029*n78_adj_692))
+rundown_cnt_7.D = n3638
+rundown_cnt_7.CLK = mclk_c
+rundown_cnt_7.SP = VCC
+rundown_cnt_7.LSR = GND
+
+comp 59: SLICE_105 (FSLICE)
+n3640 = (~n5789*(n2029*n77_adj_691)+n5789*(~n2029*rundown_cnt_8+n2029*n77_adj_691))
+rundown_cnt_8.D = n3640
+rundown_cnt_8.CLK = mclk_c
+rundown_cnt_8.SP = VCC
+rundown_cnt_8.LSR = GND
+n3651 = (~n5789*(n2029*n76_adj_690)+n5789*(~n2029*rundown_cnt_9+n2029*n76_adj_690))
+rundown_cnt_9.D = n3651
+rundown_cnt_9.CLK = mclk_c
+rundown_cnt_9.SP = VCC
+rundown_cnt_9.LSR = GND
+
+comp 60: SLICE_106 (FSLICE)
+n3660 = (~n5789*(n2029*n75_adj_689)+n5789*(~n2029*rundown_cnt_10+n2029*n75_adj_689))
+rundown_cnt_10.D = n3660
+rundown_cnt_10.CLK = mclk_c
+rundown_cnt_10.SP = VCC
+rundown_cnt_10.LSR = GND
+n3664 = (~n5789*(n2029*n74_adj_688)+n5789*(~n2029*rundown_cnt_11+n2029*n74_adj_688))
+rundown_cnt_11.D = n3664
+rundown_cnt_11.CLK = mclk_c
+rundown_cnt_11.SP = VCC
+rundown_cnt_11.LSR = GND
+
+comp 61: SLICE_107 (FSLICE)
+n3668 = (~n5789*(n2029*n73_adj_687)+n5789*(~n2029*rundown_cnt_12+n2029*n73_adj_687))
+rundown_cnt_12.D = n3668
+rundown_cnt_12.CLK = mclk_c
+rundown_cnt_12.SP = VCC
+rundown_cnt_12.LSR = GND
+n3666 = (~n5789*(n2029*n72_adj_686)+n5789*(~n2029*rundown_cnt_13+n2029*n72_adj_686))
+rundown_cnt_13.D = n3666
+rundown_cnt_13.CLK = mclk_c
+rundown_cnt_13.SP = VCC
+rundown_cnt_13.LSR = GND
+
+comp 62: SLICE_108 (FSLICE)
+n3672 = (~n5789*(n2029*n71_adj_685)+n5789*(~n2029*rundown_cnt_14+n2029*n71_adj_685))
+rundown_cnt_14.D = n3672
+rundown_cnt_14.CLK = mclk_c
+rundown_cnt_14.SP = VCC
+rundown_cnt_14.LSR = GND
+n3670 = (~n5789*(n2029*n70_adj_684)+n5789*(~n2029*rundown_cnt_15+n2029*n70_adj_684))
+rundown_cnt_15.D = n3670
+rundown_cnt_15.CLK = mclk_c
+rundown_cnt_15.SP = VCC
+rundown_cnt_15.LSR = GND
+
+comp 63: SLICE_110 (FSLICE)
+n3594 = (~n5781*(~n2019*runup_cnt_0+n2019*n80_adj_709)+n5781*(n2019*n80_adj_709))
+runup_cnt_0.D = n3594
+runup_cnt_0.CLK = cnt[5]
+runup_cnt_0.SP = VCC
+runup_cnt_0.LSR = GND
+n3653 = (~n5781*(~n2019*runup_cnt_1+n2019*n79_adj_708)+n5781*(n2019*n79_adj_708))
+runup_cnt_1.D = n3653
+runup_cnt_1.CLK = cnt[5]
+runup_cnt_1.SP = VCC
+runup_cnt_1.LSR = GND
+
+comp 64: SLICE_111 (FSLICE)
+n3662 = (~n5781*(~n2019*runup_cnt_2+n2019*n78_adj_707)+n5781*(n2019*n78_adj_707))
+runup_cnt_2.D = n3662
+runup_cnt_2.CLK = cnt[5]
+runup_cnt_2.SP = VCC
+runup_cnt_2.LSR = GND
+n3678 = (~n5781*(~n2019*runup_cnt_3+n2019*n77_adj_706)+n5781*(n2019*n77_adj_706))
+runup_cnt_3.D = n3678
+runup_cnt_3.CLK = cnt[5]
+runup_cnt_3.SP = VCC
+runup_cnt_3.LSR = GND
+
+comp 65: SLICE_112 (FSLICE)
+n3687 = (~n5781*(~n2019*runup_cnt_4+n2019*n76_adj_705)+n5781*(n2019*n76_adj_705))
+runup_cnt_4.D = n3687
+runup_cnt_4.CLK = cnt[5]
+runup_cnt_4.SP = VCC
+runup_cnt_4.LSR = GND
+n3694 = (~n5781*(~n2019*runup_cnt_5+n2019*n75_adj_704)+n5781*(n2019*n75_adj_704))
+runup_cnt_5.D = n3694
+runup_cnt_5.CLK = cnt[5]
+runup_cnt_5.SP = VCC
+runup_cnt_5.LSR = GND
+
+comp 66: SLICE_113 (FSLICE)
+n3696 = (~n5781*(~n2019*runup_cnt_6+n2019*n74_adj_703)+n5781*(n2019*n74_adj_703))
+runup_cnt_6.D = n3696
+runup_cnt_6.CLK = cnt[5]
+runup_cnt_6.SP = VCC
+runup_cnt_6.LSR = GND
+n3700 = (~n5781*(~n2019*runup_cnt_7+n2019*n73_adj_702)+n5781*(n2019*n73_adj_702))
+runup_cnt_7.D = n3700
+runup_cnt_7.CLK = cnt[5]
+runup_cnt_7.SP = VCC
+runup_cnt_7.LSR = GND
+
+comp 67: SLICE_114 (FSLICE)
+n3702 = (~n5781*(~n2019*runup_cnt_8+n2019*n72_adj_701)+n5781*(n2019*n72_adj_701))
+runup_cnt_8.D = n3702
+runup_cnt_8.CLK = cnt[5]
+runup_cnt_8.SP = VCC
+runup_cnt_8.LSR = GND
+n3704 = (~n5781*(~n2019*runup_cnt_9+n2019*n71_adj_700)+n5781*(n2019*n71_adj_700))
+runup_cnt_9.D = n3704
+runup_cnt_9.CLK = cnt[5]
+runup_cnt_9.SP = VCC
+runup_cnt_9.LSR = GND
+
+comp 68: SLICE_115 (FSLICE)
+n3706 = (~n5781*(~n2019*runup_cnt_10+n2019*n70_adj_699)+n5781*(n2019*n70_adj_699))
+runup_cnt_10.D = n3706
+runup_cnt_10.CLK = cnt[5]
+runup_cnt_10.SP = VCC
+runup_cnt_10.LSR = GND
+n3713 = (~n5781*(~n2019*runup_cnt_11+n2019*n69_adj_698)+n5781*(n2019*n69_adj_698))
+runup_cnt_11.D = n3713
+runup_cnt_11.CLK = cnt[5]
+runup_cnt_11.SP = VCC
+runup_cnt_11.LSR = GND
+
+comp 69: SLICE_116 (FSLICE)
+n3538 = (~n5781*(~n2019*runup_cnt_12+n2019*n68_adj_697)+n5781*(n2019*n68_adj_697))
+runup_cnt_12.D = n3538
+runup_cnt_12.CLK = cnt[5]
+runup_cnt_12.SP = VCC
+runup_cnt_12.LSR = GND
+n3691 = (~n5781*(~n2019*runup_cnt_13+n2019*n67_adj_696)+n5781*(n2019*n67_adj_696))
+runup_cnt_13.D = n3691
+runup_cnt_13.CLK = cnt[5]
+runup_cnt_13.SP = VCC
+runup_cnt_13.LSR = GND
+
+comp 70: SLICE_117 (FSLICE)
+n3698 = (~n5781*(~n2019*runup_cnt_14+n2019*n66_adj_695)+n5781*(n2019*n66_adj_695))
+runup_cnt_14.D = n3698
+runup_cnt_14.CLK = cnt[5]
+runup_cnt_14.SP = VCC
+runup_cnt_14.LSR = GND
+n5781 = (state_4*(state_0*state_1))
+
+comp 71: SLICE_118 (FSLICE)
+n2926 = (uart_rx_register_3*(uart_rx_register_1+uart_rx_register_2))
+runup_set_3.D = n2926
+runup_set_3.CLK = cnt[5]
+runup_set_3.SP = cnt_5_enable_43
+runup_set_3.LSR = n3723
+n3726 = (uart_rx_register_3*cnt_5_enable_43)
+
+comp 72: SLICE_120 (FSLICE)
+n98 = (~uart_rx_register_0*(~uart_rx_register_3+(uart_rx_register_1+uart_rx_register_2))+uart_rx_register_0*uart_rx_register_3)
+runup_set_6.D = n98
+runup_set_6.CLK = cnt[5]
+runup_set_6.SP = cnt_5_enable_43
+runup_set_6.LSR = GND
+n97 = (~uart_rx_register_0*(~uart_rx_register_3*~uart_rx_register_1+uart_rx_register_3*(uart_rx_register_1+uart_rx_register_2))+uart_rx_register_0*(~uart_rx_register_1+uart_rx_register_3))
+runup_set_7.D = n97
+runup_set_7.CLK = cnt[5]
+runup_set_7.SP = cnt_5_enable_43
+runup_set_7.LSR = GND
+
+comp 73: SLICE_121 (FSLICE)
+n7 = (uart_rx_register_2@uart_rx_register_0)
+runup_set_8.D = n7
+runup_set_8.CLK = cnt[5]
+runup_set_8.SP = cnt_5_enable_43
+runup_set_8.LSR = n3726
+n7_adj_665 = (~uart_rx_register_2*uart_rx_register_1+uart_rx_register_2*(uart_rx_register_0@~uart_rx_register_1))
+runup_set_9.D = n7_adj_665
+runup_set_9.CLK = cnt[5]
+runup_set_9.SP = cnt_5_enable_43
+runup_set_9.LSR = n3726
+
+comp 74: SLICE_122 (FSLICE)
+n7_adj_666 = (~uart_rx_register_1*(uart_rx_register_2*uart_rx_register_0)+uart_rx_register_1*uart_rx_register_2)
+runup_set_10.D = n7_adj_666
+runup_set_10.CLK = cnt[5]
+runup_set_10.SP = cnt_5_enable_43
+runup_set_10.LSR = n3726
+n3723 = (uart_rx_register_0*cnt_5_enable_43)
+
+comp 75: SLICE_123 (FSLICE)
+n3349 = (~n5781*(~n2919*comp_slow+n2919*runup_state_r_0)+n5781*(~n2919*comp_slow))
+runup_state_r_0.D = n3349
+runup_state_r_0.CLK = cnt[5]
+runup_state_r_0.SP = VCC
+runup_state_r_0.LSR = GND
+n15 = (runup_state_r_0*state_0)
+
+comp 76: uart_tx_a/SLICE_124 (FSLICE)
+uart_tx_a/n3720 = (~uart_tx_a/n5*(uart_tx_a/uart_tx_pin_N_550+uart_tx_a/n5788)+uart_tx_a/n5*(~uart_tx_a/n5788*uart_tx_a/uart_tx_pin_N_550+uart_tx_a/n5788*so_dat_c))
+so_dat_c.D = uart_tx_a/n3720
+so_dat_c.CLK = uart_divider[3]
+so_dat_c.SP = VCC
+so_dat_c.LSR = uart_tx_a/uart_tx_state_2__N_542
+uart_tx_a/n5788 = (~uart_tx_state_1+(uart_tx_state_2+uart_tx_state_0))
+
+comp 77: SLICE_125 (FSLICE)
+n3718 = (~n5*(~state_0*n5758+state_0*(~n5757+n5758))+n5*(~n5757+n5758))
+state_0.D = n3718
+state_0.CLK = cnt[5]
+state_0.SP = VCC
+state_0.LSR = cnt_5_enable_50
+n5465 = (~n5*(state_1+n5756)+n5*(~n2003+n5756))
+state_1.D = n5465
+state_1.CLK = cnt[5]
+state_1.SP = VCC
+state_1.LSR = cnt_5_enable_50
+
+comp 78: SLICE_126 (FSLICE)
+n5893\001/BUF1 = VCC
+state_4.D = n5893\001/BUF1
+state_4.CLK = cnt[5]
+state_4.SP = cnt_5_enable_55
+state_4.LSR = n5464
+n5529 = (state_4+state_1)
+
+comp 79: SLICE_127 (FSLICE)
+sw_dn_N_503 = (~state_0*n5696+state_0*n5695)
+sw_dn_c.D = sw_dn_N_503
+sw_dn_c.CLK = cnt[5]
+sw_dn_c.SP = VCC
+sw_dn_c.LSR = GND
+n5696 = (sw_dn_c*(~state_1*(n5762+state_4)+state_1*state_4))
+
+comp 80: SLICE_128 (FSLICE)
+n5780 = (state_0*(~state_4*~state_1))
+sw_in_r_0.D = n5780
+sw_in_r_0.CLK = cnt[5]
+sw_in_r_0.SP = cnt_5_enable_72
+sw_in_r_0.LSR = cnt_5_enable_52
+n2019 = (~runup_state_r_0__N_75*(comp_slow*(n5780*runup_state_r_0__N_76)))
+
+comp 81: SLICE_129 (FSLICE)
+n2502 = ((~cnt_5_enable_70+(~n5798*~state_0))+n5781)
+sw_rst_r_0.D = n2502
+sw_rst_r_0.CLK = cnt[5]
+sw_rst_r_0.SP = cnt_5_enable_72
+sw_rst_r_0.LSR = GND
+sw_rst_c = ~sw_rst_r_0
+
+comp 82: SLICE_130 (FSLICE)
+sw_up_N_491 = (((state_4*~n5800*sw_up_c)+(n15*~n5800*sw_up_c)+(n15*~state_4))*n5529)+(((n5762*~state_0*sw_up_c)+(state_0*sw_up_N_497))*~n5529)
+sw_up_c.D = sw_up_N_491
+sw_up_c.CLK = cnt[5]
+sw_up_c.SP = VCC
+sw_up_c.LSR = GND
+
+comp 83: SLICE_131 (FSLICE)
+n53 = (~state_1+state_4)
+sw_vref_n_c.D = n53
+sw_vref_n_c.CLK = cnt[5]
+sw_vref_n_c.SP = cnt_5_enable_72
+sw_vref_n_c.LSR = cnt_5_enable_52
+sw_vref_c = ~sw_vref_n_c
+
+comp 84: SLICE_132 (FSLICE)
+n5893 = VCC
+uart_busy.D = n5893
+uart_busy.CLK = uart_divider[3]
+uart_busy.SP = uart_tx_a/uart_tx_busy_N_557
+uart_busy.LSR = uart_tx_a/n5477
+
+comp 85: SLICE_133 (FSLICE)
+n3364 = (~uart_frame_cnt_0*~n2053+uart_frame_cnt_0*(n2053*(~uart_frame_r_0+uart_frame_start)))
+uart_frame_cnt_0.D = n3364
+uart_frame_cnt_0.CLK = uart_divider[3]
+uart_frame_cnt_0.SP = VCC
+uart_frame_cnt_0.LSR = GND
+n3415 = (~uart_frame_cnt_0*(~n2053*uart_frame_cnt_1+n2053*(~uart_divider_3_enable_51*uart_frame_cnt_1))+uart_frame_cnt_0*(~n2053*~uart_frame_cnt_1+n2053*(~uart_divider_3_enable_51*uart_frame_cnt_1)))
+uart_frame_cnt_1.D = n3415
+uart_frame_cnt_1.CLK = uart_divider[3]
+uart_frame_cnt_1.SP = VCC
+uart_frame_cnt_1.LSR = GND
+
+comp 86: SLICE_134 (FSLICE)
+n3413 = (~n5802*(~n2053*uart_frame_cnt_2+n2053*(~uart_divider_3_enable_51*uart_frame_cnt_2))+n5802*(~n2053*~uart_frame_cnt_2+n2053*(~uart_divider_3_enable_51*uart_frame_cnt_2)))
+uart_frame_cnt_2.D = n3413
+uart_frame_cnt_2.CLK = uart_divider[3]
+uart_frame_cnt_2.SP = VCC
+uart_frame_cnt_2.LSR = GND
+n3137 = (~uart_frame_cnt_2+((~uart_frame_cnt_0+uart_frame_cnt_3)+uart_frame_cnt_1))
+
+comp 87: SLICE_135 (FSLICE)
+n5708 = (((~uart_frame_r_0*uart_frame_cnt_3)+(uart_frame_start*uart_frame_cnt_3))*n2053)+(((uart_frame_cnt_2*~uart_frame_cnt_3*uart_frame_cnt_0*uart_frame_cnt_1)+(uart_frame_cnt_3*~uart_frame_cnt_0)+(uart_frame_cnt_3*~uart_frame_cnt_1)+(~uart_frame_cnt_2*uart_frame_cnt_3))*~n2053)
+uart_frame_cnt_3.D = n5708
+uart_frame_cnt_3.CLK = uart_divider[3]
+uart_frame_cnt_3.SP = VCC
+uart_frame_cnt_3.LSR = GND
+
+comp 88: SLICE_136 (FSLICE)
+n5893\002/BUF1 = VCC
+uart_frame_r_0.D = n5893\002/BUF1
+uart_frame_r_0.CLK = uart_divider[3]
+uart_frame_r_0.SP = uart_frame_start
+uart_frame_r_0.LSR = uart_divider_3_enable_51
+
+comp 89: SLICE_137 (FSLICE)
+n5892 = GND
+uart_frame_start.D = n5892
+uart_frame_start.CLK = cnt[5]
+uart_frame_start.SP = cnt_5_enable_52
+uart_frame_start.LSR = n5780
+uart_divider_3_enable_51 = (~uart_frame_start*uart_frame_r_0)
+
+comp 90: SLICE_138 (FSLICE)
+n5744 = (~uart_busy*(~uart_divider_3_enable_51*(uart_frame_state_1*uart_frame_state_0))+uart_busy*(~uart_divider_3_enable_51*(~uart_frame_state_1+uart_frame_state_0)+uart_divider_3_enable_51*(~uart_frame_state_1*~uart_frame_state_0)))
+uart_frame_state_0.D = n5744
+uart_frame_state_0.CLK = uart_divider[3]
+uart_frame_state_0.SP = VCC
+uart_frame_state_0.LSR = GND
+n2053 = (~uart_frame_state_0+((~n3137+uart_busy)+uart_frame_state_1))
+
+comp 91: SLICE_139 (FSLICE)
+n5721 = ((~uart_frame_r_0+uart_frame_start)*uart_frame_state_1)+((~uart_busy*~n3137*uart_frame_state_0)*~uart_frame_state_1)
+uart_frame_state_1.D = n5721
+uart_frame_state_1.CLK = uart_divider[3]
+uart_frame_state_1.SP = VCC
+uart_frame_state_1.LSR = GND
+
+comp 92: uart_rx_a/SLICE_140 (FSLICE)
+uart_rx_a/rx_pin_state_N_658 = (~uart_rx_a/uart_rx_zero_cnt_2*(~uart_rx_a/uart_rx_zero_cnt_3*~uart_rx_a/uart_rx_zero_cnt_4))
+uart_rx_a/rx_pin_state.D = uart_rx_a/rx_pin_state_N_658
+uart_rx_a/rx_pin_state.CLK = uart_divider[0]
+uart_rx_a/rx_pin_state.SP = uart_rx_a/uart_divider_0_enable_5
+uart_rx_a/rx_pin_state.LSR = GND
+uart_rx_a/n2099 = (uart_rx_a/n6*(~uart_rx_a/uart_rx_cnt_0*(~uart_rx_a/n5527*uart_rx_a/rx_pin_state_N_658)))
+
+comp 93: uart_rx_a/SLICE_141 (FSLICE)
+uart_rx_a/n3341 = (~uart_rx_a/uart_rx_bit_0*~uart_rx_a/n5768+uart_rx_a/uart_rx_bit_0*(uart_rx_a/n5768*(uart_rx_a/n5769+uart_rx_a/n4374)))
+uart_rx_a/uart_rx_bit_0.D = uart_rx_a/n3341
+uart_rx_a/uart_rx_bit_0.CLK = uart_divider[0]
+uart_rx_a/uart_rx_bit_0.SP = VCC
+uart_rx_a/uart_rx_bit_0.LSR = GND
+uart_rx_a/n3489 = (~uart_rx_a/uart_rx_bit_0*(~uart_rx_a/n5768*uart_rx_a/uart_rx_bit_1+uart_rx_a/n5768*(uart_rx_a/n5763*uart_rx_a/uart_rx_bit_1))+uart_rx_a/uart_rx_bit_0*(~uart_rx_a/n5768*~uart_rx_a/uart_rx_bit_1+uart_rx_a/n5768*(uart_rx_a/n5763*uart_rx_a/uart_rx_bit_1)))
+uart_rx_a/uart_rx_bit_1.D = uart_rx_a/n3489
+uart_rx_a/uart_rx_bit_1.CLK = uart_divider[0]
+uart_rx_a/uart_rx_bit_1.SP = VCC
+uart_rx_a/uart_rx_bit_1.LSR = GND
+
+comp 94: uart_rx_a/SLICE_142 (FSLICE)
+uart_rx_a/n3487 = (~uart_rx_a/n5801*(~uart_rx_a/n5768*uart_rx_a/uart_rx_bit_2+uart_rx_a/n5768*(uart_rx_a/n5763*uart_rx_a/uart_rx_bit_2))+uart_rx_a/n5801*(~uart_rx_a/n5768*~uart_rx_a/uart_rx_bit_2+uart_rx_a/n5768*(uart_rx_a/n5763*uart_rx_a/uart_rx_bit_2)))
+uart_rx_a/uart_rx_bit_2.D = uart_rx_a/n3487
+uart_rx_a/uart_rx_bit_2.CLK = uart_divider[0]
+uart_rx_a/uart_rx_bit_2.SP = VCC
+uart_rx_a/uart_rx_bit_2.LSR = GND
+uart_rx_a/n3485 = (~uart_rx_a/n5782*(~uart_rx_a/n5768*uart_rx_a/uart_rx_bit_3+uart_rx_a/n5768*(uart_rx_a/n5763*uart_rx_a/uart_rx_bit_3))+uart_rx_a/n5782*(~uart_rx_a/n5768*~uart_rx_a/uart_rx_bit_3+uart_rx_a/n5768*(uart_rx_a/n5763*uart_rx_a/uart_rx_bit_3)))
+uart_rx_a/uart_rx_bit_3.D = uart_rx_a/n3485
+uart_rx_a/uart_rx_bit_3.CLK = uart_divider[0]
+uart_rx_a/uart_rx_bit_3.SP = VCC
+uart_rx_a/uart_rx_bit_3.LSR = GND
+
+comp 95: uart_rx_a/SLICE_143 (FSLICE)
+uart_rx_a/n3483 = (((uart_rx_a/n5774*uart_rx_a/uart_rx_bit_4)+(uart_rx_a/uart_rx_cnt_0*uart_rx_a/uart_rx_bit_4)+(uart_rx_a/n4374*uart_rx_a/uart_rx_bit_4))*uart_rx_a/n5768)+(((~uart_rx_a/uart_rx_bit_4*uart_rx_a/uart_rx_bit_3*uart_rx_a/n5801*uart_rx_a/uart_rx_bit_2)+(uart_rx_a/uart_rx_bit_4*~uart_rx_a/uart_rx_bit_2)+(uart_rx_a/uart_rx_bit_4*~uart_rx_a/n5801)+(uart_rx_a/uart_rx_bit_4*~uart_rx_a/uart_rx_bit_3))*~uart_rx_a/n5768)
+uart_rx_a/uart_rx_bit_4.D = uart_rx_a/n3483
+uart_rx_a/uart_rx_bit_4.CLK = uart_divider[0]
+uart_rx_a/uart_rx_bit_4.SP = VCC
+uart_rx_a/uart_rx_bit_4.LSR = GND
+
+comp 96: uart_rx_a/SLICE_144 (FSLICE)
+uart_rx_a/n3626 = (~uart_rx_a/uart_rx_cnt_0*uart_rx_a/n2119+uart_rx_a/uart_rx_cnt_0*(~uart_rx_a/n2119*(uart_rx_a/uart_rx_state_2+uart_rx_a/uart_rx_state_1)))
+uart_rx_a/uart_rx_cnt_0.D = uart_rx_a/n3626
+uart_rx_a/uart_rx_cnt_0.CLK = uart_divider[0]
+uart_rx_a/uart_rx_cnt_0.SP = VCC
+uart_rx_a/uart_rx_cnt_0.LSR = GND
+uart_rx_a/n3611 = (~uart_rx_a/n5793*(uart_rx_a/n2119*(uart_rx_a/uart_rx_cnt_0@uart_rx_a/uart_rx_cnt_1))+uart_rx_a/n5793*(~uart_rx_a/n2119*uart_rx_a/uart_rx_cnt_1+uart_rx_a/n2119*(uart_rx_a/uart_rx_cnt_0@uart_rx_a/uart_rx_cnt_1)))
+uart_rx_a/uart_rx_cnt_1.D = uart_rx_a/n3611
+uart_rx_a/uart_rx_cnt_1.CLK = uart_divider[0]
+uart_rx_a/uart_rx_cnt_1.SP = VCC
+uart_rx_a/uart_rx_cnt_1.LSR = GND
+
+comp 97: uart_rx_a/SLICE_145 (FSLICE)
+uart_rx_a/n3613 = (~uart_rx_a/n5793*(uart_rx_a/n2119*(uart_rx_a/n5803@uart_rx_a/uart_rx_cnt_2))+uart_rx_a/n5793*(~uart_rx_a/n2119*uart_rx_a/uart_rx_cnt_2+uart_rx_a/n2119*(uart_rx_a/n5803@uart_rx_a/uart_rx_cnt_2)))
+uart_rx_a/uart_rx_cnt_2.D = uart_rx_a/n3613
+uart_rx_a/uart_rx_cnt_2.CLK = uart_divider[0]
+uart_rx_a/uart_rx_cnt_2.SP = VCC
+uart_rx_a/uart_rx_cnt_2.LSR = GND
+uart_rx_a/n3615 = (~uart_rx_a/n5793*(uart_rx_a/n2119*(uart_rx_a/n5783@uart_rx_a/uart_rx_cnt_3))+uart_rx_a/n5793*(~uart_rx_a/n2119*uart_rx_a/uart_rx_cnt_3+uart_rx_a/n2119*(uart_rx_a/n5783@uart_rx_a/uart_rx_cnt_3)))
+uart_rx_a/uart_rx_cnt_3.D = uart_rx_a/n3615
+uart_rx_a/uart_rx_cnt_3.CLK = uart_divider[0]
+uart_rx_a/uart_rx_cnt_3.SP = VCC
+uart_rx_a/uart_rx_cnt_3.LSR = GND
+
+comp 98: uart_rx_a/SLICE_146 (FSLICE)
+uart_rx_a/n3632 = (((uart_rx_a/uart_rx_cnt_3*uart_rx_a/n5803*uart_rx_a/uart_rx_cnt_2*~uart_rx_a/uart_rx_cnt_4)+(~uart_rx_a/uart_rx_cnt_2*uart_rx_a/uart_rx_cnt_4)+(~uart_rx_a/n5803*uart_rx_a/uart_rx_cnt_4)+(~uart_rx_a/uart_rx_cnt_3*uart_rx_a/uart_rx_cnt_4))*uart_rx_a/n2119)+(((uart_rx_a/uart_rx_cnt_4*uart_rx_a/uart_rx_state_2)+(uart_rx_a/uart_rx_cnt_4*uart_rx_a/uart_rx_state_1))*~uart_rx_a/n2119)
+uart_rx_a/uart_rx_cnt_4.D = uart_rx_a/n3632
+uart_rx_a/uart_rx_cnt_4.CLK = uart_divider[0]
+uart_rx_a/uart_rx_cnt_4.SP = VCC
+uart_rx_a/uart_rx_cnt_4.LSR = GND
+
+comp 99: uart_rx_a/SLICE_149 (FSLICE)
+uart_rx_a/uart_rx_state_2_N_642_0 = ((uart_rx_a/n5766*(~uart_rx_a/n4374*~uart_rx_a/n5769))+uart_rx_a/n2099)
+uart_rx_a/uart_rx_state_0.D = uart_rx_a/uart_rx_state_2_N_642_0
+uart_rx_a/uart_rx_state_0.CLK = uart_divider[0]
+uart_rx_a/uart_rx_state_0.SP = uart_rx_a/uart_divider_0_enable_1
+uart_rx_a/uart_rx_state_0.LSR = uart_rx_a/n2104
+uart_rx_a/n5769 = (((~uart_rx_a/uart_rx_cnt_2+~uart_rx_a/uart_rx_cnt_1)+uart_rx_a/uart_rx_cnt_0)+uart_rx_a/n5791)
+
+comp 100: uart_rx_a/SLICE_150 (FSLICE)
+uart_rx_a/n5759 = (~uart_rx_a/n5766+uart_rx_a/n2099)
+uart_rx_a/uart_rx_state_1.D = uart_rx_a/n5759
+uart_rx_a/uart_rx_state_1.CLK = uart_divider[0]
+uart_rx_a/uart_rx_state_1.SP = uart_rx_a/uart_divider_0_enable_12
+uart_rx_a/uart_rx_state_1.LSR = uart_rx_a/n2104
+uart_rx_a/n5766 = (((~uart_rx_a/uart_divider_0_enable_5+uart_rx_a/n14)+uart_rx_a/n10)+uart_rx_a/uart_rx_bit_3)
+
+comp 101: uart_rx_a/SLICE_151 (FSLICE)
+n5893\000/BUF1 = VCC
+uart_rx_a/uart_rx_state_2.D = n5893\000/BUF1
+uart_rx_a/uart_rx_state_2.CLK = uart_divider[0]
+uart_rx_a/uart_rx_state_2.SP = uart_rx_rst
+uart_rx_a/uart_rx_state_2.LSR = uart_rx_a/n5449
+uart_rx_a/n4374 = (((uart_rx_a/uart_rx_state_1+uart_rx_a/uart_rx_state_0)+uart_rx_a/uart_rx_state_2)+uart_rx_a/uart_rx_pin)
+
+comp 102: uart_rx_a/SLICE_152 (FSLICE)
+uart_rx_a/n3386 = (~uart_rx_a/n5763*(~uart_rx_a/n5468*uart_rx_a/rx_pin_state)+uart_rx_a/n5763*(~uart_rx_a/n5468*uart_rx_a/rx_pin_state+uart_rx_a/n5468*uart_rx_a/uart_rx_tmp_0))
+uart_rx_a/uart_rx_tmp_0.D = uart_rx_a/n3386
+uart_rx_a/uart_rx_tmp_0.CLK = uart_divider[0]
+uart_rx_a/uart_rx_tmp_0.SP = VCC
+uart_rx_a/uart_rx_tmp_0.LSR = GND
+uart_rx_a/n3511 = (~uart_rx_a/n5763*(~uart_rx_a/n5467*uart_rx_a/rx_pin_state)+uart_rx_a/n5763*(~uart_rx_a/n5467*uart_rx_a/rx_pin_state+uart_rx_a/n5467*uart_rx_a/uart_rx_tmp_1))
+uart_rx_a/uart_rx_tmp_1.D = uart_rx_a/n3511
+uart_rx_a/uart_rx_tmp_1.CLK = uart_divider[0]
+uart_rx_a/uart_rx_tmp_1.SP = VCC
+uart_rx_a/uart_rx_tmp_1.LSR = GND
+
+comp 103: uart_rx_a/SLICE_153 (FSLICE)
+uart_rx_a/n3514 = (~uart_rx_a/n5763*(~uart_rx_a/n5484*uart_rx_a/rx_pin_state)+uart_rx_a/n5763*(~uart_rx_a/n5484*uart_rx_a/rx_pin_state+uart_rx_a/n5484*uart_rx_a/uart_rx_tmp_2))
+uart_rx_a/uart_rx_tmp_2.D = uart_rx_a/n3514
+uart_rx_a/uart_rx_tmp_2.CLK = uart_divider[0]
+uart_rx_a/uart_rx_tmp_2.SP = VCC
+uart_rx_a/uart_rx_tmp_2.LSR = GND
+uart_rx_a/n3517 = (~uart_rx_a/n5763*(~uart_rx_a/n5485*uart_rx_a/rx_pin_state)+uart_rx_a/n5763*(~uart_rx_a/n5485*uart_rx_a/rx_pin_state+uart_rx_a/n5485*uart_rx_a/uart_rx_tmp_3))
+uart_rx_a/uart_rx_tmp_3.D = uart_rx_a/n3517
+uart_rx_a/uart_rx_tmp_3.CLK = uart_divider[0]
+uart_rx_a/uart_rx_tmp_3.SP = VCC
+uart_rx_a/uart_rx_tmp_3.LSR = GND
+
+comp 104: uart_rx_a/SLICE_154 (FSLICE)
+uart_rx_a/n3520 = (~uart_rx_a/n5763*(~uart_rx_a/n5479*uart_rx_a/rx_pin_state)+uart_rx_a/n5763*(~uart_rx_a/n5479*uart_rx_a/rx_pin_state+uart_rx_a/n5479*uart_rx_a/uart_rx_tmp_4))
+uart_rx_a/uart_rx_tmp_4.D = uart_rx_a/n3520
+uart_rx_a/uart_rx_tmp_4.CLK = uart_divider[0]
+uart_rx_a/uart_rx_tmp_4.SP = VCC
+uart_rx_a/uart_rx_tmp_4.LSR = GND
+uart_rx_a/n3523 = (~uart_rx_a/n5763*(~uart_rx_a/n5480*uart_rx_a/rx_pin_state)+uart_rx_a/n5763*(~uart_rx_a/n5480*uart_rx_a/rx_pin_state+uart_rx_a/n5480*uart_rx_a/uart_rx_tmp_5))
+uart_rx_a/uart_rx_tmp_5.D = uart_rx_a/n3523
+uart_rx_a/uart_rx_tmp_5.CLK = uart_divider[0]
+uart_rx_a/uart_rx_tmp_5.SP = VCC
+uart_rx_a/uart_rx_tmp_5.LSR = GND
+
+comp 105: uart_rx_a/SLICE_155 (FSLICE)
+uart_rx_a/n3526 = (~uart_rx_a/n5767*(~uart_rx_a/n5799*uart_rx_a/n3550+uart_rx_a/n5799*uart_rx_a/rx_pin_state)+uart_rx_a/n5767*uart_rx_a/n3550)
+uart_rx_a/uart_rx_tmp_6.D = uart_rx_a/n3526
+uart_rx_a/uart_rx_tmp_6.CLK = uart_divider[0]
+uart_rx_a/uart_rx_tmp_6.SP = VCC
+uart_rx_a/uart_rx_tmp_6.LSR = GND
+uart_rx_a/n3529 = (~uart_rx_a/n5765*(~uart_rx_a/n5799*uart_rx_a/n3546+uart_rx_a/n5799*uart_rx_a/rx_pin_state)+uart_rx_a/n5765*uart_rx_a/n3546)
+uart_rx_a/uart_rx_tmp_7.D = uart_rx_a/n3529
+uart_rx_a/uart_rx_tmp_7.CLK = uart_divider[0]
+uart_rx_a/uart_rx_tmp_7.SP = VCC
+uart_rx_a/uart_rx_tmp_7.LSR = GND
+
+comp 106: uart_rx_a/SLICE_156 (FSLICE)
+uart_rx_a/n3656 = (~uart_rx_a/n4262*(uart_rx_a/n2113*~uart_rx_a/uart_rx_zero_cnt_0)+uart_rx_a/n4262*(uart_rx_a/n2113@uart_rx_a/uart_rx_zero_cnt_0))
+uart_rx_a/uart_rx_zero_cnt_0.D = uart_rx_a/n3656
+uart_rx_a/uart_rx_zero_cnt_0.CLK = uart_divider[0]
+uart_rx_a/uart_rx_zero_cnt_0.SP = VCC
+uart_rx_a/uart_rx_zero_cnt_0.LSR = GND
+uart_rx_a/n3568 = (~uart_rx_a/n4262*(uart_rx_a/n2113*(uart_rx_a/uart_rx_zero_cnt_0@uart_rx_a/uart_rx_zero_cnt_1))+uart_rx_a/n4262*(~uart_rx_a/n2113*uart_rx_a/uart_rx_zero_cnt_1+uart_rx_a/n2113*(uart_rx_a/uart_rx_zero_cnt_0@uart_rx_a/uart_rx_zero_cnt_1)))
+uart_rx_a/uart_rx_zero_cnt_1.D = uart_rx_a/n3568
+uart_rx_a/uart_rx_zero_cnt_1.CLK = uart_divider[0]
+uart_rx_a/uart_rx_zero_cnt_1.SP = VCC
+uart_rx_a/uart_rx_zero_cnt_1.LSR = GND
+
+comp 107: uart_rx_a/SLICE_157 (FSLICE)
+uart_rx_a/n3570 = (~uart_rx_a/n4262*(uart_rx_a/n2113*(uart_rx_a/n5804@uart_rx_a/uart_rx_zero_cnt_2))+uart_rx_a/n4262*(~uart_rx_a/n2113*uart_rx_a/uart_rx_zero_cnt_2+uart_rx_a/n2113*(uart_rx_a/n5804@uart_rx_a/uart_rx_zero_cnt_2)))
+uart_rx_a/uart_rx_zero_cnt_2.D = uart_rx_a/n3570
+uart_rx_a/uart_rx_zero_cnt_2.CLK = uart_divider[0]
+uart_rx_a/uart_rx_zero_cnt_2.SP = VCC
+uart_rx_a/uart_rx_zero_cnt_2.LSR = GND
+uart_rx_a/n3572 = (~uart_rx_a/n4262*(uart_rx_a/n2113*(uart_rx_a/n5784@uart_rx_a/uart_rx_zero_cnt_3))+uart_rx_a/n4262*(~uart_rx_a/n2113*uart_rx_a/uart_rx_zero_cnt_3+uart_rx_a/n2113*(uart_rx_a/n5784@uart_rx_a/uart_rx_zero_cnt_3)))
+uart_rx_a/uart_rx_zero_cnt_3.D = uart_rx_a/n3572
+uart_rx_a/uart_rx_zero_cnt_3.CLK = uart_divider[0]
+uart_rx_a/uart_rx_zero_cnt_3.SP = VCC
+uart_rx_a/uart_rx_zero_cnt_3.LSR = GND
+
+comp 108: uart_rx_a/SLICE_158 (FSLICE)
+uart_rx_a/n5891 = (~uart_rx_a/n2113*(uart_rx_a/n4262*uart_rx_a/uart_rx_zero_cnt_4)+uart_rx_a/n2113*uart_rx_a/n26)
+uart_rx_a/uart_rx_zero_cnt_4.D = uart_rx_a/n5891
+uart_rx_a/uart_rx_zero_cnt_4.CLK = uart_divider[0]
+uart_rx_a/uart_rx_zero_cnt_4.SP = VCC
+uart_rx_a/uart_rx_zero_cnt_4.LSR = GND
+uart_rx_a/n26 = (uart_rx_a/uart_rx_zero_cnt_4@(uart_rx_a/uart_rx_zero_cnt_3*(uart_rx_a/n5804*uart_rx_a/uart_rx_zero_cnt_2)))
+uart_rx_a/uart_rx_pin.D = uart_rx_a/uart_rx_pin_tmp
+uart_rx_a/uart_rx_pin.CLK = uart_divider[0]
+uart_rx_a/uart_rx_pin.SP = VCC
+uart_rx_a/uart_rx_pin.LSR = GND
+
+comp 109: SLICE_159 (FSLICE)
+uart_rx_a/uart_divider_0_enable_11 = (uart_rx_a/uart_rx_state_1*(uart_rx_a/uart_rx_state_0*~uart_rx_a/uart_rx_state_2))
+uart_rx_ready.D = uart_rx_a/uart_divider_0_enable_11
+uart_rx_ready.CLK = uart_divider[0]
+uart_rx_ready.SP = uart_rx_a/uart_divider_0_enable_3
+uart_rx_ready.LSR = uart_rx_a/n2104
+cnt_5_enable_25 = (~uart_rx_state_1*(uart_rx_ready+uart_rx_state_0))
+
+comp 110: SLICE_162 (FSLICE)
+uart_rx_a/n5784 = (uart_rx_a/uart_rx_zero_cnt_2*(uart_rx_a/uart_rx_zero_cnt_1*uart_rx_a/uart_rx_zero_cnt_0))
+uart_rx_register_4.D = uart_rx_a/uart_rx_tmp_4
+uart_rx_register_4.CLK = uart_divider[0]
+uart_rx_register_4.SP = uart_rx_a/uart_divider_0_enable_11
+uart_rx_register_4.LSR = GND
+VCC_net = VCC
+uart_rx_register_5.D = uart_rx_a/uart_rx_tmp_5
+uart_rx_register_5.CLK = uart_divider[0]
+uart_rx_register_5.SP = uart_rx_a/uart_divider_0_enable_11
+uart_rx_register_5.LSR = GND
+
+comp 111: SLICE_163 (FSLICE)
+sw_in_c = ~sw_in_r_0
+uart_rx_register_6.D = uart_rx_a/uart_rx_tmp_6
+uart_rx_register_6.CLK = uart_divider[0]
+uart_rx_register_6.SP = uart_rx_a/uart_divider_0_enable_11
+uart_rx_register_6.LSR = GND
+n6 = (~uart_rx_register_7*uart_rx_register_4)
+uart_rx_register_7.D = uart_rx_a/uart_rx_tmp_7
+uart_rx_register_7.CLK = uart_divider[0]
+uart_rx_register_7.SP = uart_rx_a/uart_divider_0_enable_11
+uart_rx_register_7.LSR = GND
+
+comp 112: SLICE_164 (FSLICE)
+n5893\004/BUF1 = VCC
+uart_rx_rst.D = n5893\004/BUF1
+uart_rx_rst.CLK = cnt[5]
+uart_rx_rst.SP = uart_rx_state_2_N_313_1
+uart_rx_rst.LSR = n4316
+uart_rx_a/n2104 = (~uart_rx_rst*(uart_rx_a/uart_rx_state_2*(~uart_rx_a/uart_rx_state_0*~uart_rx_a/uart_rx_state_1)))
+
+comp 113: SLICE_165 (FSLICE)
+n5893\005/BUF1 = VCC
+uart_rx_state_0.D = n5893\005/BUF1
+uart_rx_state_0.CLK = cnt[5]
+uart_rx_state_0.SP = cnt_5_enable_1
+uart_rx_state_0.LSR = n5701
+n4316 = (uart_rx_state_1*(~uart_rx_state_0*~uart_rx_ready))
+
+comp 114: SLICE_166 (FSLICE)
+uart_rx_state_2_N_313_1 = (~uart_rx_state_1*uart_rx_state_0)
+uart_rx_state_1.D = uart_rx_state_2_N_313_1
+uart_rx_state_1.CLK = cnt[5]
+uart_rx_state_1.SP = cnt_5_enable_25
+uart_rx_state_1.LSR = n4316
+n5701 = (~uart_rx_state_1*uart_rx_state_0+uart_rx_state_1*(~uart_rx_state_0*~uart_rx_ready))
+
+comp 115: uart_tx_a/SLICE_167 (FSLICE)
+uart_tx_a/n5778 = (~uart_tx_a/uart_tx_bit_0+(uart_tx_a/uart_tx_bit_2*uart_tx_a/uart_tx_bit_1))
+uart_tx_a/uart_tx_bit_0.D = uart_tx_a/n5778
+uart_tx_a/uart_tx_bit_0.CLK = uart_divider[3]
+uart_tx_a/uart_tx_bit_0.SP = uart_divider_3_enable_52
+uart_tx_a/uart_tx_bit_0.LSR = uart_tx_a/uart_tx_state_2__N_542
+uart_tx_a/n117 = (~uart_tx_a/uart_tx_bit_0*uart_tx_a/uart_tx_bit_1+uart_tx_a/uart_tx_bit_0*(~uart_tx_a/uart_tx_bit_1+uart_tx_a/uart_tx_bit_2))
+uart_tx_a/uart_tx_bit_1.D = uart_tx_a/n117
+uart_tx_a/uart_tx_bit_1.CLK = uart_divider[3]
+uart_tx_a/uart_tx_bit_1.SP = uart_divider_3_enable_52
+uart_tx_a/uart_tx_bit_1.LSR = uart_tx_a/uart_tx_state_2__N_542
+
+comp 116: uart_tx_a/SLICE_168 (FSLICE)
+uart_tx_a/n5350 = (~uart_tx_a/uart_tx_bit_0*uart_tx_a/uart_tx_bit_2+uart_tx_a/uart_tx_bit_0*(uart_tx_a/uart_tx_bit_2+uart_tx_a/uart_tx_bit_1))
+uart_tx_a/uart_tx_bit_2.D = uart_tx_a/n5350
+uart_tx_a/uart_tx_bit_2.CLK = uart_divider[3]
+uart_tx_a/uart_tx_bit_2.SP = uart_divider_3_enable_52
+uart_tx_a/uart_tx_bit_2.LSR = uart_tx_a/uart_tx_state_2__N_542
+uart_tx_a/n5805 = (uart_tx_a/uart_tx_bit_2*uart_tx_a/uart_tx_bit_1)
+
+comp 117: SLICE_169 (FSLICE)
+uart_tx_register_7_N_467_0 = (~uart_frame_cnt_0*(~uart_frame_cnt_1*n5542+uart_frame_cnt_1*frame_content_24)+uart_frame_cnt_0*(n5542+uart_frame_cnt_1))
+uart_tx_register_0.D = uart_tx_register_7_N_467_0
+uart_tx_register_0.CLK = uart_divider[3]
+uart_tx_register_0.SP = uart_divider_3_enable_10
+uart_tx_register_0.LSR = GND
+uart_tx_register_7_N_467_1 = (~uart_frame_cnt_0*(~uart_frame_cnt_1*n5539+uart_frame_cnt_1*frame_content_25)+uart_frame_cnt_0*(n5539+uart_frame_cnt_1))
+uart_tx_register_1.D = uart_tx_register_7_N_467_1
+uart_tx_register_1.CLK = uart_divider[3]
+uart_tx_register_1.SP = uart_divider_3_enable_10
+uart_tx_register_1.LSR = GND
+
+comp 118: SLICE_170 (FSLICE)
+uart_tx_register_7_N_467_2 = (~uart_frame_cnt_0*(~uart_frame_cnt_1*n5536+uart_frame_cnt_1*frame_content_26)+uart_frame_cnt_0*(n5536+uart_frame_cnt_1))
+uart_tx_register_2.D = uart_tx_register_7_N_467_2
+uart_tx_register_2.CLK = uart_divider[3]
+uart_tx_register_2.SP = uart_divider_3_enable_10
+uart_tx_register_2.LSR = GND
+uart_tx_register_7_N_467_3 = (~uart_frame_cnt_0*(~uart_frame_cnt_1*n5533)+uart_frame_cnt_0*(~uart_frame_cnt_1*n5533+uart_frame_cnt_1*frame_content_19))
+uart_tx_register_3.D = uart_tx_register_7_N_467_3
+uart_tx_register_3.CLK = uart_divider[3]
+uart_tx_register_3.SP = uart_divider_3_enable_10
+uart_tx_register_3.LSR = GND
+
+comp 119: SLICE_171 (FSLICE)
+uart_tx_register_7_N_467_4 = (~uart_frame_cnt_0*(~uart_frame_cnt_1*n5564)+uart_frame_cnt_0*(~uart_frame_cnt_1*n5564+uart_frame_cnt_1*frame_content_20))
+uart_tx_register_4.D = uart_tx_register_7_N_467_4
+uart_tx_register_4.CLK = uart_divider[3]
+uart_tx_register_4.SP = uart_divider_3_enable_10
+uart_tx_register_4.LSR = GND
+uart_tx_register_7_N_467_5 = (~uart_frame_cnt_0*(~uart_frame_cnt_1*n5561)+uart_frame_cnt_0*(~uart_frame_cnt_1*n5561+uart_frame_cnt_1*frame_content_21))
+uart_tx_register_5.D = uart_tx_register_7_N_467_5
+uart_tx_register_5.CLK = uart_divider[3]
+uart_tx_register_5.SP = uart_divider_3_enable_10
+uart_tx_register_5.LSR = GND
+
+comp 120: SLICE_172 (FSLICE)
+uart_tx_register_7_N_467_6 = (~uart_frame_cnt_0*(~uart_frame_cnt_1*n5558)+uart_frame_cnt_0*(~uart_frame_cnt_1*n5558+uart_frame_cnt_1*frame_content_22))
+uart_tx_register_6.D = uart_tx_register_7_N_467_6
+uart_tx_register_6.CLK = uart_divider[3]
+uart_tx_register_6.SP = uart_divider_3_enable_10
+uart_tx_register_6.LSR = GND
+n5802 = (uart_frame_cnt_0*uart_frame_cnt_1)
+
+comp 121: SLICE_173 (FSLICE)
+uart_tx_register_7_N_467_7 = (((frame_content_31*~uart_frame_cnt_0)+(frame_content_23*uart_frame_cnt_0))*uart_frame_cnt_1)+(((~uart_frame_cnt_0*uart_frame_cnt_2*frame_content_15)+(n2262*uart_frame_cnt_2*frame_content_15)+(n2262*uart_frame_cnt_0))*~uart_frame_cnt_1)
+uart_tx_register_7.D = uart_tx_register_7_N_467_7
+uart_tx_register_7.CLK = uart_divider[3]
+uart_tx_register_7.SP = uart_divider_3_enable_10
+uart_tx_register_7.LSR = GND
+
+comp 122: SLICE_174 (FSLICE)
+n3634 = (~uart_tx_start*(~uart_frame_state_1*~uart_frame_state_0)+uart_tx_start*(~uart_frame_state_0+uart_frame_state_1))
+uart_tx_start.D = n3634
+uart_tx_start.CLK = uart_divider[3]
+uart_tx_start.SP = VCC
+uart_tx_start.LSR = GND
+uart_divider_3_enable_10 = (~n4276*(~uart_frame_cnt_3*(~uart_frame_state_0*~uart_frame_state_1)))
+
+comp 123: uart_tx_a/SLICE_175 (FSLICE)
+uart_tx_a/uart_tx_state_2_N_533_0 = (~uart_tx_a/n5786*(~uart_tx_start*~uart_tx_a/n5806+uart_tx_start*(~uart_tx_a/n5806*uart_tx_state_1))+uart_tx_a/n5786*(~uart_tx_start*(~uart_tx_a/n5806*~uart_tx_state_1)))
+uart_tx_state_0.D = uart_tx_a/uart_tx_state_2_N_533_0
+uart_tx_state_0.CLK = uart_divider[3]
+uart_tx_state_0.SP = uart_tx_a/uart_divider_3_enable_2
+uart_tx_state_0.LSR = GND
+uart_tx_a/n5 = (~uart_tx_state_1+(~uart_tx_state_0+uart_tx_state_2))
+
+comp 124: uart_tx_a/SLICE_176 (FSLICE)
+uart_tx_a/n3642 = ((~uart_tx_start*uart_tx_state_1)*uart_tx_a/n2069)+((uart_tx_a/uart_tx_bit_0*uart_tx_a/n5805*~uart_tx_a/n5806*uart_tx_state_1)*~uart_tx_a/n2069)
+uart_tx_state_1.D = uart_tx_a/n3642
+uart_tx_state_1.CLK = uart_divider[3]
+uart_tx_state_1.SP = VCC
+uart_tx_state_1.LSR = uart_tx_a/uart_tx_state_2__N_542
+
+comp 125: uart_tx_a/SLICE_177 (FSLICE)
+uart_tx_a/n5718 = (~uart_tx_state_1*(uart_tx_state_2*~uart_tx_start)+uart_tx_state_1*(~uart_tx_state_0*(uart_tx_state_2*~uart_tx_start)+uart_tx_state_0*(~uart_tx_state_2+~uart_tx_start)))
+uart_tx_state_2.D = uart_tx_a/n5718
+uart_tx_state_2.CLK = uart_divider[3]
+uart_tx_state_2.SP = VCC
+uart_tx_state_2.LSR = uart_tx_a/uart_tx_state_2__N_542
+uart_tx_a/uart_divider_3_enable_2 = (~uart_tx_a/n4*(~uart_tx_state_2+uart_tx_start)+uart_tx_a/n4*(~uart_tx_state_2*(uart_tx_start+uart_tx_state_0)+uart_tx_state_2*uart_tx_start))
+
+comp 126: uart_tx_a/i4157/SLICE_178 (FSLICE)
+uart_tx_a/n5553 = (((uart_tx_register_2*~uart_tx_a/uart_tx_bit_0)+(uart_tx_register_3*uart_tx_a/uart_tx_bit_0))*uart_tx_a/uart_tx_bit_1)+(((~uart_tx_a/uart_tx_bit_0*uart_tx_register_0)+(uart_tx_a/uart_tx_bit_0*uart_tx_register_1))*~uart_tx_a/uart_tx_bit_1)
+uart_tx_a/uart_tx_pin_N_550 = (uart_tx_a/n5553*~uart_tx_a/uart_tx_bit_2)+(uart_tx_a/n5554*uart_tx_a/uart_tx_bit_2)
+
+comp 127: uart_tx_a/i4158/SLICE_179 (FSLICE)
+uart_tx_a/n5554 = (((uart_tx_register_6*~uart_tx_a/uart_tx_bit_0)+(uart_tx_register_7*uart_tx_a/uart_tx_bit_0))*uart_tx_a/uart_tx_bit_1)+(((~uart_tx_a/uart_tx_bit_0*uart_tx_register_4)+(uart_tx_a/uart_tx_bit_0*uart_tx_register_5))*~uart_tx_a/uart_tx_bit_1)
+
+comp 128: i4143/SLICE_180 (FSLICE)
+n5539 = (((frame_content_33*~uart_frame_cnt_2)+(frame_content_1*uart_frame_cnt_2))*uart_frame_cnt_0)+(((~uart_frame_cnt_2*frame_content_41)+(uart_frame_cnt_2*frame_content_9))*~uart_frame_cnt_0)
+
+comp 129: i25/SLICE_181 (FSLICE)
+n8 = (((runup_state_r_0__N_76*~state_1*~state_4)+(state_1*state_4)+(result_content_46__N_186*state_1))*state_0)+(((n5445*state_1*~state_4)+(n40*~state_1*~state_4)+(n40*n5445*~state_4))*~state_0)
+
+comp 130: i4137/SLICE_182 (FSLICE)
+n5533 = (((frame_content_35*~uart_frame_cnt_2)+(frame_content_3*uart_frame_cnt_2))*uart_frame_cnt_0)+(((~uart_frame_cnt_2*frame_content_43)+(uart_frame_cnt_2*frame_content_11))*~uart_frame_cnt_0)
+
+comp 131: i4146/SLICE_183 (FSLICE)
+n5542 = (((frame_content_32*~uart_frame_cnt_2)+(frame_content_0*uart_frame_cnt_2))*uart_frame_cnt_0)+(((~uart_frame_cnt_2*frame_content_40)+(uart_frame_cnt_2*frame_content_8))*~uart_frame_cnt_0)
+
+comp 132: i4162/SLICE_184 (FSLICE)
+n5558 = (((frame_content_38*~uart_frame_cnt_2)+(frame_content_6*uart_frame_cnt_2))*uart_frame_cnt_0)+(((~uart_frame_cnt_2*frame_content_46)+(uart_frame_cnt_2*frame_content_14))*~uart_frame_cnt_0)
+
+comp 133: i4165/SLICE_185 (FSLICE)
+n5561 = (((frame_content_37*~uart_frame_cnt_2)+(frame_content_5*uart_frame_cnt_2))*uart_frame_cnt_0)+(((~uart_frame_cnt_2*frame_content_45)+(uart_frame_cnt_2*frame_content_13))*~uart_frame_cnt_0)
+
+comp 134: i4168/SLICE_186 (FSLICE)
+n5564 = (((frame_content_36*~uart_frame_cnt_2)+(frame_content_4*uart_frame_cnt_2))*uart_frame_cnt_0)+(((~uart_frame_cnt_2*frame_content_44)+(uart_frame_cnt_2*frame_content_12))*~uart_frame_cnt_0)
+
+comp 135: i4264/SLICE_187 (FSLICE)
+n5695 = ((sw_dn_c*~state_1)*state_4)+(((~state_1*~sw_up_N_497)+(state_1*~runup_state_r_0))*~state_4)
+
+comp 136: i4140/SLICE_188 (FSLICE)
+n5536 = (((frame_content_34*~uart_frame_cnt_2)+(frame_content_2*uart_frame_cnt_2))*uart_frame_cnt_0)+(((~uart_frame_cnt_2*frame_content_42)+(uart_frame_cnt_2*frame_content_10))*~uart_frame_cnt_0)
+
+comp 137: SLICE_189 (FSLICE)
+n4866 = (~cnt_stat_2*(~cnt_stat_3*cnt_stat_5+cnt_stat_3*(cnt_stat_5+cnt_stat_1))+cnt_stat_2*(cnt_stat_5+cnt_stat_3))
+frame_content_33.D = result_content_33
+frame_content_33.CLK = uart_divider[3]
+frame_content_33.SP = uart_divider_3_enable_51
+frame_content_33.LSR = GND
+n4869 = (~n4866*(cnt_stat_6*(runup_state_r_0+cnt_stat_5))+n4866*(~cnt_stat_6*runup_state_r_0+cnt_stat_6*(runup_state_r_0+cnt_stat_5)))
+frame_content_34.D = result_content_34
+frame_content_34.CLK = uart_divider[3]
+frame_content_34.SP = uart_divider_3_enable_51
+frame_content_34.LSR = GND
+
+comp 138: SLICE_190 (FSLICE)
+cnt_5_enable_72 = (~n5762*((~n5798*~state_0)+cnt_5_enable_70)+n5762*(cnt_5_enable_70*(state_0+n5798)))
+cnt_5_enable_70 = (~state_1*~state_4+state_1*(~state_4+state_0))
+
+comp 139: SLICE_191 (FSLICE)
+cnt_5__N_296 = (~n5107*(~cnt_3*(cnt[5]*cnt_4)+cnt_3*cnt[5])+n5107*cnt[5])
+comp_fast.D = comp_fast_sync
+comp_fast.CLK = mclk_c
+comp_fast.SP = VCC
+comp_fast.LSR = GND
+n5107 = (cnt_0*(cnt_1*cnt_2))
+comp_fast_sync.D = ~comp_ext_c
+comp_fast_sync.CLK = mclk_c
+comp_fast_sync.SP = VCC
+comp_fast_sync.LSR = GND
+
+comp 140: SLICE_192 (FSLICE)
+n5464 = (((n5757+n5758)+cnt_5_enable_50)+n2003)
+frame_content_42.D = result_content_42
+frame_content_42.CLK = uart_divider[3]
+frame_content_42.SP = uart_divider_3_enable_51
+frame_content_42.LSR = GND
+n2003 = (state_4*(cstart_slow*(state_0*state_1)))
+frame_content_43.D = result_content_43
+frame_content_43.CLK = uart_divider[3]
+frame_content_43.SP = uart_divider_3_enable_51
+frame_content_43.LSR = GND
+
+comp 141: SLICE_193 (FSLICE)
+n6_adj_667 = (cnt_stat_4+cnt_stat_1)
+frame_content_0.D = result_content_0
+frame_content_0.CLK = uart_divider[3]
+frame_content_0.SP = uart_divider_3_enable_51
+frame_content_0.LSR = GND
+n5762 = (((cnt_stat_0+n5764)+n5794)+n6_adj_667)
+frame_content_9.D = result_content_9
+frame_content_9.CLK = uart_divider[3]
+frame_content_9.SP = uart_divider_3_enable_51
+frame_content_9.LSR = GND
+
+comp 142: SLICE_194 (FSLICE)
+sw_up_N_497 = ((~cnt_stat_4*n4869+cnt_stat_4*n52)+n3324)
+n3324 = (((n5472+n5495)+cnt_stat_10)+cnt_stat_7)
+
+comp 143: SLICE_195 (FSLICE)
+n5756 = (~runup_state_r_0__N_75*(~n5789*n5445)+runup_state_r_0__N_75*((~n5789*n5445)+n5761))
+frame_content_20.D = result_content_20
+frame_content_20.CLK = uart_divider[3]
+frame_content_20.SP = uart_divider_3_enable_51
+frame_content_20.LSR = GND
+n5445 = (((n5779*cnt_stat_4)+n3324)+n5797)
+frame_content_21.D = result_content_21
+frame_content_21.CLK = uart_divider[3]
+frame_content_21.SP = uart_divider_3_enable_51
+frame_content_21.LSR = GND
+
+comp 144: SLICE_196 (FSLICE)
+n5757 = (runup_state_r_0__N_76*(runup_state_r_0__N_75*(~n5798*state_0)))
+frame_content_22.D = result_content_22
+frame_content_22.CLK = uart_divider[3]
+frame_content_22.SP = uart_divider_3_enable_51
+frame_content_22.LSR = GND
+n5798 = (state_1+state_4)
+frame_content_23.D = result_content_23
+frame_content_23.CLK = uart_divider[3]
+frame_content_23.SP = uart_divider_3_enable_51
+frame_content_23.LSR = GND
+
+comp 145: SLICE_197 (FSLICE)
+n5758 = (~n5771*(~n5789*(n5797+n3324))+n5771*~n5789)
+n5797 = (cnt_stat_6+cnt_stat_5)
+
+comp 146: SLICE_198 (FSLICE)
+n5789 = (~state_1+(state_4+state_0))
+frame_content_46.D = result_content_46
+frame_content_46.CLK = uart_divider[3]
+frame_content_46.SP = uart_divider_3_enable_51
+frame_content_46.LSR = GND
+n2919 = (~n5761*(~n5445+n5789)+n5761*(~n5445*runup_state_r_0__N_75+n5445*(runup_state_r_0__N_75*n5789)))
+frame_content_4.D = result_content_4
+frame_content_4.CLK = uart_divider[3]
+frame_content_4.SP = uart_divider_3_enable_51
+frame_content_4.LSR = GND
+
+comp 147: SLICE_199 (FSLICE)
+runup_state_r_0__N_76 = (~n4413*n3324+n4413*(~cnt_stat_5*n3324+cnt_stat_5*(cnt_stat_6+n3324)))
+frame_content_35.D = result_content_35
+frame_content_35.CLK = uart_divider[3]
+frame_content_35.SP = uart_divider_3_enable_51
+frame_content_35.LSR = GND
+n4413 = (((cnt_stat_2+cnt_stat_3)+cnt_stat_4)+n5795)
+frame_content_36.D = result_content_36
+frame_content_36.CLK = uart_divider[3]
+frame_content_36.SP = uart_divider_3_enable_51
+frame_content_36.LSR = GND
+
+comp 148: SLICE_200 (FSLICE)
+n5771 = (~n5795*(cnt_stat_4*(cnt_stat_2+cnt_stat_3))+n5795*cnt_stat_4)
+frame_content_26.D = result_content_26
+frame_content_26.CLK = uart_divider[3]
+frame_content_26.SP = uart_divider_3_enable_51
+frame_content_26.LSR = GND
+n5795 = (cnt_stat_0*cnt_stat_1)
+frame_content_2.D = result_content_2
+frame_content_2.CLK = uart_divider[3]
+frame_content_2.SP = uart_divider_3_enable_51
+frame_content_2.LSR = GND
+
+comp 149: SLICE_201 (FSLICE)
+n5777 = (cnt_stat_3*(cnt_stat_2*(cnt_stat_0*cnt_stat_1)))
+frame_content_44.D = result_content_44
+frame_content_44.CLK = uart_divider[3]
+frame_content_44.SP = uart_divider_3_enable_51
+frame_content_44.LSR = GND
+n3267 = (~cnt_stat_4*(cnt_stat_6+cnt_stat_5)+cnt_stat_4*((cnt_stat_6+cnt_stat_5)+n5777))
+frame_content_45.D = result_content_45
+frame_content_45.CLK = uart_divider[3]
+frame_content_45.SP = uart_divider_3_enable_51
+frame_content_45.LSR = GND
+
+comp 150: SLICE_202 (FSLICE)
+n5796 = ((cnt_stat_13+cnt_stat_14)+cnt_stat_12)
+frame_content_5.D = result_content_5
+frame_content_5.CLK = uart_divider[3]
+frame_content_5.SP = uart_divider_3_enable_51
+frame_content_5.LSR = GND
+n40 = (~cnt_stat_11*n5796+cnt_stat_11*(~n10_adj_664*n5796+n10_adj_664*(n5796+cnt_stat_10)))
+frame_content_6.D = result_content_6
+frame_content_6.CLK = uart_divider[3]
+frame_content_6.SP = uart_divider_3_enable_51
+frame_content_6.LSR = GND
+
+comp 151: SLICE_203 (FSLICE)
+n5495 = (((cnt_stat_13+cnt_stat_14)+cnt_stat_12)+cnt_stat_11)
+frame_content_12.D = result_content_12
+frame_content_12.CLK = uart_divider[3]
+frame_content_12.SP = uart_divider_3_enable_51
+frame_content_12.LSR = GND
+result_content_46__N_186 = (~n5472*(~n8_adj_683*n5495+n8_adj_683*(cnt_stat_10+n5495))+n5472*(cnt_stat_10+n5495))
+frame_content_13.D = result_content_13
+frame_content_13.CLK = uart_divider[3]
+frame_content_13.SP = uart_divider_3_enable_51
+frame_content_13.LSR = GND
+
+comp 152: SLICE_204 (FSLICE)
+cnt_5_enable_54 = (~state_0*(~state_4*~state_1))
+comp_slow.D = comp_slow_sync
+comp_slow.CLK = cnt[5]
+comp_slow.SP = VCC
+comp_slow.LSR = GND
+n5 = (~cstart_slow+((n40*cnt_5_enable_54)+n5781))
+comp_slow_sync.D = ~comp_ext_c
+comp_slow_sync.CLK = cnt[5]
+comp_slow_sync.SP = VCC
+comp_slow_sync.LSR = GND
+
+comp 153: SLICE_205 (FSLICE)
+n8_adj_683 = (~cnt_stat_5*(cnt_stat_6*cnt_stat_7)+cnt_stat_5*(~n43*(cnt_stat_6*cnt_stat_7)+n43*cnt_stat_7))
+frame_content_37.D = result_content_37
+frame_content_37.CLK = uart_divider[3]
+frame_content_37.SP = uart_divider_3_enable_51
+frame_content_37.LSR = GND
+n43 = ((cnt_stat_2*(n5795*cnt_stat_3))+cnt_stat_4)
+frame_content_38.D = result_content_38
+frame_content_38.CLK = uart_divider[3]
+frame_content_38.SP = uart_divider_3_enable_51
+frame_content_38.LSR = GND
+
+comp 154: SLICE_206 (FSLICE)
+n5800 = (state_0*state_1)
+frame_content_1.D = result_content_1
+frame_content_1.CLK = uart_divider[3]
+frame_content_1.SP = uart_divider_3_enable_51
+frame_content_1.LSR = GND
+n2029 = (~comp_fast*(~runup_state_r_0*(n5800*~state_4))+comp_fast*(runup_state_r_0*(n5800*~state_4)))
+frame_content_19.D = result_content_19
+frame_content_19.CLK = uart_divider[3]
+frame_content_19.SP = uart_divider_3_enable_51
+frame_content_19.LSR = GND
+
+comp 155: SLICE_207 (FSLICE)
+cnt_5_enable_43 = (uart_rx_register_6*(n6*(cnt_5_enable_1*~uart_rx_register_5)))
+frame_content_7.D = result_content_7
+frame_content_7.CLK = uart_divider[3]
+frame_content_7.SP = uart_divider_3_enable_51
+frame_content_7.LSR = GND
+cnt_5_enable_1 = (~uart_rx_state_1*(~uart_rx_state_0*uart_rx_ready))
+frame_content_8.D = result_content_8
+frame_content_8.CLK = uart_divider[3]
+frame_content_8.SP = uart_divider_3_enable_51
+frame_content_8.LSR = GND
+
+comp 156: SLICE_208 (FSLICE)
+uart_rx_a/n5768 = (~uart_rx_a/uart_divider_0_enable_5+(~uart_rx_a/uart_rx_cnt_0+(~uart_rx_a/n5790+uart_rx_a/n5791)))
+rundown_sign.D = runup_state_r_0
+rundown_sign.CLK = cnt[5]
+rundown_sign.SP = cnt_5_enable_51
+rundown_sign.LSR = GND
+uart_rx_a/n5468 = (((uart_rx_a/uart_rx_bit_2+uart_rx_a/uart_rx_bit_1)+uart_rx_a/uart_rx_bit_0)+uart_rx_a/n5768)
+
+comp 157: SLICE_209 (FSLICE)
+uart_rx_a/n5767 = ((~uart_rx_a/uart_rx_cnt_0+(~uart_rx_a/uart_divider_0_enable_5+uart_rx_a/n5774))+uart_rx_a/uart_rx_bit_0)
+result_content_39.D = runup_cnt_7
+result_content_39.CLK = cnt[5]
+result_content_39.SP = cnt_5_enable_50
+result_content_39.LSR = GND
+uart_rx_a/uart_divider_0_enable_5 = (~uart_rx_a/uart_rx_state_1*(uart_rx_a/uart_rx_state_0*~uart_rx_a/uart_rx_state_2))
+result_content_3.D = rundown_cnt_3
+result_content_3.CLK = cnt[5]
+result_content_3.SP = cnt_5_enable_50
+result_content_3.LSR = GND
+
+comp 158: SLICE_210 (FSLICE)
+uart_rx_a/n5790 = (uart_rx_a/uart_rx_cnt_2*uart_rx_a/uart_rx_cnt_1)
+result_content_7.D = rundown_cnt_7
+result_content_7.CLK = cnt[5]
+result_content_7.SP = cnt_5_enable_50
+result_content_7.LSR = GND
+uart_rx_a/n4 = (~uart_rx_a/uart_rx_cnt_0*(~uart_rx_a/n4374*(~uart_rx_a/n5790+uart_rx_a/n5791))+uart_rx_a/uart_rx_cnt_0*~uart_rx_a/n4374)
+result_content_8.D = rundown_cnt_8
+result_content_8.CLK = cnt[5]
+result_content_8.SP = cnt_5_enable_50
+result_content_8.LSR = GND
+
+comp 159: SLICE_211 (FSLICE)
+uart_rx_a/n5773 = (uart_rx_a/uart_rx_cnt_0*(uart_rx_a/uart_rx_cnt_2*uart_rx_a/uart_rx_cnt_1))
+runup_set_4.D = uart_rx_register_1
+runup_set_4.CLK = cnt[5]
+runup_set_4.SP = cnt_5_enable_43
+runup_set_4.LSR = n3726
+uart_rx_a/n20 = (~uart_rx_a/uart_rx_state_0*uart_rx_a/uart_rx_state_1+uart_rx_a/uart_rx_state_0*(~uart_rx_a/uart_rx_state_1*(~uart_rx_a/n5773+uart_rx_a/n5791)))
+runup_set_5.D = uart_rx_register_2
+runup_set_5.CLK = cnt[5]
+runup_set_5.SP = cnt_5_enable_43
+runup_set_5.LSR = n3726
+
+comp 160: SLICE_212 (FSLICE)
+uart_rx_a/n5770 = (~uart_rx_a/uart_rx_cnt_0+((~uart_rx_a/uart_rx_cnt_2+~uart_rx_a/uart_rx_cnt_1)+uart_rx_a/n5791))
+result_content_40.D = runup_cnt_8
+result_content_40.CLK = cnt[5]
+result_content_40.SP = cnt_5_enable_50
+result_content_40.LSR = GND
+uart_rx_a/n4262 = (~uart_rx_a/n5770*(~uart_rx_a/uart_divider_0_enable_5*uart_rx_a/n5763)+uart_rx_a/n5770*(~uart_rx_a/uart_divider_0_enable_5*uart_rx_a/n5763+uart_rx_a/uart_divider_0_enable_5*(uart_rx_a/uart_rx_pin*uart_rx_a/n5763)))
+result_content_41.D = runup_cnt_9
+result_content_41.CLK = cnt[5]
+result_content_41.SP = cnt_5_enable_50
+result_content_41.LSR = GND
+
+comp 161: SLICE_213 (FSLICE)
+uart_rx_a/n5791 = (uart_rx_a/uart_rx_cnt_3+uart_rx_a/uart_rx_cnt_4)
+result_content_24.D = runup_set_8
+result_content_24.CLK = cnt[5]
+result_content_24.SP = cnt_5_enable_50
+result_content_24.LSR = GND
+uart_rx_a/n5763 = (((~uart_rx_a/n5790+uart_rx_a/n5791)+uart_rx_a/n4374)+uart_rx_a/uart_rx_cnt_0)
+result_content_25.D = runup_set_9
+result_content_25.CLK = cnt[5]
+result_content_25.SP = cnt_5_enable_50
+result_content_25.LSR = GND
+
+comp 162: SLICE_214 (FSLICE)
+uart_rx_a/n5774 = (~uart_rx_a/uart_rx_cnt_1+(~uart_rx_a/uart_rx_cnt_2+(uart_rx_a/uart_rx_cnt_3+uart_rx_a/uart_rx_cnt_4)))
+result_content_42.D = runup_cnt_10
+result_content_42.CLK = cnt[5]
+result_content_42.SP = cnt_5_enable_50
+result_content_42.LSR = GND
+uart_rx_a/n5765 = (~uart_rx_a/uart_rx_bit_0+(~uart_rx_a/uart_rx_cnt_0+(~uart_rx_a/uart_divider_0_enable_5+uart_rx_a/n5774)))
+result_content_43.D = runup_cnt_11
+result_content_43.CLK = cnt[5]
+result_content_43.SP = cnt_5_enable_50
+result_content_43.LSR = GND
+
+comp 163: uart_rx_a/SLICE_215 (FSLICE)
+uart_rx_a/n5527 = (((uart_rx_a/n5804+uart_rx_a/uart_rx_cnt_2)+uart_rx_a/uart_rx_cnt_4)+uart_rx_a/uart_rx_cnt_1)
+uart_rx_a/n5804 = (uart_rx_a/uart_rx_zero_cnt_1*uart_rx_a/uart_rx_zero_cnt_0)
+
+comp 164: SLICE_216 (FSLICE)
+uart_rx_a/n5480 = ((~uart_rx_a/uart_rx_bit_0+(~uart_rx_a/uart_rx_bit_2+uart_rx_a/uart_rx_bit_1))+uart_rx_a/n5768)
+result_content_26.D = runup_set_10
+result_content_26.CLK = cnt[5]
+result_content_26.SP = cnt_5_enable_50
+result_content_26.LSR = GND
+uart_rx_a/n5467 = ((~uart_rx_a/uart_rx_bit_0+(uart_rx_a/uart_rx_bit_2+uart_rx_a/uart_rx_bit_1))+uart_rx_a/n5768)
+result_content_2.D = rundown_cnt_2
+result_content_2.CLK = cnt[5]
+result_content_2.SP = cnt_5_enable_50
+result_content_2.LSR = GND
+
+comp 165: SLICE_217 (FSLICE)
+uart_rx_a/n5479 = (((~uart_rx_a/uart_rx_bit_2+uart_rx_a/uart_rx_bit_1)+uart_rx_a/uart_rx_bit_0)+uart_rx_a/n5768)
+result_content_31.D = rundown_sign
+result_content_31.CLK = cnt[5]
+result_content_31.SP = cnt_5_enable_50
+result_content_31.LSR = GND
+uart_rx_a/n5484 = (((~uart_rx_a/uart_rx_bit_1+uart_rx_a/uart_rx_bit_2)+uart_rx_a/uart_rx_bit_0)+uart_rx_a/n5768)
+result_content_32.D = runup_cnt_0
+result_content_32.CLK = cnt[5]
+result_content_32.SP = cnt_5_enable_50
+result_content_32.LSR = GND
+
+comp 166: SLICE_218 (FSLICE)
+uart_rx_a/uart_divider_0_enable_12 = (((~uart_rx_a/n5763+~uart_rx_a/n5766)+uart_rx_rst)+uart_rx_a/n2099)
+result_content_9.D = rundown_cnt_9
+result_content_9.CLK = cnt[5]
+result_content_9.SP = cnt_5_enable_50
+result_content_9.LSR = GND
+uart_rx_a/uart_divider_0_enable_1 = ((~uart_rx_a/n5763+(~uart_rx_a/n5766+uart_rx_a/n2099))+uart_rx_rst)
+
+comp 167: SLICE_219 (FSLICE)
+uart_tx_a/n5477 = (uart_tx_state_2*(~uart_tx_state_0*~uart_tx_state_1))
+uart_divider_3_enable_52 = (~uart_tx_state_1*(uart_tx_state_0*~uart_tx_state_2)+uart_tx_state_1*(~uart_tx_state_0*~uart_tx_state_2))
+
+comp 168: SLICE_220 (FSLICE)
+uart_tx_a/uart_tx_busy_N_557 = (~uart_tx_state_2*(~uart_tx_state_0*~uart_tx_state_1))
+uart_rx_register_0.D = uart_rx_a/uart_rx_tmp_0
+uart_rx_register_0.CLK = uart_divider[0]
+uart_rx_register_0.SP = uart_rx_a/uart_divider_0_enable_11
+uart_rx_register_0.LSR = GND
+uart_tx_a/uart_tx_state_2__N_542 = (~uart_tx_state_1*(uart_tx_state_0*~uart_tx_state_2))
+uart_rx_register_1.D = uart_rx_a/uart_rx_tmp_1
+uart_rx_register_1.CLK = uart_divider[0]
+uart_rx_register_1.SP = uart_rx_a/uart_divider_0_enable_11
+uart_rx_register_1.LSR = GND
+
+comp 169: SLICE_221 (FSLICE)
+uart_tx_a/n5786 = (~uart_tx_a/uart_tx_bit_0+(~uart_tx_a/uart_tx_bit_2+~uart_tx_a/uart_tx_bit_1))
+uart_rx_a/uart_rx_pin_tmp.D = deb_0_c_c
+uart_rx_a/uart_rx_pin_tmp.CLK = uart_divider[0]
+uart_rx_a/uart_rx_pin_tmp.SP = VCC
+uart_rx_a/uart_rx_pin_tmp.LSR = GND
+uart_tx_a/n4 = (~uart_tx_a/uart_tx_bit_0*uart_tx_state_1+uart_tx_a/uart_tx_bit_0*(uart_tx_state_1*(~uart_tx_a/uart_tx_bit_2+~uart_tx_a/uart_tx_bit_1)))
+
+comp 170: SLICE_222 (FSLICE)
+cnt_5_enable_52 = (~state_0*(~n5762*(~state_4*~state_1)))
+cstart_slow.D = cstart_slow_sync
+cstart_slow.CLK = cnt[5]
+cstart_slow.SP = VCC
+cstart_slow.LSR = GND
+n3734 = (~state_1*(n8*~state_4)+state_1*(~state_0*(n8*~state_4)+state_0*n8))
+cstart_slow_sync.D = con_start_c
+cstart_slow_sync.CLK = cnt[5]
+cstart_slow_sync.SP = VCC
+cstart_slow_sync.LSR = GND
+
+comp 171: SLICE_223 (FSLICE)
+n47 = (~state_0*(~state_4*state_1)+state_0*(~state_4*~state_1))
+frame_content_10.D = result_content_10
+frame_content_10.CLK = uart_divider[3]
+frame_content_10.SP = uart_divider_3_enable_51
+frame_content_10.LSR = GND
+cnt_5_enable_50 = (~state_4*(result_content_46__N_186*(state_0*state_1)))
+frame_content_11.D = result_content_11
+frame_content_11.CLK = uart_divider[3]
+frame_content_11.SP = uart_divider_3_enable_51
+frame_content_11.LSR = GND
+
+comp 172: SLICE_224 (FSLICE)
+uart_rx_a/n6 = (uart_rx_a/uart_rx_cnt_3*(~uart_rx_a/uart_rx_state_0*(~uart_rx_a/uart_rx_state_2*uart_rx_a/uart_rx_state_1)))
+result_content_35.D = runup_cnt_3
+result_content_35.CLK = cnt[5]
+result_content_35.SP = cnt_5_enable_50
+result_content_35.LSR = GND
+uart_rx_a/uart_divider_0_enable_3 = (~uart_rx_a/uart_rx_state_1*uart_rx_rst+uart_rx_a/uart_rx_state_1*((uart_rx_a/uart_rx_state_0*~uart_rx_a/uart_rx_state_2)+uart_rx_rst))
+result_content_36.D = runup_cnt_4
+result_content_36.CLK = cnt[5]
+result_content_36.SP = cnt_5_enable_50
+result_content_36.LSR = GND
+
+comp 173: SLICE_225 (FSLICE)
+uart_rx_a/n3546 = (~uart_rx_a/n4374*(uart_rx_a/uart_rx_tmp_7*(uart_rx_a/uart_rx_cnt_0+uart_rx_a/n5774))+uart_rx_a/n4374*uart_rx_a/uart_rx_tmp_7)
+result_content_44.D = runup_cnt_12
+result_content_44.CLK = cnt[5]
+result_content_44.SP = cnt_5_enable_50
+result_content_44.LSR = GND
+uart_rx_a/n3550 = (~uart_rx_a/n4374*(uart_rx_a/uart_rx_tmp_6*(uart_rx_a/uart_rx_cnt_0+uart_rx_a/n5774))+uart_rx_a/n4374*uart_rx_a/uart_rx_tmp_6)
+result_content_45.D = runup_cnt_13
+result_content_45.CLK = cnt[5]
+result_content_45.SP = cnt_5_enable_50
+result_content_45.LSR = GND
+
+comp 174: SLICE_226 (FSLICE)
+uart_rx_a/n5485 = ((~uart_rx_a/uart_rx_bit_0+(~uart_rx_a/uart_rx_bit_1+uart_rx_a/uart_rx_bit_2))+uart_rx_a/n5768)
+result_content_33.D = runup_cnt_1
+result_content_33.CLK = cnt[5]
+result_content_33.SP = cnt_5_enable_50
+result_content_33.LSR = GND
+uart_rx_a/n5782 = (uart_rx_a/uart_rx_bit_2*(uart_rx_a/uart_rx_bit_0*uart_rx_a/uart_rx_bit_1))
+result_content_34.D = runup_cnt_2
+result_content_34.CLK = cnt[5]
+result_content_34.SP = cnt_5_enable_50
+result_content_34.LSR = GND
+
+comp 175: SLICE_227 (FSLICE)
+n5794 = (cnt_stat_2+cnt_stat_3)
+frame_content_31.D = result_content_31
+frame_content_31.CLK = uart_divider[3]
+frame_content_31.SP = uart_divider_3_enable_51
+frame_content_31.LSR = GND
+n5779 = (((cnt_stat_0*cnt_stat_1)+cnt_stat_3)+cnt_stat_2)
+frame_content_32.D = result_content_32
+frame_content_32.CLK = uart_divider[3]
+frame_content_32.SP = uart_divider_3_enable_51
+frame_content_32.LSR = GND
+
+comp 176: SLICE_228 (FSLICE)
+n5472 = (cnt_stat_9+cnt_stat_8)
+frame_content_14.D = result_content_14
+frame_content_14.CLK = uart_divider[3]
+frame_content_14.SP = uart_divider_3_enable_51
+frame_content_14.LSR = GND
+n10_adj_664 = (cnt_stat_9*(n3267*(cnt_stat_8*cnt_stat_7)))
+frame_content_15.D = result_content_15
+frame_content_15.CLK = uart_divider[3]
+frame_content_15.SP = uart_divider_3_enable_51
+frame_content_15.LSR = GND
+
+comp 177: SLICE_229 (FSLICE)
+uart_rx_a/n5799 = (uart_rx_a/uart_rx_bit_2*uart_rx_a/uart_rx_bit_1)
+result_content_46.D = runup_cnt_14
+result_content_46.CLK = cnt[5]
+result_content_46.SP = cnt_5_enable_50
+result_content_46.LSR = GND
+uart_rx_a/n10 = ((~uart_rx_a/uart_rx_bit_2+~uart_rx_a/uart_rx_bit_1)+uart_rx_a/uart_rx_cnt_3)
+result_content_4.D = rundown_cnt_4
+result_content_4.CLK = cnt[5]
+result_content_4.SP = cnt_5_enable_50
+result_content_4.LSR = GND
+
+comp 178: uart_rx_a/SLICE_230 (FSLICE)
+uart_rx_a/n5803 = (uart_rx_a/uart_rx_cnt_0*uart_rx_a/uart_rx_cnt_1)
+uart_rx_a/n5783 = (uart_rx_a/uart_rx_cnt_2*(uart_rx_a/uart_rx_cnt_0*uart_rx_a/uart_rx_cnt_1))
+
+comp 179: SLICE_231 (FSLICE)
+n4276 = (uart_frame_cnt_1*uart_frame_cnt_2)
+frame_content_3.D = result_content_3
+frame_content_3.CLK = uart_divider[3]
+frame_content_3.SP = uart_divider_3_enable_51
+frame_content_3.LSR = GND
+n2262 = (~uart_frame_cnt_2*frame_content_39+uart_frame_cnt_2*frame_content_7)
+frame_content_39.D = result_content_39
+frame_content_39.CLK = uart_divider[3]
+frame_content_39.SP = uart_divider_3_enable_51
+frame_content_39.LSR = GND
+
+comp 180: SLICE_232 (FSLICE)
+n5764 = ((cnt_stat_6+cnt_stat_5)+n3324)
+frame_content_24.D = result_content_24
+frame_content_24.CLK = uart_divider[3]
+frame_content_24.SP = uart_divider_3_enable_51
+frame_content_24.LSR = GND
+n52 = (~n4866*runup_state_r_0+n4866*(cnt_stat_6+runup_state_r_0))
+frame_content_25.D = result_content_25
+frame_content_25.CLK = uart_divider[3]
+frame_content_25.SP = uart_divider_3_enable_51
+frame_content_25.LSR = GND
+
+comp 181: SLICE_233 (FSLICE)
+cnt_5_enable_51 = (~state_4*(state_0*state_1))
+frame_content_40.D = result_content_40
+frame_content_40.CLK = uart_divider[3]
+frame_content_40.SP = uart_divider_3_enable_51
+frame_content_40.LSR = GND
+cnt_5_enable_55 = (~n40*~cstart_slow+n40*(~cstart_slow+(~n5798*~state_0)))
+frame_content_41.D = result_content_41
+frame_content_41.CLK = uart_divider[3]
+frame_content_41.SP = uart_divider_3_enable_51
+frame_content_41.LSR = GND
+
+comp 182: SLICE_234 (FSLICE)
+uart_rx_a/n5793 = (uart_rx_a/uart_rx_state_2+uart_rx_a/uart_rx_state_1)
+result_content_5.D = rundown_cnt_5
+result_content_5.CLK = cnt[5]
+result_content_5.SP = cnt_5_enable_50
+result_content_5.LSR = GND
+uart_rx_a/n2113 = (uart_rx_a/n20*(~uart_rx_a/uart_rx_pin*~uart_rx_a/uart_rx_state_2))
+result_content_6.D = rundown_cnt_6
+result_content_6.CLK = cnt[5]
+result_content_6.SP = cnt_5_enable_50
+result_content_6.LSR = GND
+
+comp 183: uart_rx_a/SLICE_235 (FSLICE)
+uart_rx_a/n14 = (~uart_rx_a/n5773+(~uart_rx_a/uart_rx_bit_0+(uart_rx_a/uart_rx_bit_4+uart_rx_a/uart_rx_cnt_4)))
+uart_rx_a/n5801 = (uart_rx_a/uart_rx_bit_0*uart_rx_a/uart_rx_bit_1)
+
+comp 184: SLICE_236 (FSLICE)
+uart_tx_a/n5806 = (uart_tx_state_2+uart_tx_state_0)
+uart_rx_register_2.D = uart_rx_a/uart_rx_tmp_2
+uart_rx_register_2.CLK = uart_divider[0]
+uart_rx_register_2.SP = uart_rx_a/uart_divider_0_enable_11
+uart_rx_register_2.LSR = GND
+uart_tx_a/n2069 = (~uart_tx_a/n5*(~uart_tx_a/n5788*(~uart_tx_a/n5805+~uart_tx_a/uart_tx_bit_0))+uart_tx_a/n5*((~uart_tx_a/n5805+~uart_tx_a/uart_tx_bit_0)+uart_tx_a/n5788))
+uart_rx_register_3.D = uart_rx_a/uart_rx_tmp_3
+uart_rx_register_3.CLK = uart_divider[0]
+uart_rx_register_3.SP = uart_rx_a/uart_divider_0_enable_11
+uart_rx_register_3.LSR = GND
+
+comp 185: SLICE_237 (FSLICE)
+uart_rx_a/n5449 = ((~uart_rx_a/n5763+(~uart_rx_a/n5766+uart_rx_a/n2099))+uart_rx_a/n2104)
+result_content_37.D = runup_cnt_5
+result_content_37.CLK = cnt[5]
+result_content_37.SP = cnt_5_enable_50
+result_content_37.LSR = GND
+uart_rx_a/n2119 = (~uart_rx_a/n5792+(~uart_rx_a/n5770*(uart_rx_a/n4*~uart_rx_a/uart_divider_0_enable_5)+uart_rx_a/n5770*(uart_rx_a/uart_divider_0_enable_5+uart_rx_a/n4)))
+result_content_38.D = runup_cnt_6
+result_content_38.CLK = cnt[5]
+result_content_38.SP = cnt_5_enable_50
+result_content_38.LSR = GND

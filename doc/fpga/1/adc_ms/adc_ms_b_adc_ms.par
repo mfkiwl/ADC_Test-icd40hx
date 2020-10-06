@@ -1,0 +1,237 @@
+PAR: Place And Route Diamond (64-bit) 3.11.2.446.
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
+Tue Jul 28 13:17:56 2020
+
+/usr/local/diamond/3.11_x64/ispfpga/bin/lin64/par -f adc_ms_b_adc_ms.p2t
+adc_ms_b_adc_ms_map.ncd adc_ms_b_adc_ms.dir adc_ms_b_adc_ms.prf -gui -msgset
+/home/jarin/storage/main/backup_mg/contest/tah/mm/proj/fpga/1/promote.xml
+
+
+Preference file: adc_ms_b_adc_ms.prf.
+
+Level/       Number       Worst        Timing       Worst        Timing       Run          NCD
+Cost [ncd]   Unrouted     Slack        Score        Slack(hold)  Score(hold)  Time         Status
+----------   --------     -----        ------       -----------  -----------  ----         ------
+5_1   *      0            -            -            -            -            05           Completed
+
+* : Design saved.
+
+Total (real) run time for 1-seed: 5 secs 
+
+par done!
+
+Note: user must run 'Trace' for timing closure signoff.
+
+Lattice Place and Route Report for Design "adc_ms_b_adc_ms_map.ncd"
+Tue Jul 28 13:17:56 2020
+
+PAR: Place And Route Diamond (64-bit) 3.11.2.446.
+Command Line: par -w -l 5 -i 6 -t 1 -c 0 -e 0 -gui -msgset /home/jarin/storage/main/backup_mg/contest/tah/mm/proj/fpga/1/promote.xml -exp parUseNBR=1:parCDP=0:parCDR=0:parPathBased=OFF adc_ms_b_adc_ms_map.ncd adc_ms_b_adc_ms.dir/5_1.ncd adc_ms_b_adc_ms.prf
+Preference file: adc_ms_b_adc_ms.prf.
+Placement level-cost: 5-1.
+Routing Iterations: 6
+
+Loading design for application par from file adc_ms_b_adc_ms_map.ncd.
+Design name: adc_ms
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO1200C
+Package:     TQFP100
+Performance: 3
+Loading device for application par from file 'mj5g17x12.nph' in environment: /usr/local/diamond/3.11_x64/ispfpga.
+Package Status:                     Final          Version 1.19.
+Performance Hardware Data Status: Version 1.94.
+License checked out.
+
+
+Ignore Preference Error(s):  True
+Device utilization summary:
+
+   PIO (prelim)      29/211          13% used
+                     29/73           39% bonded
+   SLICE            196/600          32% used
+
+
+
+Number of Signals: 628
+Number of Connections: 1683
+
+Pin Constraint Summary:
+   29 out of 29 pins locked (100% locked).
+
+The following 4 signals are selected to use the primary clock routing resources:
+    cnt[5] (driver: SLICE_43, clk load #: 75)
+    uart_divider[3] (driver: SLICE_32, clk load #: 39)
+    uart_divider[0] (driver: SLICE_33, clk load #: 24)
+    mclk_c (driver: mclk, clk load #: 12)
+
+The following 2 signals are selected to use the secondary clock routing resources:
+    cnt_5_enable_63 (driver: SLICE_230, clk load #: 0, sr load #: 1, ce load #: 20)
+    uart_divider_3_enable_52 (driver: SLICE_144, clk load #: 0, sr load #: 1, ce load #: 20)
+
+No signal is selected as Global Set/Reset.
+Starting Placer Phase 0.
+..........
+Finished Placer Phase 0.  REAL time: 0 secs 
+
+Starting Placer Phase 1.
+...................
+Placer score = 72219.
+Finished Placer Phase 1.  REAL time: 4 secs 
+
+Starting Placer Phase 2.
+.
+Placer score =  71888
+Finished Placer Phase 2.  REAL time: 4 secs 
+
+
+------------------ Clock Report ------------------
+
+Global Clock Resources:
+  CLK_PIN    : 1 out of 4 (25%)
+  PLL        : 0 out of 1 (0%)
+
+Global Clocks:
+  PRIMARY "cnt[5]" from Q1 on comp "SLICE_43" on site "R7C2C", clk load = 75
+  PRIMARY "uart_divider[3]" from Q1 on comp "SLICE_32" on site "R6C2B", clk load = 39
+  PRIMARY "uart_divider[0]" from Q0 on comp "SLICE_33" on site "R6C2A", clk load = 24
+  PRIMARY "mclk_c" from comp "mclk" on CLK_PIN site "40 (PB7F)", clk load = 12
+  SECONDARY "cnt_5_enable_63" from F1 on comp "SLICE_230" on site "R10C2C", clk load = 0, ce load = 20, sr load = 1
+  SECONDARY "uart_divider_3_enable_52" from F1 on comp "SLICE_144" on site "R10C2A", clk load = 0, ce load = 20, sr load = 1
+
+  PRIMARY  : 4 out of 4 (100%)
+  SECONDARY: 2 out of 4 (50%)
+
+--------------- End of Clock Report ---------------
+
+
+I/O Usage Summary (final):
+   29 out of 211 (13.7%) PIO sites used.
+   29 out of 73 (39.7%) bonded PIO sites used.
+   Number of PIO comps: 29; differential: 0.
+   Number of Vref pins used: 0.
+
+I/O Bank Usage Summary:
++----------+---------------+------------+------------+------------+
+| I/O Bank | Usage         | Bank Vccio | Bank Vref1 | Bank Vref2 |
++----------+---------------+------------+------------+------------+
+| 0        | 1 / 10 ( 10%) | 3.3V       | -          | -          |
+| 1        | 3 / 8 ( 37%)  | 3.3V       | -          | -          |
+| 2        | 2 / 10 ( 20%) | 3.3V       | -          | -          |
+| 3        | 7 / 11 ( 63%) | 3.3V       | -          | -          |
+| 4        | 7 / 8 ( 87%)  | 3.3V       | -          | -          |
+| 5        | 4 / 5 ( 80%)  | 3.3V       | -          | -          |
+| 6        | 2 / 10 ( 20%) | 3.3V       | -          | -          |
+| 7        | 3 / 11 ( 27%) | 3.3V       | -          | -          |
++----------+---------------+------------+------------+------------+
+
+Total placer CPU time: 3 secs 
+
+Dumping design to file adc_ms_b_adc_ms.dir/5_1.ncd.
+
+
+-----------------------------------------------------------------
+INFO - par: ASE feature is off due to non timing-driven settings.  
+-----------------------------------------------------------------
+
+0 connections routed; 1683 unrouted.
+Starting router resource preassignment
+
+Completed router resource preassignment. Real time: 4 secs 
+
+Start NBR router at Tue Jul 28 13:18:00 CEST 2020
+
+*****************************************************************
+Info: NBR allows conflicts(one node used by more than one signal)
+      in the earlier iterations. In each iteration, it tries to  
+      solve the conflicts while keeping the critical connections 
+      routed as short as possible. The routing process is said to
+      be completed when no conflicts exist and all connections   
+      are routed.                                                
+Note: NBR uses a different method to calculate timing slacks. The
+      worst slack and total negative slack may not be the same as
+      that in TRCE report. You should always run TRCE to verify  
+      your design.                                               
+*****************************************************************
+
+Start NBR special constraint process at Tue Jul 28 13:18:00 CEST 2020
+
+Start NBR section for initial routing at Tue Jul 28 13:18:00 CEST 2020
+Level 4, iteration 1
+54(0.11%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; real time: 4 secs 
+
+Info: Initial congestion level at 75% usage is 0
+Info: Initial congestion area  at 75% usage is 0 (0.00%)
+
+Start NBR section for normal routing at Tue Jul 28 13:18:00 CEST 2020
+Level 4, iteration 1
+28(0.05%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; real time: 5 secs 
+Level 4, iteration 2
+7(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; real time: 5 secs 
+Level 4, iteration 3
+5(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; real time: 5 secs 
+Level 4, iteration 4
+2(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; real time: 5 secs 
+Level 4, iteration 5
+1(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; real time: 5 secs 
+Level 4, iteration 6
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; real time: 5 secs 
+
+Start NBR section for re-routing at Tue Jul 28 13:18:01 CEST 2020
+Level 4, iteration 1
+0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; real time: 5 secs 
+
+Start NBR section for post-routing at Tue Jul 28 13:18:01 CEST 2020
+
+End NBR router with 0 unrouted connection
+
+NBR Summary
+-----------
+  Number of unrouted connections : 0 (0.00%)
+  Number of connections with timing violations : 0 (0.00%)
+  Estimated worst slack<setup> : <n/a>
+  Timing score<setup> : 0
+-----------
+Notes: The timing info is calculated for SETUP only and all PAR_ADJs are ignored.
+
+
+
+Total CPU time 3 secs 
+Total REAL time: 5 secs 
+Completely routed.
+End of route.  1683 routed (100.00%); 0 unrouted.
+
+Hold time timing score: 0, hold timing errors: 0
+
+Timing score: 0 
+
+Dumping design to file adc_ms_b_adc_ms.dir/5_1.ncd.
+
+
+All signals are completely routed.
+
+
+PAR_SUMMARY::Run status = Completed
+PAR_SUMMARY::Number of unrouted conns = 0
+PAR_SUMMARY::Worst  slack<setup/<ns>> = <n/a>
+PAR_SUMMARY::Timing score<setup/<ns>> = <n/a>
+PAR_SUMMARY::Worst  slack<hold /<ns>> = <n/a>
+PAR_SUMMARY::Timing score<hold /<ns>> = <n/a>
+PAR_SUMMARY::Number of errors = 0
+
+Total CPU  time to completion: 4 secs 
+Total REAL time to completion: 5 secs 
+
+par done!
+
+Note: user must run 'Trace' for timing closure signoff.
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
