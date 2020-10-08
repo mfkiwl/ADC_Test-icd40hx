@@ -1,3 +1,4 @@
 (fp_lib_table
-  (lib (name ADC_TEST)(type KiCad)(uri /home/grzegorz/git/ADC_Test/hardware/lib/pcb/ADC_TEST.pretty)(options "")(descr ""))
+  (lib (name ADC_TEST_Linux)(type KiCad)(uri /home/grzegorz/git/ADC_Test/hardware/lib/pcb/ADC_TEST.pretty)(options "")(descr "")(disabled))
+  (lib (name ADC_Test)(type KiCad)(uri C:/Users/behrensg/git-repos/ADC_Test/hardware/lib/pcb/ADC_TEST.pretty)(options "")(descr ""))
 )
