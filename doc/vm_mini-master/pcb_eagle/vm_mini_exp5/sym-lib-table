@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name vm_mini_exp5-eagle-import)(type Legacy)(uri ${KIPRJMOD}/vm_mini_exp5-eagle-import.lib)(options "")(descr ""))
+)
