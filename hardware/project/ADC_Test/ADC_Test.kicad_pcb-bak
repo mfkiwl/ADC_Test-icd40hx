@@ -2015,7 +2015,7 @@
   )
 
   (module ADC_TEST:TQFP-144_20x20mm_P0.5mm (layer F.Cu) (tedit 5D7AC01F) (tstamp 5F80F427)
-    (at 194.31 121.92)
+    (at 52.35 -41.267)
     (descr "TQFP, 144 Pin (http://www.microsemi.com/index.php?option=com_docman&task=doc_download&gid=131095), generated with kicad-footprint-generator ipc_qfp_generator.py")
     (tags "TQFP QFP")
     (path /6014329A/5E5E292C)
@@ -2420,7 +2420,7 @@
   )
 
   (module ADC_TEST:TQFP-144_20x20mm_P0.5mm (layer F.Cu) (tedit 5D7AC01F) (tstamp 5F80F325)
-    (at 163.83 121.92)
+    (at -135.29 69.783)
     (descr "TQFP, 144 Pin (http://www.microsemi.com/index.php?option=com_docman&task=doc_download&gid=131095), generated with kicad-footprint-generator ipc_qfp_generator.py")
     (tags "TQFP QFP")
     (path /5F7CBD0E/5E468D70)
