@@ -1,3 +1,9 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP MMBTA55
+D 0.5A Ic, 300V Vce, PNP High Voltage Transistor, SOT-23
+K PNP High Voltage Transistor
+F https://www.onsemi.com/pub/Collateral/MMBTA92LT1-D.PDF
+$ENDCMP
+#
 #End Doc Library
