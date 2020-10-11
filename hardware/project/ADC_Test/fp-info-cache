@@ -1,291 +1,4 @@
-18413887623626332
-ADC_TEST
-7448013501
-WE-CMBNC Common Mode PowerLine Choke Nanocrystalline
-
-0
-4
-4
-ADC_TEST
-7448014501
-WE-CMBNC Common Mode PowerLine Choke Nanocrystalline
-
-0
-4
-4
-ADC_TEST
-4032
-
-
-0
-2
-2
-ADC_TEST
-9012
-COTO Miniature Molded SIP Reed Relay
-
-0
-4
-4
-ADC_TEST
-60817-096
-
-
-0
-1
-1
-ADC_TEST
-36107406S
-WE-SHC Shielding Cabinet
-EMC shielding
-0
-32
-1
-ADC_TEST
-744031004
-WE-TPC SMD Shielded Tiny Power Inductor
-
-0
-2
-2
-ADC_TEST
-744053220
-WE-TPC SMD Shielded Tiny Power Inductor
-
-0
-2
-2
-ADC_TEST
-744233121
- Filter, Line, Common Mode, WE-CNSW Series, 120 ohm, 280 mA, 2mm x 1.2mm x 1.2mm 
-
-0
-4
-4
-ADC_TEST
-749010012A
-Transformer, LAN, 1 Port, 10/100 Base-T, 1500VAC, 350µH, 1:1 Turn Ratio
-
-0
-16
-16
-ADC_TEST
-74489440068
-COUPLED INDUCTOR  WE-TDC 8038
-
-0
-4
-4
-ADC_TEST
-AQY212GS
-Load current greatly increased using next-generation MOSFET High Capacity 4-pin Type
-
-0
-4
-4
-ADC_TEST
-BFC2
-Film Dielectric Trimmers
-
-0
-4
-2
-ADC_TEST
-CW252016
-CW252016 Series - High Q Chip Inductors
-
-0
-2
-2
-ADC_TEST
-DO_214AA_REV
-
-
-0
-2
-2
-ADC_TEST
-D_SOD-323HE
-SOD-323HE
-SOD-323HE
-0
-2
-2
-ADC_TEST
-ECS
-
-
-0
-4
-4
-ADC_TEST
-Fuse_SMD2920
-MF-LSMFSeries-PTCResettableFuses
-Fuse SMD2920
-0
-2
-2
-ADC_TEST
-GDT
-
-
-0
-2
-2
-ADC_TEST
-GU-SOP8
-
-
-0
-8
-8
-ADC_TEST
-HE360_x-5050462-8
-HE3600 Miniature Single In-line Reed Relay
-
-0
-4
-4
-ADC_TEST
-HSOP-32-1EP_7.5x11.0mm_P0.65mm_ThermalVias
-HSOP32, plastic, thermal enhanced small outline package; 32 terminals; 0.65 mm pitch; 7.5 mm x 11 mmx 2.22 mm body
-HSOP 7.5 x 11.0mm Pitch 0.65mm
-0
-33
-33
-ADC_TEST
-JZ
-J Series Outperforms All Other Similar Trimmers
-
-0
-2
-2
-ADC_TEST
-LMx99
-
-
-0
-4
-4
-ADC_TEST
-NX3225GD
- A small surface-mount type crystal unit, ideal for an engine control CPU clock
-
-0
-2
-2
-ADC_TEST
-NX5032GA
-Crystal
-
-0
-2
-2
-ADC_TEST
-OKI-T3-W40
-Adjustable Output 3-Amp DOSA-SMT DC/DC Converters
-
-0
-5
-5
-ADC_TEST
-PowerPAD
-
-
-0
-49
-21
-ADC_TEST
-SA
-LOW-PROFILE SURFACE-MOUNT RELAY
-
-0
-10
-10
-ADC_TEST
-SO8E
-module CMS SOJ 8 pins etroit
-CMS SOJ
-0
-8
-8
-ADC_TEST
-SO8N
-Module CMS SOJ 8 pins large
-CMS SOJ
-0
-8
-8
-ADC_TEST
-Socket_DIN41612-CaseC1-AC-Male-64Pin-2rows
-
-
-0
-66
-65
-ADC_TEST
-TCK-141
-Inductor
-
-0
-2
-2
-ADC_TEST
-THL15
-THL 15WI Series, 15 Watt
-
-0
-6
-6
-ADC_TEST
-TO-71
-
-
-0
-6
-6
-ADC_TEST
-TO-252-2_Rectifier
-TO-252-2
-TO-252-2 Rectifier
-0
-3
-3
-ADC_TEST
-TQFP-144_20x20mm_P0.5mm
-TQFP, 144 Pin (http://www.microsemi.com/index.php?option=com_docman&task=doc_download&gid=131095), generated with kicad-footprint-generator ipc_qfp_generator.py
-TQFP QFP
-0
-144
-144
-ADC_TEST
-TSR1
-DC/DC Converter TSR 1 Series, 1 A
-
-0
-3
-3
-ADC_TEST
-TSR2
-DC/DC Converter TSR 2 Series, 2 A
-
-0
-3
-3
-ADC_TEST
-TSSOP-54
-
-SSOP 0.8
-0
-54
-54
-ADC_TEST
-WSR5
-
-
-0
-2
-2
+18387575545311949
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -81101,3 +80814,177 @@ varistor SIOV
 0
 2
 2
+vm_mini_exp5
+1X03
+<b>PIN HEADER</b> - 2.54
+
+0
+3
+3
+vm_mini_exp5
+1X04
+<b>PIN HEADER</b> - 2.54
+
+0
+4
+4
+vm_mini_exp5
+1X08
+<b>PIN HEADER</b> - 2.54
+
+0
+8
+8
+vm_mini_exp5
+1210
+
+
+0
+2
+2
+vm_mini_exp5
+C050-025X075
+<b>CAPACITOR</b><p>
+grid 5 mm, outline 2.5 x 7.5 mm
+
+0
+2
+2
+vm_mini_exp5
+C050-045X075
+<b>CAPACITOR</b><p>
+grid 5 mm, outline 4.5 x 7.5 mm
+
+0
+2
+2
+vm_mini_exp5
+DIL08
+<b>Dual In Line Package</b>
+
+0
+8
+8
+vm_mini_exp5
+EPCOS_N81
+<b>GASENTLADUNGSABLEITER</b><p>
+Source: http://de.farnell.com .. 4025.pdf
+
+0
+2
+2
+vm_mini_exp5
+HE3621
+<b>RELAY</b><p>
+reed, 1 x norm. open, grid 5.08 mm, Hamlin
+
+0
+4
+4
+vm_mini_exp5
+MLP28
+<b>MLP 28</b><p>
+Source: www.silabs.com .. CP2101.pdf
+
+0
+30
+30
+vm_mini_exp5
+MSOP8-EP
+
+
+0
+9
+9
+vm_mini_exp5
+OSOP20
+
+
+0
+20
+20
+vm_mini_exp5
+P1-17
+<b>TEST PAD</b>
+
+0
+1
+1
+vm_mini_exp5
+R0805
+
+
+0
+2
+2
+vm_mini_exp5
+R_MINIMELF
+
+
+0
+2
+2
+vm_mini_exp5
+S05K175
+<b>VARISTOR</b>
+
+0
+2
+2
+vm_mini_exp5
+SO-16
+
+
+0
+16
+16
+vm_mini_exp5
+SO08
+<b>Small Outline Package 8</b><br>
+NS Package M08A
+
+0
+8
+8
+vm_mini_exp5
+SO16
+<b>Small Outline package</b> 150 mil
+
+0
+16
+16
+vm_mini_exp5
+SOD-80
+
+
+0
+2
+2
+vm_mini_exp5
+SOD80C
+<B>DIODE</B>
+
+0
+2
+2
+vm_mini_exp5
+SOIC127P600X175-8N
+
+
+0
+8
+8
+vm_mini_exp5
+SOT23
+
+
+0
+3
+3
+vm_mini_exp5
+USB-B-H
+<b>USB Series B Hole Mounted</b>
+
+0
+6
+6
