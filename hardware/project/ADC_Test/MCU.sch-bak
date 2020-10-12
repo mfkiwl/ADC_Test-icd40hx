@@ -1131,10 +1131,6 @@ NoConn ~ 14550 1300
 NoConn ~ 14550 1400
 NoConn ~ 14550 1500
 NoConn ~ 14550 1600
-Text HLabel 14600 6100 2    50   Output ~ 0
-FGPA_PWR_ON
-Wire Wire Line
-	14550 6100 14600 6100
 Text HLabel 14600 4400 2    50   Output ~ 0
 SR_CLK
 Text HLabel 14600 1900 2    50   Output ~ 0
@@ -1289,4 +1285,5 @@ NoConn ~ 3150 5500
 NoConn ~ 3150 6200
 NoConn ~ 3150 6300
 NoConn ~ 3150 6400
+NoConn ~ 14550 6100
 $EndSCHEMATC
