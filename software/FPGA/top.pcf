@@ -1,0 +1,17 @@
+set_io clk 129
+set_io sw_in 130
+set_io sw_dn 115
+set_io sw_rst 136
+set_io sw_up 121
+set_io sw_vref_n 110
+set_io sw_vref 7
+set_io comp_ext 144
+set_io led_green 37
+set_io led_red 38
+set_io deb_0 2
+set_io deb_1 3
+set_io deb_2 4
+set_io con_start 81
+set_io so_dat 82
+set_io si_dat 83
+set_io vref_su 1

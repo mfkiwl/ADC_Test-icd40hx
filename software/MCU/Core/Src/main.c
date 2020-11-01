@@ -24,7 +24,6 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -56,6 +55,13 @@ const osThreadAttr_t defaultTask_attributes = {
   .priority = (osPriority_t) osPriorityNormal,
   .stack_size = 256 * 4
 };
+/* Definitions for myTaskLED */
+osThreadId_t myTaskLEDHandle;
+const osThreadAttr_t myTaskLED_attributes = {
+  .name = "myTaskLED",
+  .priority = (osPriority_t) osPriorityLow,
+  .stack_size = 256 * 4
+};
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -67,6 +73,7 @@ static void MX_I2C4_Init(void);
 static void MX_SPI3_Init(void);
 static void MX_USART2_Init(void);
 void StartDefaultTask(void *argument);
+void StartTaskLED(void *argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -84,6 +91,7 @@ void StartDefaultTask(void *argument);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+
 
   /* USER CODE END 1 */
 
@@ -109,8 +117,9 @@ int main(void)
   MX_SPI3_Init();
   MX_USART2_Init();
   /* USER CODE BEGIN 2 */
+ // BSP_Init();
   MX_LWIP_Init();
-
+ // HAL_GPIO_WritePin(FPGA_IO1_GPIO_Port, FPGA_IO1_Pin, 0);
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -134,11 +143,16 @@ int main(void)
 
   /* Create the thread(s) */
   /* creation of defaultTask */
-  defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+ // defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+
+  /* creation of myTaskLED */
+  myTaskLEDHandle = osThreadNew(StartTaskLED, NULL, &myTaskLED_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
-  /* add threads, ... */
   scpi_server_init();
+
+//  osThreadSuspend(TriggerTaskHandle);
+
   /* USER CODE END RTOS_THREADS */
 
   /* Start scheduler */
@@ -152,6 +166,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
   }
   /* USER CODE END 3 */
 }
@@ -343,11 +358,15 @@ static void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOG_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOE, LED_RED_Pin|LED_GREEN_Pin|LED_BLUE_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, EEPROM_WP_Pin|SR_CLK_Pin|FPGA_IO3_Pin|FPGA_IO4_Pin
@@ -358,6 +377,13 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(SP3_NSS_GPIO_Port, SP3_NSS_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : LED_RED_Pin LED_GREEN_Pin LED_BLUE_Pin */
+  GPIO_InitStruct.Pin = LED_RED_Pin|LED_GREEN_Pin|LED_BLUE_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
   /*Configure GPIO pins : EEPROM_WP_Pin SR_CLK_Pin FPGA_IO3_Pin FPGA_IO4_Pin
                            FPGA_IO1_Pin FPGA_IO2_Pin */
@@ -386,12 +412,21 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
+/**
+  * @brief  Perform the SDRAM exernal memory inialization sequence
+  * @param  hsdram: SDRAM handle
+  * @param  Command: Pointer to SDRAM command structure
+  * @retval None
+  */
+
+
+
 /* USER CODE END 4 */
 
 /* USER CODE BEGIN Header_StartDefaultTask */
 /**
   * @brief  Function implementing the defaultTask thread.
-  * @param  argument: Not used
+  * @param  argument: Not used 
   * @retval None
   */
 /* USER CODE END Header_StartDefaultTask */
@@ -400,12 +435,32 @@ void StartDefaultTask(void *argument)
   /* init code for LWIP */
   MX_LWIP_Init();
   /* USER CODE BEGIN 5 */
+
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+	   // osThreadTerminate(NULL);
   }
   /* USER CODE END 5 */
+}
+
+/* USER CODE BEGIN Header_StartTaskLED */
+/**
+* @brief Function implementing the myTaskLED thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTaskLED */
+void StartTaskLED(void *argument)
+{
+  /* USER CODE BEGIN StartTaskLED */
+  /* Infinite loop */
+  for(;;)
+  {
+	 HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
+	 osDelay(pdMS_TO_TICKS(500));
+  }
+  /* USER CODE END StartTaskLED */
 }
 
 /**

@@ -34,6 +34,8 @@
  *
  */
 
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -45,8 +47,44 @@
 
 
 
+scpi_choice_def_t boolean_select[] =
+{
+    {"OFF", 0},
+    {"ON", 1},
+	{"0", 0},
+	{"1", 1},
+    SCPI_CHOICE_LIST_END
+};
+
+long result, num;
+
+
+long adc_get_raw (unsigned char * input_data)
+{
+    long res,num;
+
+    unsigned int adc_runup, adc_rundown, adc_rundown_neg;
+    unsigned int coeff_N;
+    adc_rundown_neg = 1;
+    if (input_data[0]&0x40) adc_rundown_neg = 0;
+    adc_runup = ((((unsigned int)(input_data[0]))<<8) | (((unsigned int)(input_data[1]))<<0))&0x3FFF;
+    adc_rundown = (((unsigned int)(input_data[2]))<<8) | (((unsigned int)(input_data[3]))<<0);
+    num = adc_runup;
+    num = num * 100000;
+    num = num + adc_rundown;
+    res = adc_runup;
+    coeff_N = 50000;
+    res = res - 100;
+    res = res * coeff_N;
+    res = res/1;
+    if (adc_rundown_neg==0) res = res + adc_rundown;
+    else res = res - adc_rundown;
+    return res;
+}
+
 static scpi_result_t TEST_TSQ(scpi_t * context)
 {
+
 
 	return SCPI_RES_OK;
 }
@@ -107,6 +145,7 @@ const scpi_command_t scpi_commands[] = {
     {.pattern = "SYSTem:ERRor:COUNt?", .callback = SCPI_SystemErrorCountQ,},
     {.pattern = "SYSTem:VERSion?", .callback = SCPI_SystemVersionQ,},
 
+	//scpi_system.c
 
 	{.pattern = "TS?", .callback = TEST_TSQ,},
 
