@@ -11,7 +11,7 @@ set_io led_red 38
 set_io deb_0 2
 set_io deb_1 3
 set_io deb_2 4
-set_io con_start 81
+set_io con_start 99
 set_io so_dat 82
 set_io si_dat 83
 set_io vref_su 1

@@ -10,12 +10,12 @@ output deb_0,deb_1,deb_2;
 
 reg[5:0] cnt = 6'd0;
 reg[5:0] uart_divider;
-reg[14:0] cnt_stat = 11'd0;
-reg[14:0] cnt_runup = 11'd0;
+reg[14:0] cnt_stat = 15'd0;
+reg[14:0] cnt_runup = 15'd0;
 reg[4:0] state = 3'd0;
 reg[2:0] debug;
 reg[0:0] sw_up_r, sw_dn_r, sw_rst_r, sw_vref_r, sw_in_r;
-reg[0:0] runup_state_r,timer_gate_r,timer_enable_r;
+reg[0:0] runup_state_r = 0,timer_gate_r,timer_enable_r;
 reg uart_tx_start, uart_frame_start,uart_rx_rst;
 reg [2:0] uart_frame_state = 3'd0,uart_frame_r;
 reg [3:0] uart_frame_cnt;
@@ -31,7 +31,7 @@ reg rundown_sign;
 reg [47:0] frame_content = 48'd0;
 reg [47:0] result_content = 48'd0;
 reg [7:0] uart_tx_register;
-reg [2:0] uart_rx_state;
+reg [2:0] uart_rx_state = 3'd0;
 wire [7:0] uart_rx_register;
 
 assign w_green = led_green;
@@ -64,10 +64,11 @@ begin
 		begin
 		if (uart_rx_ready==1)
 			begin
+				
 			//do something with rx data
 			if (uart_rx_register[7:4]==5)
 				begin
-						w_green <= ~w_green;
+				
 				case (uart_rx_register[3:0])
 					0 : runup_set<=199;	//1
 					1 : runup_set<=399;	//2
@@ -105,6 +106,7 @@ begin
 		end	
 	if (state==0)
 	begin
+		
 		if (cnt_stat==0)
 			begin
 			sw_rst_r <= 1;
@@ -112,7 +114,7 @@ begin
 			sw_vref_r <= 1;
 			sw_up_r <= 0;
 			sw_dn_r <= 0;
-			uart_frame_start <=0;	
+			uart_frame_start <=1;	
 			end
 		if (cnt_stat>=3999)
 			begin
@@ -127,6 +129,7 @@ begin
 
 	if (state==19)
 		begin
+			
 		cnt_stat <= 0;
 		cnt_runup <= 0;
 		runup_state_r <=0;
@@ -145,15 +148,18 @@ begin
 	if (state==1)
 	begin
 //		runup_set<=1999;
+	
 		uart_divider <= 0;
-		uart_frame_start <=1;
+		uart_frame_start <=0;
 		sw_rst_r <= 0;
 		sw_in_r <= 1;
 		sw_vref_r <= 1;
 		if (runup_state_r==0)
 			begin
+				
 			if (cnt_stat>=90)
 				begin
+					
 				sw_up_r <= 1;
 				sw_dn_r <= 0;
 				end
@@ -176,8 +182,10 @@ begin
 				sw_dn_r <= 1;
 				end			
 			end	
+
 		if (cnt_stat>=99)
 			begin
+				
 			cnt_stat<=0;
 			cnt_runup <= cnt_runup + 1;
 			if (cnt_runup>=runup_set)
@@ -186,6 +194,7 @@ begin
 				end
 			else
 				begin
+					
 				if (comp_slow==1) 
 					begin
 					runup_state_r <= 1;
@@ -196,12 +205,14 @@ begin
 			end
 		else
 			begin
+				
 			cnt_stat <= cnt_stat + 1;
 			end
 	end	 
 	
 	if (state==2)
 	begin
+		
 		sw_rst_r <= 0;
 		sw_in_r <= 0;
 		sw_vref_r <= 0;
@@ -284,9 +295,7 @@ always @ (posedge mclk)
 	end
 
 	
-assign deb_0 = si_dat;
-//assign deb_1 = si_dat;
-assign deb_2 = debug[0];
+
 assign sw_up = sw_up_r;
 assign sw_dn = sw_dn_r;
 assign sw_rst = ~sw_rst_r;
@@ -299,13 +308,14 @@ assign vref_su = 1;
 
 always @ (posedge uart_tx_bit_clock)
 	begin
-		w_red <= ~w_red;
+		w_green <= ~w_green;
 	if (uart_frame_start)
 		begin
 		uart_frame_r <=1;
 		end
 	if ((uart_frame_r==1)&(uart_frame_start==0))
 		begin
+			
 		uart_frame_r <=0;
 		uart_frame_cnt <= 0;
 		//frame_content <= 32'hAA550FF0;
@@ -314,6 +324,7 @@ always @ (posedge uart_tx_bit_clock)
 		end
 	if (uart_frame_state==0)
 		begin
+
 		if (uart_frame_cnt==0)
 			uart_tx_register <= frame_content[47:40];
 		if (uart_frame_cnt==1)
@@ -329,12 +340,15 @@ always @ (posedge uart_tx_bit_clock)
 		uart_tx_start<=1;
 		if (uart_busy==1)
 			uart_frame_state <=1;
+			
 		end
 	else if (uart_frame_state==1)
 		begin
+			
 		uart_tx_start<=0;
 		if (uart_busy==0)
 			begin
+				w_red <= ~w_red;
 			if (uart_frame_cnt==5)
 				begin
 				uart_frame_state <=2;
@@ -348,6 +362,7 @@ always @ (posedge uart_tx_bit_clock)
 		end
 	else if (uart_frame_state==2)
 		begin
+			w_red <= ~w_red;
 		end
 	end
 

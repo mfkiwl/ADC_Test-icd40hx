@@ -34,8 +34,6 @@
  *
  */
 
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -45,7 +43,9 @@
 #include "main.h"
 #include "cmsis_os.h"
 
-
+extern UART_HandleTypeDef huart2;
+extern uint8_t log_status;
+extern volatile uint8_t rx_data[6];
 
 scpi_choice_def_t boolean_select[] =
 {
@@ -85,7 +85,14 @@ long adc_get_raw (unsigned char * input_data)
 static scpi_result_t TEST_TSQ(scpi_t * context)
 {
 
+	//HAL_StatusTypeDef status;
+	//uint8_t rx_data[6]={0x00};
+	char str[32] = {0x00};
+	HAL_GPIO_WritePin(FPGA_IO1_GPIO_Port, FPGA_IO1_Pin, 1);
+	log_status = 1;
 
+	sprintf(str,"%02X,%02X,%02X,%02X,%02X,%02X", rx_data[0],rx_data[1],rx_data[2],rx_data[3],rx_data[4],rx_data[5]);
+	SCPI_ResultCharacters(context, str, 32);
 	return SCPI_RES_OK;
 }
 

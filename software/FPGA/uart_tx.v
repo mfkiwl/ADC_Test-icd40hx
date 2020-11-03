@@ -6,8 +6,8 @@ module uart_tx(
 			output reg uart_tx_pin,
 			output reg uart_tx_busy
 		);
-reg[2:0] uart_tx_state;
-reg[2:0] uart_tx_bit;
+reg[2:0] uart_tx_state = 3'd0;
+reg[2:0] uart_tx_bit = 3'd0;
 
 always @(posedge uart_tx_bclk)
 	begin

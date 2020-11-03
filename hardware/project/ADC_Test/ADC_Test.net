@@ -1,8 +1,8 @@
 (export (version D)
   (design
     (source /home/grzegorz/git/ADC_Test/hardware/project/ADC_Test/ADC_Test.sch)
-    (date "Mon Oct 12 22:11:30 2020")
-    (tool "Eeschema 5.1.6")
+    (date "Tue Nov  3 19:49:13 2020")
+    (tool "Eeschema 5.1.7")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
         (title)
@@ -3835,7 +3835,7 @@
         (alias BC860)
         (alias MMBT3906))
       (description "0.8A Ic, 45V Vce, PNP Transistor, SOT-23")
-      (docs http://www.fairchildsemi.com/ds/BC/BC807.pdf)
+      (docs https://www.onsemi.com/pub/Collateral/BC808-D.pdf)
       (footprints
         (fp SOT?23*))
       (fields
@@ -3858,7 +3858,7 @@
         (alias MMBT5550L)
         (alias MMBT5551L))
       (description "0.8A Ic, 45V Vce, NPN Transistor, SOT-23")
-      (docs http://www.fairchildsemi.com/ds/BC/BC817.pdf)
+      (docs https://www.onsemi.com/pub/Collateral/BC818-D.pdf)
       (footprints
         (fp SOT?23*))
       (fields
@@ -5506,7 +5506,7 @@
     (net (code 382) (name /Input/K1_CTR)
       (node (ref K601) (pin 3))
       (node (ref U606) (pin 5)))
-    (net (code 383) (name /Input/K3_CTR)
+    (net (code 383) (name /Input/K4_CTR)
       (node (ref U606) (pin 7))
       (node (ref K603) (pin 3)))
     (net (code 384) (name "Net-(R601-Pad1)")

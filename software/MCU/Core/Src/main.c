@@ -21,6 +21,7 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include "lwip.h"
+#include "bsp_74hc595.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -46,7 +47,7 @@ I2C_HandleTypeDef hi2c4;
 
 SPI_HandleTypeDef hspi3;
 
-USART_HandleTypeDef husart2;
+UART_HandleTypeDef huart2;
 
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
@@ -62,7 +63,19 @@ const osThreadAttr_t myTaskLED_attributes = {
   .priority = (osPriority_t) osPriorityLow,
   .stack_size = 256 * 4
 };
+/* Definitions for LogData */
+osThreadId_t LogDataHandle;
+const osThreadAttr_t LogData_attributes = {
+  .name = "LogData",
+  .priority = (osPriority_t) osPriorityLow,
+  .stack_size = 256 * 4
+};
 /* USER CODE BEGIN PV */
+
+uint8_t log_status = 0;
+volatile uint8_t rx_data[6] = {0x00};
+uint8_t it_array_mul[10]={1, 1, 1, 1, 2, 5, 10, 0};
+struct cal_struct	cal_data;
 
 /* USER CODE END PV */
 
@@ -71,9 +84,10 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_I2C4_Init(void);
 static void MX_SPI3_Init(void);
-static void MX_USART2_Init(void);
+static void MX_USART2_UART_Init(void);
 void StartDefaultTask(void *argument);
 void StartTaskLED(void *argument);
+void StartTaskLogData(void *argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -92,6 +106,24 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 
+  cal_data.adc_step = CAL_PREDEF_STEP;
+  cal_data.adc_z_offset = CAL_PREDEF_NZO;
+  cal_data.v_1V_offset = CAL_PREDEF_1VO;
+  cal_data.v_1V_gain = CAL_PREDEF_1VG;
+  cal_data.v_10V_offset = CAL_PREDEF_10VO;
+  cal_data.v_10V_gain = CAL_PREDEF_10VG;
+  cal_data.v_100V_offset = CAL_PREDEF_100VO;
+  cal_data.v_100V_gain = CAL_PREDEF_100VG;
+  cal_data.r_1k_offset = CAL_PREDEF_1KO;
+  cal_data.r_1k_gain = CAL_PREDEF_1KG;
+  cal_data.r_10k_offset = CAL_PREDEF_10KO;
+  cal_data.r_10k_gain = CAL_PREDEF_10KG;
+  cal_data.r_100k_offset = CAL_PREDEF_100KO;
+  cal_data.r_100k_gain = CAL_PREDEF_100KG;
+  cal_data.r_1M_offset = CAL_PREDEF_1MO;
+  cal_data.r_1M_gain = CAL_PREDEF_1MG;
+  cal_data.r_10M_offset = CAL_PREDEF_10MO;
+  cal_data.r_10M_gain = CAL_PREDEF_10MG;
 
   /* USER CODE END 1 */
 
@@ -115,10 +147,11 @@ int main(void)
   MX_GPIO_Init();
   MX_I2C4_Init();
   MX_SPI3_Init();
-  MX_USART2_Init();
+  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
  // BSP_Init();
   MX_LWIP_Init();
+
  // HAL_GPIO_WritePin(FPGA_IO1_GPIO_Port, FPGA_IO1_Pin, 0);
   /* USER CODE END 2 */
 
@@ -143,10 +176,13 @@ int main(void)
 
   /* Create the thread(s) */
   /* creation of defaultTask */
- // defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+  //defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
   /* creation of myTaskLED */
   myTaskLEDHandle = osThreadNew(StartTaskLED, NULL, &myTaskLED_attributes);
+
+  /* creation of LogData */
+  LogDataHandle = osThreadNew(StartTaskLogData, NULL, &LogData_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   scpi_server_init();
@@ -319,7 +355,7 @@ static void MX_SPI3_Init(void)
   * @param None
   * @retval None
   */
-static void MX_USART2_Init(void)
+static void MX_USART2_UART_Init(void)
 {
 
   /* USER CODE BEGIN USART2_Init 0 */
@@ -329,16 +365,17 @@ static void MX_USART2_Init(void)
   /* USER CODE BEGIN USART2_Init 1 */
 
   /* USER CODE END USART2_Init 1 */
-  husart2.Instance = USART2;
-  husart2.Init.BaudRate = 115200;
-  husart2.Init.WordLength = USART_WORDLENGTH_8B;
-  husart2.Init.StopBits = USART_STOPBITS_1;
-  husart2.Init.Parity = USART_PARITY_NONE;
-  husart2.Init.Mode = USART_MODE_TX_RX;
-  husart2.Init.CLKPolarity = USART_POLARITY_LOW;
-  husart2.Init.CLKPhase = USART_PHASE_1EDGE;
-  husart2.Init.CLKLastBit = USART_LASTBIT_DISABLE;
-  if (HAL_USART_Init(&husart2) != HAL_OK)
+  huart2.Instance = USART2;
+  huart2.Init.BaudRate = 57600;
+  huart2.Init.WordLength = UART_WORDLENGTH_8B;
+  huart2.Init.StopBits = UART_STOPBITS_1;
+  huart2.Init.Parity = UART_PARITY_NONE;
+  huart2.Init.Mode = UART_MODE_TX_RX;
+  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+  huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+  huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+  if (HAL_UART_Init(&huart2) != HAL_OK)
   {
     Error_Handler();
   }
@@ -362,11 +399,15 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOG_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOE, LED_RED_Pin|LED_GREEN_Pin|LED_BLUE_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(SR_LAT_GPIO_Port, SR_LAT_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, EEPROM_WP_Pin|SR_CLK_Pin|FPGA_IO3_Pin|FPGA_IO4_Pin
@@ -385,20 +426,34 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : EEPROM_WP_Pin SR_CLK_Pin FPGA_IO3_Pin FPGA_IO4_Pin
-                           FPGA_IO1_Pin FPGA_IO2_Pin */
-  GPIO_InitStruct.Pin = EEPROM_WP_Pin|SR_CLK_Pin|FPGA_IO3_Pin|FPGA_IO4_Pin
-                          |FPGA_IO1_Pin|FPGA_IO2_Pin;
+  /*Configure GPIO pin : SR_LAT_Pin */
+  GPIO_InitStruct.Pin = SR_LAT_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  HAL_GPIO_Init(SR_LAT_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : EEPROM_WP_Pin FPGA_IO3_Pin FPGA_IO4_Pin FPGA_IO1_Pin
+                           FPGA_IO2_Pin */
+  GPIO_InitStruct.Pin = EEPROM_WP_Pin|FPGA_IO3_Pin|FPGA_IO4_Pin|FPGA_IO1_Pin
+                          |FPGA_IO2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : SR_CLK_Pin */
+  GPIO_InitStruct.Pin = SR_CLK_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  HAL_GPIO_Init(SR_CLK_GPIO_Port, &GPIO_InitStruct);
+
   /*Configure GPIO pin : SR_DAT_Pin */
   GPIO_InitStruct.Pin = SR_DAT_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(SR_DAT_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : SP3_NSS_Pin */
@@ -412,13 +467,35 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
-/**
-  * @brief  Perform the SDRAM exernal memory inialization sequence
-  * @param  hsdram: SDRAM handle
-  * @param  Command: Pointer to SDRAM command structure
-  * @retval None
-  */
+double get_voltage (uint8_t * adc_arrray, uint8_t it_adc, float cf)
+{
+  int64_t tmp1,tmp2;
+  uint16_t adc_up, adc_total, adc_rundown;
+  uint8_t adc_x;
+  double retval;
+  adc_up = (((uint16_t)(adc_arrray[0]))<<8)+(((uint16_t)(adc_arrray[1]))<<0);
+  adc_total = (((uint16_t)(adc_arrray[2]&0x0F))<<8)+(((uint16_t)(adc_arrray[3]))<<0);
+  adc_rundown = (((uint16_t)(adc_arrray[4]))<<8)+(((uint16_t)(adc_arrray[5]))<<0);
+  adc_x = (adc_arrray[2]&0x80)>>7;
+  if (adc_x==1)
+  {
+	  tmp1 = adc_rundown+(cal_data.adc_z_offset);
+  }
+  else
+  {
+	  tmp1 = -adc_rundown;
+  }
 
+  tmp2 = (adc_total+1)/2;
+  tmp2 = tmp2-adc_up;
+  tmp2 = tmp2*cal_data.adc_step;
+  tmp2 = tmp2 - tmp1;
+  retval = tmp2;							//tmp2 now holds ADC counts
+  retval = retval/338.10;					//roughly map ADC counts to voltage
+  retval = retval/((double)(it_adc));		//correction to integration time
+  retval = retval / cf;
+  return retval;
+}
 
 
 /* USER CODE END 4 */
@@ -457,10 +534,41 @@ void StartTaskLED(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	 HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
+	 //HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
 	 osDelay(pdMS_TO_TICKS(500));
   }
   /* USER CODE END StartTaskLED */
+}
+
+/* USER CODE BEGIN Header_StartTaskLogData */
+/**
+* @brief Function implementing the LogData thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTaskLogData */
+void StartTaskLogData(void *argument)
+{
+  /* USER CODE BEGIN StartTaskLogData */
+  /* Infinite loop */
+  for(;;)
+  {
+	  if(log_status)
+	  {
+		  HAL_UART_Init(&huart2);
+		  if(HAL_OK ==HAL_UART_Receive(&huart2, (uint8_t *)rx_data, 6, 600))
+		  {
+			  HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
+		  }
+		  else
+		  {
+			  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
+		  }
+		  HAL_UART_DeInit(&huart2);
+	  }
+	  osDelay(pdMS_TO_TICKS(10));
+  }
+  /* USER CODE END StartTaskLogData */
 }
 
 /**

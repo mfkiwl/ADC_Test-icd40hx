@@ -1203,7 +1203,7 @@ K2_CTR
 Wire Wire Line
 	3200 10500 3200 10800
 Text Label 4000 10800 1    50   ~ 0
-K3_CTR
+K4_CTR
 Wire Wire Line
 	4000 10500 4000 10800
 Text Label 5700 1800 2    50   ~ 0
@@ -1215,7 +1215,7 @@ K2_CTR
 Wire Wire Line
 	5400 1700 5700 1700
 Text Label 5700 2000 2    50   ~ 0
-K3_CTR
+K4_CTR
 Wire Wire Line
 	5400 2000 5700 2000
 $Comp
