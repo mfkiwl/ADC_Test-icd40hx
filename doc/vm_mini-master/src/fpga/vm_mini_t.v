@@ -105,7 +105,7 @@ begin
 			sw_vref_r <= 1;
 			sw_up_r <= 0;
 			sw_dn_r <= 0;
-			uart_frame_start <=0;	
+			uart_frame_start <=1;	
 			end
 		if (cnt_stat>=3999)
 			begin
@@ -140,7 +140,7 @@ begin
 	begin
 //		runup_set<=1999;
 		uart_divider <= 0;
-		uart_frame_start <=1;
+		uart_frame_start <=0;
 		sw_rst_r <= 0;
 		sw_in_r <= 1;
 		sw_vref_r <= 1;

@@ -42,10 +42,16 @@
 #include "scpi/scpi.h"
 #include "main.h"
 #include "cmsis_os.h"
+#include "bsp_74hc595.h"
 
-extern UART_HandleTypeDef huart2;
+
 extern uint8_t log_status;
 extern volatile uint8_t rx_data[6];
+extern unsigned char  shiftRegisters[2];
+extern struct cfg_struct dmm_cfg;
+extern struct cal_struct cal_data;
+
+extern UART_HandleTypeDef huart2;
 
 scpi_choice_def_t boolean_select[] =
 {
@@ -82,15 +88,106 @@ long adc_get_raw (unsigned char * input_data)
     return res;
 }
 
+static scpi_result_t SCPI_ConfigureVoltageDC(scpi_t * context)
+{
+	scpi_number_t param_range;
+		float valid_ranges[4] = {1, 10, 100};
+		uint8_t is_valid = 0;
+		uint16_t switch_path = 0;
+
+
+		if(!SCPI_ParamNumber(context, scpi_special_numbers_def, &param_range, TRUE)){
+			return SCPI_RES_ERR;
+		}
+
+		if(param_range.special){
+			switch(param_range.content.tag)	{
+			case SCPI_NUM_MIN: dmm_cfg.range = 1; break;
+			case SCPI_NUM_MAX: dmm_cfg.range = 100; break;
+			case SCPI_NUM_DEF: dmm_cfg.range = 100; break;
+			default: SCPI_ErrorPush(context, SCPI_ERROR_ILLEGAL_PARAMETER_VALUE); return SCPI_RES_ERR;
+			}
+		}
+		else{
+			if((SCPI_UNIT_VOLT == param_range.unit) && (SCPI_UNIT_NONE == param_range.unit)){
+				for(uint8_t i = 0; i < 3; i++){
+					if(valid_ranges[i] == param_range.content.value){
+						is_valid = 1;
+						break;
+					}
+					else{
+						is_valid = 0;
+					}
+				}
+
+				if(is_valid){
+
+				}
+				else{
+					SCPI_ErrorPush(context, SCPI_ERROR_DATA_OUT_OF_RANGE);
+					return SCPI_RES_ERR;
+				}
+			}
+			else{
+				SCPI_ErrorPush(context, SCPI_ERROR_INVALID_SUFFIX);
+				return SCPI_RES_ERR;
+			}
+		}
+
+		switch(dmm_cfg.range )
+		{
+		case 1:   shiftRegisters[0] = SR_K1; shiftRegisters[1] = SR_M11 | SR_M24 | SR_M21; break;
+		case 10:  shiftRegisters[0] = SR_K1; shiftRegisters[1] = SR_M11 | SR_M24 | SR_M22; break;
+		case 100: shiftRegisters[0] = SR_K2 | SR_K4; shiftRegisters[1] = SR_M11 | SR_M24 | SR_M22; break;
+		}
+
+		 ShiftRegister74HC595_update();
+
+	return SCPI_RES_OK;
+}
+
+static scpi_result_t SCPI_MeasureVoltageDCQ(scpi_t * context)
+{
+	double adc_in =0;
+	uint8_t test[6] = {0x83,0x2f, 0xc3,0xef,0x0F,0xF0};
+	adc_in = get_voltage(rx_data,10,1.0);
+	char str[64] = {0x00};
+
+	switch (dmm_cfg.range)
+	{
+	case 1: break;
+	case 10:
+		{
+			adc_in = adc_in * 1.0;
+			adc_in = adc_in + cal_data.v_10V_offset;
+			adc_in = adc_in * cal_data.v_10V_gain;
+			sprintf(str,"%+9.4f", adc_in);
+
+		}break;
+	case 100:
+		{
+			adc_in *=10.0;
+			adc_in = adc_in + cal_data.v_100V_offset;
+			adc_in = adc_in * cal_data.v_100V_gain;
+			sprintf(str,"%+9.4f", adc_in);
+
+		}break;
+	}
+	SCPI_ResultCharacters(context, str, 64);
+	return SCPI_RES_OK;
+}
+
 static scpi_result_t TEST_TSQ(scpi_t * context)
 {
+	char str[64] = {0x00};
+/*
+	uint8_t tx_data[1] = {0x77};
 
-	//HAL_StatusTypeDef status;
-	//uint8_t rx_data[6]={0x00};
-	char str[32] = {0x00};
-	HAL_GPIO_WritePin(FPGA_IO1_GPIO_Port, FPGA_IO1_Pin, 1);
-	log_status = 1;
 
+	HAL_UART_Init(&huart2);
+	HAL_UART_Transmit(&huart2, tx_data, 1, 1000);
+	HAL_UART_DeInit(&huart2);
+*/
 	sprintf(str,"%02X,%02X,%02X,%02X,%02X,%02X", rx_data[0],rx_data[1],rx_data[2],rx_data[3],rx_data[4],rx_data[5]);
 	SCPI_ResultCharacters(context, str, 32);
 	return SCPI_RES_OK;
@@ -152,7 +249,8 @@ const scpi_command_t scpi_commands[] = {
     {.pattern = "SYSTem:ERRor:COUNt?", .callback = SCPI_SystemErrorCountQ,},
     {.pattern = "SYSTem:VERSion?", .callback = SCPI_SystemVersionQ,},
 
-	//scpi_system.c
+	{.pattern = "CONFigure[:VOLTage]:DC", .callback = SCPI_ConfigureVoltageDC,},
+	{.pattern = "MEASure[:VOLTage]:DC?", .callback = SCPI_MeasureVoltageDCQ,},
 
 	{.pattern = "TS?", .callback = TEST_TSQ,},
 

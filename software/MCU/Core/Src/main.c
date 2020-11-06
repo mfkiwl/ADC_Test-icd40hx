@@ -21,7 +21,6 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include "lwip.h"
-#include "bsp_74hc595.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -73,9 +72,11 @@ const osThreadAttr_t LogData_attributes = {
 /* USER CODE BEGIN PV */
 
 uint8_t log_status = 0;
-volatile uint8_t rx_data[6] = {0x00};
+uint8_t rx_data[6] = {0x00};
 uint8_t it_array_mul[10]={1, 1, 1, 1, 2, 5, 10, 0};
 struct cal_struct	cal_data;
+struct cfg_struct dmm_cfg;
+extern unsigned char  shiftRegisters[2] ;
 
 /* USER CODE END PV */
 
@@ -149,10 +150,17 @@ int main(void)
   MX_SPI3_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
- // BSP_Init();
+
   MX_LWIP_Init();
 
- // HAL_GPIO_WritePin(FPGA_IO1_GPIO_Port, FPGA_IO1_Pin, 0);
+  shiftRegisters[0] = SR_K1; shiftRegisters[1] = SR_M11 | SR_M24 | SR_M22;
+  ShiftRegister74HC595_update();
+
+  dmm_cfg.range = 10;
+
+  HAL_GPIO_WritePin(FPGA_IO1_GPIO_Port, FPGA_IO1_Pin, 1);
+  log_status = 1;
+
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -185,9 +193,8 @@ int main(void)
   LogDataHandle = osThreadNew(StartTaskLogData, NULL, &LogData_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
-  scpi_server_init();
 
-//  osThreadSuspend(TriggerTaskHandle);
+  scpi_server_init();
 
   /* USER CODE END RTOS_THREADS */
 
@@ -366,7 +373,7 @@ static void MX_USART2_UART_Init(void)
 
   /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
-  huart2.Init.BaudRate = 57600;
+  huart2.Init.BaudRate = 115200;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
   huart2.Init.Parity = UART_PARITY_NONE;
@@ -534,8 +541,8 @@ void StartTaskLED(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	 //HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
-	 osDelay(pdMS_TO_TICKS(500));
+	 HAL_GPIO_TogglePin(LED_BLUE_GPIO_Port, LED_BLUE_Pin);
+	 osDelay(pdMS_TO_TICKS(1000));
   }
   /* USER CODE END StartTaskLED */
 }

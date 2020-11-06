@@ -1,6 +1,6 @@
 #include "bsp_74hc595.h"
 
-unsigned char  shiftRegisters[8] = {0}; //8 means 8 74HC595 IC
+unsigned char  shiftRegisters[2] = {0x00}; //2 means 2 74HC595 IC
 
 void ShiftRegister74HC595_dalay(void)
 {
@@ -19,6 +19,8 @@ void ShiftRegister74HC595_update(void)
 	//Only call AFTER all values are set how you would like 
     int i , j;
     LatchPinSet(LOW595);
+    shiftRegisters[0] ^=SR_INVERT_MASK;
+    shiftRegisters[1] ^=SR_INVERT_MASK;
 
     //iterate through the registers
     for(i = Number_of_Registers - 1; i >=  0; i--){
@@ -44,7 +46,7 @@ void ShiftRegister74HC595_update(void)
 
 }
 
-void ShiftRegister74HC595_setPin(int index, bool val)
+void ShiftRegister74HC595_setPin(int index, bool_t val)
 {
     int byteIndex = index / 8;
     int bitIndex = index % 8;
@@ -56,7 +58,7 @@ void ShiftRegister74HC595_setPin(int index, bool val)
     shiftRegisters[byteIndex] = current_byte;
 }
 
-void ShiftRegister74HC595_setAll(bool val)
+void ShiftRegister74HC595_setAll(bool_t val)
 {
     int i;
     //set all register pins to val

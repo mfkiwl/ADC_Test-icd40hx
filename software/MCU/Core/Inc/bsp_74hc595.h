@@ -16,7 +16,7 @@ typedef enum
 {
   LOW = 0,
   HIGH
-}bool;
+}bool_t;
 
 extern unsigned char  shiftRegisters[];
 
@@ -24,8 +24,8 @@ void SerialDataPinSet(PinState595 state);
 void ClockPinSet(PinState595 state);
 void LatchPinSet(PinState595 state);
 void ShiftRegister74HC595_clear(void);
-void ShiftRegister74HC595_setAll(bool val);
-void ShiftRegister74HC595_setPin(int index, bool val);
+void ShiftRegister74HC595_setAll(bool_t val);
+void ShiftRegister74HC595_setPin(int index, bool_t val);
 void ShiftRegister74HC595_update(void);
 void ShiftRegister74HC595_init(void);
 #endif

@@ -107,24 +107,27 @@ void Error_Handler(void);
 #define		CAL_PREDEF_NZO		-170.0
 #define		CAL_PREDEF_STEP		38500
 
-#define	SR_M14		0x8000
-#define	SR_M13		0x4000
-#define	SR_M12		0x2000
-#define	SR_M11		0x1000
-#define	SR_M21		0x0800
-#define	SR_M22		0x0400
-#define	SR_M23		0x0200
-#define	SR_M24		0x0100
-#define	SR_K4		0x0080
-#define	SR_K3		0x0040
-#define	SR_K1		0x0020
-#define	SR_K2		0x0010
-#define	SR_M3D		0x0008
-#define	SR_M3C		0x0004
-#define	SR_M3B		0x0002
-#define	SR_M3A		0x0001
-#define	SR_INVERT_MASK	0xFFFF
+#define	SR_M14		0x80
+#define	SR_M13		0x40
+#define	SR_M12		0x20
+#define	SR_M11		0x10
+#define	SR_M21		0x08
+#define	SR_M22		0x04
+#define	SR_M23		0x02
+#define	SR_M24		0x01
+#define	SR_K4		0x80
+#define	SR_K1		0x20
+#define	SR_K2		0x10
 
+#define	SR_INVERT_MASK	0xFF
+
+
+struct val_74hc595
+{
+	uint8_t ON;
+	uint8_t OFF
+
+};
 
 struct cal_struct
 	{
@@ -147,6 +150,15 @@ struct cal_struct
 	double	r_10M_offset;
 	double	r_10M_gain;
 };
+
+
+struct cfg_struct
+{
+	uint32_t range;
+
+};
+
+double get_voltage (uint8_t * adc_arrray, uint8_t it_adc, float cf);
 
 /* USER CODE END Private defines */
 
