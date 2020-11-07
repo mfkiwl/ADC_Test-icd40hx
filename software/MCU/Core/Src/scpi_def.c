@@ -150,7 +150,7 @@ static scpi_result_t SCPI_MeasureVoltageDCQ(scpi_t * context)
 {
 	double adc_in =0;
 	uint8_t test[6] = {0x83,0x2f, 0xc3,0xef,0x0F,0xF0};
-	adc_in = get_voltage(rx_data,10,1.0);
+	adc_in = get_voltage(rx_data,10,1.000015);
 	char str[64] = {0x00};
 
 	switch (dmm_cfg.range)
@@ -158,10 +158,10 @@ static scpi_result_t SCPI_MeasureVoltageDCQ(scpi_t * context)
 	case 1: break;
 	case 10:
 		{
-			adc_in = adc_in * 1.0;
+			adc_in = adc_in/(double)1000;
 			adc_in = adc_in + cal_data.v_10V_offset;
 			adc_in = adc_in * cal_data.v_10V_gain;
-			sprintf(str,"%+9.4f", adc_in);
+			sprintf(str,"%f", adc_in);
 
 		}break;
 	case 100:
@@ -169,7 +169,7 @@ static scpi_result_t SCPI_MeasureVoltageDCQ(scpi_t * context)
 			adc_in *=10.0;
 			adc_in = adc_in + cal_data.v_100V_offset;
 			adc_in = adc_in * cal_data.v_100V_gain;
-			sprintf(str,"%+9.4f", adc_in);
+			sprintf(str,"%f", adc_in);
 
 		}break;
 	}
@@ -181,9 +181,15 @@ static scpi_result_t TEST_TSQ(scpi_t * context)
 {
 	char str[64] = {0x00};
 /*
-	uint8_t tx_data[1] = {0x77};
+	uint8_t tx_data[1] = {0x52};
 
+    uint32_t npc = 0;
 
+    if(!SCPI_ParamUInt32(context, &npc, TRUE))
+    {
+        return SCPI_RES_ERR;
+    }
+    tx_data[0] = 0x50 + (uint8_t)npc;
 	HAL_UART_Init(&huart2);
 	HAL_UART_Transmit(&huart2, tx_data, 1, 1000);
 	HAL_UART_DeInit(&huart2);

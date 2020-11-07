@@ -90,8 +90,8 @@ void Error_Handler(void);
 
 #define		CAL_PREDEF_1VO		- 0.000070
 #define		CAL_PREDEF_1VG		0.9838070
-#define		CAL_PREDEF_10VO		- 0.00004
-#define		CAL_PREDEF_10VG		0.9838573
+#define		CAL_PREDEF_10VO		0.008033
+#define		CAL_PREDEF_10VG		0.985334
 #define		CAL_PREDEF_100VO	- 0.0009
 #define		CAL_PREDEF_100VG	0.9839094
 #define		CAL_PREDEF_1KO		- 0.001

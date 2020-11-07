@@ -64,11 +64,13 @@ begin
 		begin
 		if (uart_rx_ready==1)
 			begin
+				w_red <= ~w_red;
 				
 			//do something with rx data
 			if (uart_rx_register[7:4]==5)
 				begin
-				
+			w_red <= ~w_red;
+	
 				case (uart_rx_register[3:0])
 					0 : runup_set<=199;	//1
 					1 : runup_set<=399;	//2
@@ -348,7 +350,6 @@ always @ (posedge uart_tx_bit_clock)
 		uart_tx_start<=0;
 		if (uart_busy==0)
 			begin
-				w_red <= ~w_red;
 			if (uart_frame_cnt==5)
 				begin
 				uart_frame_state <=2;
@@ -362,7 +363,6 @@ always @ (posedge uart_tx_bit_clock)
 		end
 	else if (uart_frame_state==2)
 		begin
-			w_red <= ~w_red;
 		end
 	end
 

@@ -11,9 +11,9 @@ module uart_rx(
 		);
 		
 reg uart_rx_pin_tmp, uart_rx_pin;
-reg[2:0] uart_rx_state;
+reg[2:0] uart_rx_state = 3'd0;
 reg[4:0] uart_rx_cnt;
-reg[4:0] uart_rx_bit;
+reg[4:0] uart_rx_bit = 3'd0;
 reg[4:0] uart_rx_zero_cnt;
 reg[7:0] uart_rx_tmp;
 reg rx_pin_state;

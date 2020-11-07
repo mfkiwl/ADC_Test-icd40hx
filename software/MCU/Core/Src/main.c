@@ -74,6 +74,7 @@ const osThreadAttr_t LogData_attributes = {
 uint8_t log_status = 0;
 uint8_t rx_data[6] = {0x00};
 uint8_t it_array_mul[10]={1, 1, 1, 1, 2, 5, 10, 0};
+double it_array_refcor[3]={1, 1.01582, 1};
 struct cal_struct	cal_data;
 struct cfg_struct dmm_cfg;
 extern unsigned char  shiftRegisters[2] ;
@@ -373,7 +374,7 @@ static void MX_USART2_UART_Init(void)
 
   /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
-  huart2.Init.BaudRate = 115200;
+  huart2.Init.BaudRate = 62500;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
   huart2.Init.Parity = UART_PARITY_NONE;
@@ -573,7 +574,7 @@ void StartTaskLogData(void *argument)
 		  }
 		  HAL_UART_DeInit(&huart2);
 	  }
-	  osDelay(pdMS_TO_TICKS(10));
+	  osDelay(pdMS_TO_TICKS(5));
   }
   /* USER CODE END StartTaskLogData */
 }
