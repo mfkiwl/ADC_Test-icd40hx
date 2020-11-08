@@ -135,6 +135,7 @@ int main(void)
 
   MX_LWIP_Init();
   DMM_Init();
+
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -478,12 +479,12 @@ BSP_StatusTypeDef eeprom_status()
 	}
 }
 
-BSP_StatusTypeDef eeprom_read(union cal_data* union_data, size_t size)
+BSP_StatusTypeDef eeprom_read(uint8_t* data, size_t size)
 {
 
 	if(ee24_isConnected())
 	{
-		if(ee24_read(0, union_data->bytes, size, 1000))
+		if(ee24_read(0, data, size, 1000))
 		{
 			return BSP_OK;
 		}
@@ -499,13 +500,13 @@ BSP_StatusTypeDef eeprom_read(union cal_data* union_data, size_t size)
 	}
 }
 
-BSP_StatusTypeDef eeprom_write(union bsp_data* union_data, size_t size)
+BSP_StatusTypeDef eeprom_write(uint8_t* data, size_t size)
 {
-	uint8_t tx_data = EEPROM_WRITE_DONE;
+	uint8_t tx_data[1] = {EEPROM_WRITE_DONE};
 
 	if(ee24_isConnected())
 	{
-		if(ee24_write(0, union_data->bytes, size, 1000))
+		if(ee24_write(0, data, size, 1000))
 		{
 			if(ee24_write(EEPROM_END, &tx_data, 1, 1000))
 			{
@@ -582,13 +583,13 @@ void DMM_Init()
 	}
 	else if(BSP_OK == status)
 	{
-		eeprom_read(dmm.calibration, STRUCT_SIZE);
+		eeprom_read(dmm.calibration.bytes, STRUCT_SIZE);
 	}
 
-	meas_path(dmm.range, MEAS_NORM);
+	meas_path(dmm.range, NORM_MEAS);
 
 	HAL_GPIO_WritePin(FPGA_IO1_GPIO_Port, FPGA_IO1_Pin, 1);
-	log_status = 1;
+
 }
 
 /* USER CODE END 4 */

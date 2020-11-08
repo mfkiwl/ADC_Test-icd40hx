@@ -126,6 +126,7 @@ union cal_data
 	double	v_10V_offset;
 	double	v_10V_gain;
 	double	v_100V_offset;
+	double	v_100V_gain;
 	}structure;
 
 	uint8_t bytes[STRUCT_SIZE];
@@ -178,9 +179,9 @@ typedef enum
 
 } BSP_StatusTypeDef;
 
-double get_voltage (uint8_t * adc_arrray, uint8_t it_adc, float cf);
-BSP_StatusTypeDef eeprom_read(union cal_data* union_data, size_t size);
-BSP_StatusTypeDef eeprom_write(union bsp_data* union_data, size_t size);
+
+BSP_StatusTypeDef eeprom_read(uint8_t* data, size_t size);
+BSP_StatusTypeDef eeprom_write(uint8_t* data, size_t size);
 BSP_StatusTypeDef eeprom_status();
 /* USER CODE END Private defines */
 
