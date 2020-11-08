@@ -43,7 +43,7 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include "bsp_74hc595.h"
-
+#include "ee24Config.h"
 
 extern uint8_t log_status;
 extern volatile uint8_t rx_data[6];
@@ -62,36 +62,112 @@ scpi_choice_def_t boolean_select[] =
     SCPI_CHOICE_LIST_END
 };
 
-long result, num;
+extern uint8_t valid_data;
 
-
-long adc_get_raw (unsigned char * input_data)
+double get_voltage (uint8_t * adc_arrray, uint8_t it_adc, double cf)
 {
-    long res,num;
+  int64_t tmp1,tmp2;
+  uint16_t adc_up, adc_total, adc_rundown;
+  uint8_t adc_x;
+  double retval;
+  adc_up = (((uint16_t)(adc_arrray[0]))<<8)+(((uint16_t)(adc_arrray[1]))<<0);
+  adc_total = (((uint16_t)(adc_arrray[2]&0x0F))<<8)+(((uint16_t)(adc_arrray[3]))<<0);
+  adc_rundown = (((uint16_t)(adc_arrray[4]))<<8)+(((uint16_t)(adc_arrray[5]))<<0);
+  adc_x = (adc_arrray[2]&0x80)>>7;
+  if (adc_x==1)
+  {
+	  tmp1 = adc_rundown+(cal_data.adc_z_offset);
+  }
+  else
+  {
+	  tmp1 = -adc_rundown;
+  }
 
-    unsigned int adc_runup, adc_rundown, adc_rundown_neg;
-    unsigned int coeff_N;
-    adc_rundown_neg = 1;
-    if (input_data[0]&0x40) adc_rundown_neg = 0;
-    adc_runup = ((((unsigned int)(input_data[0]))<<8) | (((unsigned int)(input_data[1]))<<0))&0x3FFF;
-    adc_rundown = (((unsigned int)(input_data[2]))<<8) | (((unsigned int)(input_data[3]))<<0);
-    num = adc_runup;
-    num = num * 100000;
-    num = num + adc_rundown;
-    res = adc_runup;
-    coeff_N = 50000;
-    res = res - 100;
-    res = res * coeff_N;
-    res = res/1;
-    if (adc_rundown_neg==0) res = res + adc_rundown;
-    else res = res - adc_rundown;
-    return res;
+  tmp2 = (adc_total+1)/2;
+  tmp2 = tmp2-adc_up;
+  tmp2 = tmp2*cal_data.adc_step;
+  tmp2 = tmp2 - tmp1;
+  retval = tmp2;							//tmp2 now holds ADC counts
+  retval = retval/338.10;					//roughly map ADC counts to voltage
+  retval = retval/((double)(it_adc));		//correction to integration time
+  retval = retval / cf;
+  return retval;
 }
 
-static scpi_result_t SCPI_ConfigureVoltageDC(scpi_t * context)
+
+void meas_path(uint8_t range, uint8_t mode)
+{
+	shiftRegisters[0] = 0;
+	shiftRegisters[1] = 0;
+	ShiftRegister74HC595_update();
+
+	if(AUTO_ZERO == mode)
+	{
+		switch(range)
+		{
+			case 1:   shiftRegisters[0] = 0; shiftRegisters[1] = SR_M14 | SR_M24 | SR_M21; break;
+			case 10:  shiftRegisters[0] = 0; shiftRegisters[1] = SR_M14 | SR_M24 | SR_M22; break;
+			case 100: shiftRegisters[0] = 0; shiftRegisters[1] = SR_M14 | SR_M24 | SR_M22; break;
+		}
+	}
+	else if(NORM_MEAS == mode)
+	{
+		switch(range)
+		{
+			case 1:   shiftRegisters[0] = SR_K1; shiftRegisters[1] = SR_M11 | SR_M24 | SR_M21; break;
+			case 10:  shiftRegisters[0] = SR_K1; shiftRegisters[1] = SR_M11 | SR_M24 | SR_M22; break;
+			case 100: shiftRegisters[0] = SR_K2 | SR_K4; shiftRegisters[1] = SR_M11 | SR_M24 | SR_M22; break;
+		}
+	}
+	else if(ADC_MEAS == mode)
+	{
+		switch(range)
+		{
+			case 1:   shiftRegisters[0] = 0; shiftRegisters[1] = SR_M14 | SR_M23 | SR_M21; break;
+			case 10:  shiftRegisters[0] = 0; shiftRegisters[1] = SR_M14 | SR_M23 | SR_M22; break;
+			case 100: shiftRegisters[0] = 0; shiftRegisters[1] = SR_M14 | SR_M23 | SR_M22; break;
+		}
+	}
+
+	ShiftRegister74HC595_update();
+
+}
+
+double zero_measure(uint8_t adc_it, double adc_cf, uint8_t nplc)
+{
+	double results[10] = {0.0};
+
+
+}
+
+double measure(uint8_t adc_it, double adc_cf, uint8_t nplc)
+{
+	double sum = 0.0;
+	double result = 0.0;
+	uint8_t loop_max = 0;
+
+	if(nplc > 3)
+	{
+		loop_max = (uint8_t)(nplc/10);
+		for(uint32_t x = 0; x < loop_max; x++)
+		{
+			sum+= get_voltage(rx_data, adc_it, adc_cf);
+		}
+
+		result = sum/(double)loop_max;
+	}
+	else
+	{
+		result = get_voltage(rx_data, adc_it, adc_cf);
+	}
+
+	return result;
+}
+
+static scpi_result_t SCPI_SenseVoltageDC(scpi_t * context)
 {
 	scpi_number_t param_range;
-		float valid_ranges[4] = {1, 10, 100};
+		uint8_t valid_ranges[4] = {1, 10, 100};
 		uint8_t is_valid = 0;
 		uint16_t switch_path = 0;
 
@@ -134,66 +210,75 @@ static scpi_result_t SCPI_ConfigureVoltageDC(scpi_t * context)
 			}
 		}
 
-		switch(dmm_cfg.range )
+		switch(dmm.range)
 		{
-		case 1:   shiftRegisters[0] = SR_K1; shiftRegisters[1] = SR_M11 | SR_M24 | SR_M21; break;
-		case 10:  shiftRegisters[0] = SR_K1; shiftRegisters[1] = SR_M11 | SR_M24 | SR_M22; break;
-		case 100: shiftRegisters[0] = SR_K2 | SR_K4; shiftRegisters[1] = SR_M11 | SR_M24 | SR_M22; break;
+		case 1:   dmm.range_index = 0; break;
+		case 10:  dmm.range_index = 1; break;
+		case 100: dmm.range_index = 2;break;
 		}
 
-		 ShiftRegister74HC595_update();
+		meas_path(dmm.range, MEAS_NORM);
 
 	return SCPI_RES_OK;
 }
 
+
+
 static scpi_result_t SCPI_MeasureVoltageDCQ(scpi_t * context)
 {
-	double adc_in =0;
-	uint8_t test[6] = {0x83,0x2f, 0xc3,0xef,0x0F,0xF0};
-	adc_in = get_voltage(rx_data,10,1.000015);
-	char str[64] = {0x00};
+	double adc_in = 0.0;
+	char str[24] = {0x00};
+	uint32_t loop = dmm_cfg.samples;
 
-	switch (dmm_cfg.range)
+	adc_in = measure(dmm.adc_raw[dmm.nplc_index], dmm.adc_cf[dmm.nplc_index], dmm.nplc_index);
+
+	while(dmm.samples--)
 	{
-	case 1: break;
-	case 10:
+		switch (dmm_cfg.range)
 		{
+		case 1:{
 			adc_in = adc_in/(double)1000;
-			adc_in = adc_in + cal_data.v_10V_offset;
-			adc_in = adc_in * cal_data.v_10V_gain;
+			adc_in = adc_in + dmm.calibration.structure.v_1V_offset;
+			adc_in = adc_in * dmm.calibration.structure.v_1V_gain;
+			adc_in = adc_in + dmm.zero_val;
 			sprintf(str,"%f", adc_in);
 
 		}break;
-	case 100:
-		{
-			adc_in *=10.0;
-			adc_in = adc_in + cal_data.v_100V_offset;
-			adc_in = adc_in * cal_data.v_100V_gain;
-			sprintf(str,"%f", adc_in);
+		case 10:{
+				adc_in = adc_in/(double)1000;
+				adc_in = adc_in + dmm.calibration.structure.v_10V_offset;
+				adc_in = adc_in * dmm.calibration.structure.v_10V_gain;
+				adc_in = adc_in + dmm.zero_val;
+				sprintf(str,"%f", adc_in);
 
-		}break;
+			}break;
+		case 100:{
+			adc_in = adc_in/(double)1000;
+				adc_in = adc_in + dmm.calibration.structure.v_100V_offset;
+				adc_in = adc_in * dmm.calibration.structure.v_100V_gain;
+				adc_in = adc_in + dmm.zero_val;
+				sprintf(str,"%f", adc_in);
+
+			}break;
+		}
+		SCPI_ResultCharacters(context, str, 24);
 	}
-	SCPI_ResultCharacters(context, str, 64);
+
+
+	return SCPI_RES_OK;
+}
+
+static scpi_result_t SCPI_CalibrationStore(scpi_t * context)
+{
+	eeprom_write(dmm.calibration, STRUCT_SIZE);
+
 	return SCPI_RES_OK;
 }
 
 static scpi_result_t TEST_TSQ(scpi_t * context)
 {
 	char str[64] = {0x00};
-/*
-	uint8_t tx_data[1] = {0x52};
 
-    uint32_t npc = 0;
-
-    if(!SCPI_ParamUInt32(context, &npc, TRUE))
-    {
-        return SCPI_RES_ERR;
-    }
-    tx_data[0] = 0x50 + (uint8_t)npc;
-	HAL_UART_Init(&huart2);
-	HAL_UART_Transmit(&huart2, tx_data, 1, 1000);
-	HAL_UART_DeInit(&huart2);
-*/
 	sprintf(str,"%02X,%02X,%02X,%02X,%02X,%02X", rx_data[0],rx_data[1],rx_data[2],rx_data[3],rx_data[4],rx_data[5]);
 	SCPI_ResultCharacters(context, str, 32);
 	return SCPI_RES_OK;
@@ -255,7 +340,24 @@ const scpi_command_t scpi_commands[] = {
     {.pattern = "SYSTem:ERRor:COUNt?", .callback = SCPI_SystemErrorCountQ,},
     {.pattern = "SYSTem:VERSion?", .callback = SCPI_SystemVersionQ,},
 
-	{.pattern = "CONFigure[:VOLTage]:DC", .callback = SCPI_ConfigureVoltageDC,},
+	{.pattern = "[SENSe:]VOLTage:DC", .callback = SCPI_SenseVoltageDC,},
+	{.pattern = "[SENSe:]VOLTage:DC?", .callback = SCPI_SenseVoltageDCQ,},
+
+	{.pattern = "[SENSe:]VOLTage[:DC]:NPLC", .callback = SCPI_SenseVoltageDCNPLC,},
+	{.pattern = "[SENSe:]VOLTage[:DC]:NPLC?", .callback = SCPI_SenseVoltageDCNPLCQ,},
+
+	{.pattern = "[SENSe:]VOLTage[:DC]:ZERO:AUTO", .callback = SCPI_SenseVoltageDCZeroAuto,},
+	{.pattern = "[SENSe:]VOLTage[:DC]:ZERO:AUTO?", .callback = SCPI_SenseVoltageDCZeroAutoQ,},
+
+	{.pattern = "SAMPle:COUNt", .callback = SCPI_SampleCount,},
+	{.pattern = "SAMPle:COUNt?", .callback = SCPI_SampleCountQ,},
+
+	{.pattern = "CALibration:ADC?", .callback = SCPI_CalibrationADCQ,},
+	{.pattern = "CALibration:VALue", .callback = SCPI_CalibrationValue,},
+	{.pattern = "CALibration:VALue?", .callback = SCPI_CalibrationValueQ,},
+	{.pattern = "CALibration[:ALL]?", .callback = SCPI_CalibrationAllQ,},
+	{.pattern = "CALibration:STORe", .callback = SCPI_CalibrationStore,},
+
 	{.pattern = "MEASure[:VOLTage]:DC?", .callback = SCPI_MeasureVoltageDCQ,},
 
 	{.pattern = "TS?", .callback = TEST_TSQ,},

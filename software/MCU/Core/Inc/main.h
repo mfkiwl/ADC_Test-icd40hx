@@ -88,22 +88,12 @@ void Error_Handler(void);
 #define FPGA_IO2_GPIO_Port GPIOD
 /* USER CODE BEGIN Private defines */
 
-#define		CAL_PREDEF_1VO		- 0.000070
-#define		CAL_PREDEF_1VG		0.9838070
+#define		CAL_PREDEF_1VO		0
+#define		CAL_PREDEF_1VG		1
 #define		CAL_PREDEF_10VO		0.008033
 #define		CAL_PREDEF_10VG		0.985334
-#define		CAL_PREDEF_100VO	- 0.0009
-#define		CAL_PREDEF_100VG	0.9839094
-#define		CAL_PREDEF_1KO		- 0.001
-#define		CAL_PREDEF_1KG		0.9379245
-#define		CAL_PREDEF_10KO		- 0.0000
-#define		CAL_PREDEF_10KG		0.9380175
-#define		CAL_PREDEF_100KO	- 0.0000
-#define		CAL_PREDEF_100KG	0.9381589
-#define		CAL_PREDEF_1MO		- 0.0006
-#define		CAL_PREDEF_1MG		0.9381589
-#define		CAL_PREDEF_10MO		- 0.000
-#define		CAL_PREDEF_10MG		0.9381589
+#define		CAL_PREDEF_100VO	0
+#define		CAL_PREDEF_100VG	1
 #define		CAL_PREDEF_NZO		-170.0
 #define		CAL_PREDEF_STEP		38500
 
@@ -121,15 +111,13 @@ void Error_Handler(void);
 
 #define	SR_INVERT_MASK	0xFF
 
+#define STRUCT_SIZE 72
 
-struct val_74hc595
+#pragma pack(push, 1)
+
+union cal_data
 {
-	uint8_t ON;
-	uint8_t OFF
-
-};
-
-struct cal_struct
+	struct cal_struct
 	{
 	int32_t	adc_z_offset;
 	int32_t	adc_step;
@@ -138,28 +126,62 @@ struct cal_struct
 	double	v_10V_offset;
 	double	v_10V_gain;
 	double	v_100V_offset;
-	double	v_100V_gain;
-	double	r_1k_offset;
-	double	r_1k_gain;
-	double	r_10k_offset;
-	double	r_10k_gain;
-	double	r_100k_offset;
-	double	r_100k_gain;
-	double	r_1M_offset;
-	double	r_1M_gain;
-	double	r_10M_offset;
-	double	r_10M_gain;
+	}structure;
+
+	uint8_t bytes[STRUCT_SIZE];
 };
 
 
+#pragma pack(pop)
+
+enum zero_states
+{
+	ZERO_OFF = 0,
+	ZERO_ON,
+	ZERO_ONCE
+};
+
+enum measure_mode
+{
+	AUTO_ZERO = 1,
+	NORM_MEAS,
+	ADC_MEAS
+
+};
 struct cfg_struct
 {
 	uint32_t range;
-
+	uint8_t range_index;
+	uint8_t nplc_index;
+	uint32_t samples;
+	uint8_t nplc;
+	uint8_t zero_status;
+	double zero_val;
+	double adc_raw[7];
+	double adc_cf[7];
+	uint8_t adc_nplc[7];
+	uint8_t zero_done;
+	union cal_data calibration;
 };
 
-double get_voltage (uint8_t * adc_arrray, uint8_t it_adc, float cf);
+typedef enum
+{
+  BSP_OK       = 0x00U,
+  BSP_ERROR    = 0x01U,
+  BSP_BUSY = 0x02U,
+  BSP_TIMEOUT  = 0x03U,
+  BSP_EEPROM_EMPTY = 0x04U,
+  BSP_EEPROM_MAX_SIZE = 0x05U,
+  BSP_EEPROM_NO_CONNECTION = 0x06U,
+  BSP_EEPROM_WRITE_ERROR = 0x07U,
+  BSP_EEPROM_READ_ERROR = 0x08U
 
+} BSP_StatusTypeDef;
+
+double get_voltage (uint8_t * adc_arrray, uint8_t it_adc, float cf);
+BSP_StatusTypeDef eeprom_read(union cal_data* union_data, size_t size);
+BSP_StatusTypeDef eeprom_write(union bsp_data* union_data, size_t size);
+BSP_StatusTypeDef eeprom_status();
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

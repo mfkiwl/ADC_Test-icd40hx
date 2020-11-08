@@ -21,6 +21,7 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include "lwip.h"
+#include "bsp_ee24.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -71,13 +72,12 @@ const osThreadAttr_t LogData_attributes = {
 };
 /* USER CODE BEGIN PV */
 
-uint8_t log_status = 0;
 uint8_t rx_data[6] = {0x00};
 uint8_t it_array_mul[10]={1, 1, 1, 1, 2, 5, 10, 0};
 double it_array_refcor[3]={1, 1.01582, 1};
-struct cal_struct	cal_data;
-struct cfg_struct dmm_cfg;
-extern unsigned char  shiftRegisters[2] ;
+uint32_t count_fail= 0;
+struct cfg_struct dmm;
+
 
 /* USER CODE END PV */
 
@@ -90,7 +90,7 @@ static void MX_USART2_UART_Init(void);
 void StartDefaultTask(void *argument);
 void StartTaskLED(void *argument);
 void StartTaskLogData(void *argument);
-
+void DMM_Init();
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -107,25 +107,6 @@ void StartTaskLogData(void *argument);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
-  cal_data.adc_step = CAL_PREDEF_STEP;
-  cal_data.adc_z_offset = CAL_PREDEF_NZO;
-  cal_data.v_1V_offset = CAL_PREDEF_1VO;
-  cal_data.v_1V_gain = CAL_PREDEF_1VG;
-  cal_data.v_10V_offset = CAL_PREDEF_10VO;
-  cal_data.v_10V_gain = CAL_PREDEF_10VG;
-  cal_data.v_100V_offset = CAL_PREDEF_100VO;
-  cal_data.v_100V_gain = CAL_PREDEF_100VG;
-  cal_data.r_1k_offset = CAL_PREDEF_1KO;
-  cal_data.r_1k_gain = CAL_PREDEF_1KG;
-  cal_data.r_10k_offset = CAL_PREDEF_10KO;
-  cal_data.r_10k_gain = CAL_PREDEF_10KG;
-  cal_data.r_100k_offset = CAL_PREDEF_100KO;
-  cal_data.r_100k_gain = CAL_PREDEF_100KG;
-  cal_data.r_1M_offset = CAL_PREDEF_1MO;
-  cal_data.r_1M_gain = CAL_PREDEF_1MG;
-  cal_data.r_10M_offset = CAL_PREDEF_10MO;
-  cal_data.r_10M_gain = CAL_PREDEF_10MG;
 
   /* USER CODE END 1 */
 
@@ -153,15 +134,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   MX_LWIP_Init();
-
-  shiftRegisters[0] = SR_K1; shiftRegisters[1] = SR_M11 | SR_M24 | SR_M22;
-  ShiftRegister74HC595_update();
-
-  dmm_cfg.range = 10;
-
-  HAL_GPIO_WritePin(FPGA_IO1_GPIO_Port, FPGA_IO1_Pin, 1);
-  log_status = 1;
-
+  DMM_Init();
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -475,36 +448,148 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
-double get_voltage (uint8_t * adc_arrray, uint8_t it_adc, float cf)
+BSP_StatusTypeDef eeprom_status()
 {
-  int64_t tmp1,tmp2;
-  uint16_t adc_up, adc_total, adc_rundown;
-  uint8_t adc_x;
-  double retval;
-  adc_up = (((uint16_t)(adc_arrray[0]))<<8)+(((uint16_t)(adc_arrray[1]))<<0);
-  adc_total = (((uint16_t)(adc_arrray[2]&0x0F))<<8)+(((uint16_t)(adc_arrray[3]))<<0);
-  adc_rundown = (((uint16_t)(adc_arrray[4]))<<8)+(((uint16_t)(adc_arrray[5]))<<0);
-  adc_x = (adc_arrray[2]&0x80)>>7;
-  if (adc_x==1)
-  {
-	  tmp1 = adc_rundown+(cal_data.adc_z_offset);
-  }
-  else
-  {
-	  tmp1 = -adc_rundown;
-  }
+	uint8_t rx_data = 0;
 
-  tmp2 = (adc_total+1)/2;
-  tmp2 = tmp2-adc_up;
-  tmp2 = tmp2*cal_data.adc_step;
-  tmp2 = tmp2 - tmp1;
-  retval = tmp2;							//tmp2 now holds ADC counts
-  retval = retval/338.10;					//roughly map ADC counts to voltage
-  retval = retval/((double)(it_adc));		//correction to integration time
-  retval = retval / cf;
-  return retval;
+	if(ee24_isConnected())
+	{
+		if(ee24_read(EEPROM_END, &rx_data, 1, 1000))
+		{
+			if(EEPROM_WRITE_DONE == rx_data)
+			{
+				return BSP_OK;
+			}
+			else
+			{
+				return BSP_EEPROM_EMPTY;
+			}
+
+		}
+		else
+		{
+			return BSP_EEPROM_READ_ERROR;
+		}
+
+	}
+	else
+	{
+		return BSP_EEPROM_NO_CONNECTION;
+	}
 }
 
+BSP_StatusTypeDef eeprom_read(union cal_data* union_data, size_t size)
+{
+
+	if(ee24_isConnected())
+	{
+		if(ee24_read(0, union_data->bytes, size, 1000))
+		{
+			return BSP_OK;
+		}
+		else
+		{
+			return BSP_EEPROM_READ_ERROR;
+		}
+
+	}
+	else
+	{
+		return BSP_EEPROM_NO_CONNECTION;
+	}
+}
+
+BSP_StatusTypeDef eeprom_write(union bsp_data* union_data, size_t size)
+{
+	uint8_t tx_data = EEPROM_WRITE_DONE;
+
+	if(ee24_isConnected())
+	{
+		if(ee24_write(0, union_data->bytes, size, 1000))
+		{
+			if(ee24_write(EEPROM_END, &tx_data, 1, 1000))
+			{
+				return BSP_OK;
+			}
+			else
+			{
+				return BSP_EEPROM_WRITE_ERROR;
+			}
+
+		}
+		else
+		{
+			return BSP_EEPROM_WRITE_ERROR;
+		}
+
+	}
+	else
+	{
+		return BSP_EEPROM_NO_CONNECTION;
+	}
+}
+
+void DMM_Init()
+{
+	BSP_StatusTypeDef status;
+	status = eeprom_status();
+
+	if(BSP_EEPROM_EMPTY == status)
+	{
+
+	 dmm.calibration.structure.adc_step = CAL_PREDEF_STEP;
+	 dmm.calibration.structure.adc_z_offset = CAL_PREDEF_NZO;
+	 dmm.calibration.structure.v_1V_offset = CAL_PREDEF_1VO;
+	 dmm.calibration.structure.v_1V_gain = CAL_PREDEF_1VG;
+	 dmm.calibration.structure.v_10V_offset = CAL_PREDEF_10VO;
+	 dmm.calibration.structure.v_10V_gain = CAL_PREDEF_10VG;
+	 dmm.calibration.structure.v_100V_offset = CAL_PREDEF_100VO;
+	 dmm.calibration.structure.v_100V_gain = CAL_PREDEF_100VG;
+
+	 dmm.adc_cf[0] = 1.000145;
+	 dmm.adc_cf[1] = 1.000060;
+	 dmm.adc_cf[2] = 1.000015;
+	 dmm.adc_cf[3] = 1.0;
+	 dmm.adc_cf[4] = 1.0;
+	 dmm.adc_cf[5] = 1.0;
+	 dmm.adc_cf[6] = 1.0;
+
+	 dmm.adc_raw[0] = 1;
+	 dmm.adc_raw[1] = 2;
+	 dmm.adc_raw[2] = 5;
+	 dmm.adc_raw[3] = 10;
+	 dmm.adc_raw[4] = 10;
+	 dmm.adc_raw[5] = 10;
+	 dmm.adc_raw[6] = 10;
+
+	 dmm.adc_nplc[0] = 1;
+	 dmm.adc_nplc[1] = 2;
+	 dmm.adc_nplc[2] = 5;
+	 dmm.adc_nplc[3] = 10;
+	 dmm.adc_nplc[4] = 20;
+	 dmm.adc_nplc[5] = 50;
+	 dmm.adc_nplc[6] = 100;
+
+	 dmm.nplc = 10;
+	 dmm.range = 100;
+	 dmm.range_index = 2;
+	 dmm.nplc_index = 3;
+	 dmm.samples = 1;
+	 dmm.zero_val = 0;
+	 dmm.zero_done = 0;
+	 dmm.zero_status = ZERO_OFF;
+
+	}
+	else if(BSP_OK == status)
+	{
+		eeprom_read(dmm.calibration, STRUCT_SIZE);
+	}
+
+	meas_path(dmm.range, MEAS_NORM);
+
+	HAL_GPIO_WritePin(FPGA_IO1_GPIO_Port, FPGA_IO1_Pin, 1);
+	log_status = 1;
+}
 
 /* USER CODE END 4 */
 
@@ -561,19 +646,17 @@ void StartTaskLogData(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	  if(log_status)
+	  HAL_UART_Init(&huart2);
+	  if(HAL_OK ==HAL_UART_Receive(&huart2, (uint8_t *)rx_data, 6, 600))
 	  {
-		  HAL_UART_Init(&huart2);
-		  if(HAL_OK ==HAL_UART_Receive(&huart2, (uint8_t *)rx_data, 6, 600))
-		  {
-			  HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
-		  }
-		  else
-		  {
-			  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-		  }
-		  HAL_UART_DeInit(&huart2);
+		  HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
 	  }
+	  else
+	  {
+		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
+		  count_fail++;
+	  }
+	  HAL_UART_DeInit(&huart2);
 	  osDelay(pdMS_TO_TICKS(5));
   }
   /* USER CODE END StartTaskLogData */

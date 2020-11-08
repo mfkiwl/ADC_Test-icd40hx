@@ -1,6 +1,7 @@
 
-#include <bsp_ee24.h>
+#include "bsp_ee24.h"
 #include "main.h"
+
 #if (_EEPROM_USE_FREERTOS == 1)
 #include "cmsis_os.h"
 #define ee24_delay(x)   osDelay(x)
