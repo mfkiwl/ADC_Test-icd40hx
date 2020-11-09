@@ -76,6 +76,7 @@ uint8_t rx_data[6] = {0x00};
 uint8_t it_array_mul[10]={1, 1, 1, 1, 2, 5, 10, 0};
 double it_array_refcor[3]={1, 1.01582, 1};
 uint32_t count_fail= 0;
+uint8_t new_data = 0;
 struct cfg_struct dmm;
 
 
@@ -165,7 +166,7 @@ int main(void)
   myTaskLEDHandle = osThreadNew(StartTaskLED, NULL, &myTaskLED_attributes);
 
   /* creation of LogData */
-  LogDataHandle = osThreadNew(StartTaskLogData, NULL, &LogData_attributes);
+ // LogDataHandle = osThreadNew(StartTaskLogData, NULL, &LogData_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
 
@@ -578,7 +579,7 @@ void DMM_Init()
 	 dmm.samples = 1;
 	 dmm.zero_val = 0;
 	 dmm.zero_done = 0;
-	 dmm.zero_status = ZERO_OFF;
+	 dmm.zero_status = ZERO_ON;
 
 	}
 	else if(BSP_OK == status)
@@ -651,6 +652,7 @@ void StartTaskLogData(void *argument)
 	  if(HAL_OK ==HAL_UART_Receive(&huart2, (uint8_t *)rx_data, 6, 600))
 	  {
 		  HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
+		  new_data = 1;
 	  }
 	  else
 	  {
